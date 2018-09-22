@@ -49,6 +49,7 @@
             <input type="text" placeholder="Name" size="46">
             Type: <select>
             <option>boolean</option>
+            <option>integer</option>
             <option selected>string</option>
         </select>
             <input type="text" placeholder="Value" size="29">
@@ -117,7 +118,7 @@
                     <div class="icon reset"></div>
                 </td>
             </tr>
-            <tr>
+            <tr class="edited">
                 <td>
                     <div class="icon star"></div>
                 </td>
@@ -135,7 +136,45 @@
                     <input type="submit" value="save">
                 </td>
             </tr>
+            <tr class="odd edited">
+                <td>
+                    <div class="icon star"></div>
+                </td>
+                <td>browser.zz.user-added</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+                <td>some content</td>
+                <td>
+                    <div class="icon trash"></div>
+                </td>
+            </tr>
+            <tr class="blocked">
+                <td>
+                    <div class="icon lock"></div>
+                </td>
+                <td>browser.zz.yz.blocked</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+                <td>1337</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+            </tr>
         </table>
+
+
+        <h4>Some information...</h4>
+        <ul>
+            <li>the navigation filters components (before first dot)</li>
+            <li>the header should be sticky = always on top</li>
+            <li>the div with the border is only visible if the user clicked the "add entry" button</li>
+            <li>locked items: icons should be grey, too</li>
+            <li>mirror the reset icon</li>
+            <li>reset icon grey when already default value?</li>
+            <li>"save" should be replaced with a tick</li>
+        </ul>
     </div>
 </div>
 </body>
