@@ -64,7 +64,6 @@ body {
 
 .icon.lock {
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/incontentprefs/privacy-security.svg");
-    transform: scaleX(-1);
 }
 
 .icon.copy {
@@ -73,6 +72,7 @@ body {
 
 .icon.reset {
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/icons/reload.svg");
+    transform: scaleX(-1);
 }
 
 .icon.trash {
