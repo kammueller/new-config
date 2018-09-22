@@ -1,89 +1,91 @@
-body{
+body {
     padding: 30px;
     background-clip: #f9f9fa;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Helvetica Neue', sans-serif;
 }
 
-.col{
+.col {
     float: left;
     height: 100%;
     margin: 10px;
 }
 
-.right{
+.right {
     width: 240px;
     font-size: 16px;
 }
 
-.center{
+.center {
     width: 692px;
 }
 
-.spacer{
+.spacer {
     height: 5px;
 }
 
-.menu-item{
+.menu-item {
     padding: 3px;
     border-radius: 3px;
 }
 
-.menu-item:hover{
+.menu-item:hover {
     background: #ebebeb;
 }
 
-.menu-item.active-fake{
+.menu-item.active-fake {
     background: #dadada;
 }
 
 .icon {
     height: 16px;
     width: 16px;
-    float:left;
+    float: left;
     margin-top: 3px;
     margin-right: 5px;
     background-size: 16px 16px;
 }
 
-.icon.star{
+.icon.star {
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/icons/bookmark-hollow.svg");
 }
 
-.icon.star.filled{
+.icon.star.filled {
     background-image: url("bookmark-fill.svg");
 
 }
 
-.icon.search{
+.icon.search {
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/extensions/onboarding/content/img/icons_singlesearch.svg");
 }
 
-.icon.add{
-     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/themes/images/add.svg");
+.icon.add {
+    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/themes/images/add.svg");
 }
 
-.icon.lock{
-     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/incontentprefs/privacy-security.svg");
+.icon.lock {
+    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/incontentprefs/privacy-security.svg");
+    transform: scaleX(-1);
 }
 
-.icon.copy{
+.icon.copy {
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/extensions/screenshots/webextension/icons/copy.svg");
 }
 
-.icon.reset{
+.icon.reset {
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/icons/reload.svg");
 }
 
-.icon.trash{
+.icon.trash {
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/components/newtab/data/content/assets/glyph-delete-16.svg");
 }
 
-.search-bar{
+.search-bar {
     width: 100%;
 }
 
-.blocked{
-    color: #555555;
+.blocked {
+    /*color: #555555;*/
+    opacity: 0.6;
 }
 
 .odd {
