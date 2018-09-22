@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About:Config</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="right col">
+    <div class="menu-item">
+        <div class="icon search"></div>
+        Everything
+    </div>
+    <div class="menu-item">
+        <div class="icon star"></div>
+        Favourites
+    </div>
+    <div class="spacer"></div>
+    <div class="menu-item">accessibility</div>
+    <div class="menu-item">advanced</div>
+    <div class="menu-item">alerts</div>
+    <div class="menu-item">app</div>
+    <div class="menu-item">apz</div>
+    <div class="menu-item">beacon</div>
+    <div class="menu-item">bidi</div>
+    <div class="menu-item">breakpad</div>
+    <div class="menu-item active-fake">browser</div>
+    <div class="menu-item">canvas</div>
+    <div class="menu-item">...</div>
+</div>
+
+<div class="center col">
+    <div class="cnt-head">
+        <input type="search" class="search-bar" placeholder="Search for something...">
+        <div class="cntr-l" style="float: left">
+            <input type="checkbox" checked> modified &nbsp; &nbsp;
+            <input type="checkbox" checked> default &nbsp; &nbsp;
+            <input type="checkbox" checked> Regexp search
+        </div>
+        <div class="cntr-r" style="float: right">
+            <button>Add Entry</button>
+        </div>
+    </div>
+    <div class="spacer" style="clear: both"></div>
+    <div class="new-entry">
+        <input type="text" placeholder="Name" size="46">
+        Type: <select>
+            <option>boolean</option>
+            <option selected>string</option>
+        </select>
+        <input type="text" placeholder="Value" size="29">
+        <input type="submit" value="add">
+    </div>
+    <div class="spacer" style="clear: both"></div>
+    <div class="table-wrap">
+        <table width="100%">
+            <tr style="font-weight: bold" class="odd">
+                <td></td>
+                <td>Name</td>
+                <td></td>
+                <td>Value</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="icon star"></div>
+                </td>
+                <td>browser.a.value</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+                <td>42</td>
+                <td>
+                    <div class="icon reset"></div>
+                </td>
+            </tr>
+            <tr class="blocked odd">
+                <td>
+                    <div class="icon lock"></div>
+                </td>
+                <td>browser.blocked</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+                <td>hello-world</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="icon star"></div>
+                </td>
+                <td>browser.in.edit</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+                <td><input type="text" value="old value" class="edit"></td>
+                <td>
+                    <input type="submit" value="save">
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>
+                    <div class="icon star filled"></div>
+                </td>
+                <td>browser.fav.thing</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+                <td>true</td>
+                <td>
+                    <div class="icon reset"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="icon star"></div>
+                </td>
+                <td>browser.zz.bool-edit</td>
+                <td>
+                    <div class="icon copy"></div>
+                </td>
+                <td>
+                    <select class="edit">
+                        <option>true</option>
+                        <option selected>false</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" value="save">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
