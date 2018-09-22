@@ -30,28 +30,32 @@
 </div>
 
 <div class="center col">
-    <div class="cnt-head">
-        <input type="search" class="search-bar" placeholder="Search for something...">
-        <div class="cntr-l" style="float: left">
-            <input type="checkbox" checked> modified &nbsp; &nbsp;
-            <input type="checkbox" checked> default &nbsp; &nbsp;
-            <input type="checkbox" checked> Regexp search
+    <!-- this div should stick to the top and not be scrolled out of view -->
+    <div class="sticky">
+        <div class="cnt-head">
+            <input type="search" class="search-bar" placeholder="Search for something...">
+            <div class="cntr-l" style="float: left">
+                <input type="checkbox" checked> modified &nbsp; &nbsp;
+                <input type="checkbox" checked> default &nbsp; &nbsp;
+                <input type="checkbox" checked> Regexp search
+            </div>
+            <div class="cntr-r" style="float: right">
+                <button>Add Entry</button>
+            </div>
         </div>
-        <div class="cntr-r" style="float: right">
-            <button>Add Entry</button>
-        </div>
-    </div>
-    <div class="spacer" style="clear: both"></div>
-    <div class="new-entry">
-        <input type="text" placeholder="Name" size="46">
-        Type: <select>
+        <div class="spacer" style="clear: both"></div>
+        <!--this div should only be visible after the user clicked the "Add Entry" button-->
+        <div class="new-entry">
+            <input type="text" placeholder="Name" size="46">
+            Type: <select>
             <option>boolean</option>
             <option selected>string</option>
         </select>
-        <input type="text" placeholder="Value" size="29">
-        <input type="submit" value="add">
+            <input type="text" placeholder="Value" size="29">
+            <input type="submit" value="add">
+        </div>
+        <div class="spacer" style="clear: both"></div>
     </div>
-    <div class="spacer" style="clear: both"></div>
     <div class="table-wrap">
         <table width="100%">
             <tr style="font-weight: bold" class="odd">
