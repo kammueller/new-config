@@ -4,178 +4,186 @@
     <meta charset="UTF-8">
     <title>About:Config</title>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="chrome://global/skin/in-content/common.css">
 </head>
 <body>
-<div class="right col">
-    <div class="menu-item">
-        <div class="icon search"></div>
-        Everything
-    </div>
-    <div class="menu-item">
-        <div class="icon star"></div>
-        Favourites
-    </div>
-    <div class="spacer"></div>
-    <div class="menu-item">accessibility</div>
-    <div class="menu-item">advanced</div>
-    <div class="menu-item">alerts</div>
-    <div class="menu-item">app</div>
-    <div class="menu-item">apz</div>
-    <div class="menu-item">beacon</div>
-    <div class="menu-item">bidi</div>
-    <div class="menu-item">breakpad</div>
-    <div class="menu-item active-fake">browser</div>
-    <div class="menu-item">canvas</div>
-    <div class="menu-item">...</div>
-</div>
-
-<div class="center col">
-    <!-- this div should stick to the top and not be scrolled out of view -->
-    <div class="sticky">
-        <div class="cnt-head">
-            <input type="search" class="search-bar" placeholder="Search for something...">
-            <div class="cntr-l" style="float: left">
-                <input type="checkbox" checked> modified &nbsp; &nbsp;
-                <input type="checkbox" checked> default &nbsp; &nbsp;
-                <input type="checkbox" checked> Regexp search
+<div class="container">
+    <div class="navigation">
+        <div id="categories">
+            <div class="category category-small">
+                <div class="icon search"></div>
+                Everything
             </div>
-            <div class="cntr-r" style="float: right">
-                <button>Add Entry</button>
+            <div class="category category-small">
+                <div class="icon star"></div>
+                Favourites
+            </div>
+            <div class="spacer"></div>
+            <div class="category category-small">accessibility</div>
+            <div class="category category-small">advanced</div>
+            <div class="category category-small">alerts</div>
+            <div class="category category-small">app</div>
+            <div class="category category-small">apz</div>
+            <div class="category category-small">beacon</div>
+            <div class="category category-small">bidi</div>
+            <div class="category category-small">breakpad</div>
+            <div class="category category-small active-fake">browser</div>
+            <div class="category category-small">canvas</div>
+            <div class="category category-small">...</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="pane-container">
+            <!-- this div should stick to the top and not be scrolled out of view -->
+            <div class="sticky">
+                <div class="cnt-head">
+                    <input type="search" class="search-bar" placeholder="Search for something...">
+                    <div class="cntr-l" style="float: left">
+                        <input type="checkbox" checked> modified &nbsp; &nbsp;
+                        <input type="checkbox" checked> default &nbsp; &nbsp;
+                        <input type="checkbox" checked> Regexp search
+                    </div>
+                    <div class="cntr-r" style="float: right">
+                        <button>Add Entry</button>
+                    </div>
+                </div>
+                <div class="spacer" style="clear: both"></div>
+                <!--this div should only be visible after the user clicked the "Add Entry" button-->
+                <div class="new-entry">
+                    <input type="text" placeholder="Name" size="46">
+                    Type: <select>
+                    <option>boolean</option>
+                    <option>integer</option>
+                    <option selected>string</option>
+                </select>
+                    <input type="text" placeholder="Value" size="29">
+                    <input type="submit" value="add">
+                </div>
+                <div class="spacer" style="clear: both"></div>
+            </div>
+            <div class="table-wrap">
+                <table width="100%">
+                    <tr style="font-weight: bold" class="odd">
+                        <td></td>
+                        <td>Name</td>
+                        <td></td>
+                        <td>Value</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="icon star"></div>
+                        </td>
+                        <td>browser.a.value</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                        <td>42</td>
+                        <td>
+                            <div class="icon reset"></div>
+                        </td>
+                    </tr>
+                    <tr class="blocked odd">
+                        <td>
+                            <div class="icon lock"></div>
+                        </td>
+                        <td>browser.blocked</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                        <td>hello-world</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="icon star"></div>
+                        </td>
+                        <td>browser.in.edit</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                        <td><input type="text" value="old value" class="edit"></td>
+                        <td>
+                            <input type="submit" value="save">
+                        </td>
+                    </tr>
+                    <tr class="odd">
+                        <td>
+                            <div class="icon star filled"></div>
+                        </td>
+                        <td>browser.fav.thing</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                        <td>true</td>
+                        <td>
+                            <div class="icon reset"></div>
+                        </td>
+                    </tr>
+                    <tr class="edited">
+                        <td>
+                            <div class="icon star"></div>
+                        </td>
+                        <td>browser.zz.bool-edit</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                        <td>
+                            <select class="edit">
+                                <option>true</option>
+                                <option selected>false</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" value="save">
+                        </td>
+                    </tr>
+                    <tr class="odd edited">
+                        <td>
+                            <div class="icon star"></div>
+                        </td>
+                        <td>browser.zz.user-added</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                        <td>some content</td>
+                        <td>
+                            <div class="icon trash"></div>
+                        </td>
+                    </tr>
+                    <tr class="blocked">
+                        <td>
+                            <div class="icon lock"></div>
+                        </td>
+                        <td>browser.zz.yz.blocked</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                        <td>1337</td>
+                        <td>
+                            <div class="icon copy"></div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="spacer" style="height: 100px"></div>
+
+                <h4>Some information how this should work</h4>
+                <ul>
+                    <li>the navigation filters components (before first dot)</li>
+                    <li>the header should be sticky = always on top</li>
+                    <li>the div with the border is only visible if the user clicked the "add entry" button</li>
+                    <li>reset icon grey when already default value?</li>
+                    <li>"save" should be replaced with a tick</li>
+                    <li>edit option appears on (double?)-click. Maybe toggle button?!</li>
+                </ul>
             </div>
         </div>
-        <div class="spacer" style="clear: both"></div>
-        <!--this div should only be visible after the user clicked the "Add Entry" button-->
-        <div class="new-entry">
-            <input type="text" placeholder="Name" size="46">
-            Type: <select>
-            <option>boolean</option>
-            <option>integer</option>
-            <option selected>string</option>
-        </select>
-            <input type="text" placeholder="Value" size="29">
-            <input type="submit" value="add">
-        </div>
-        <div class="spacer" style="clear: both"></div>
-    </div>
-    <div class="table-wrap">
-        <table width="100%">
-            <tr style="font-weight: bold" class="odd">
-                <td></td>
-                <td>Name</td>
-                <td></td>
-                <td>Value</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="icon star"></div>
-                </td>
-                <td>browser.a.value</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-                <td>42</td>
-                <td>
-                    <div class="icon reset"></div>
-                </td>
-            </tr>
-            <tr class="blocked odd">
-                <td>
-                    <div class="icon lock"></div>
-                </td>
-                <td>browser.blocked</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-                <td>hello-world</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="icon star"></div>
-                </td>
-                <td>browser.in.edit</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-                <td><input type="text" value="old value" class="edit"></td>
-                <td>
-                    <input type="submit" value="save">
-                </td>
-            </tr>
-            <tr class="odd">
-                <td>
-                    <div class="icon star filled"></div>
-                </td>
-                <td>browser.fav.thing</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-                <td>true</td>
-                <td>
-                    <div class="icon reset"></div>
-                </td>
-            </tr>
-            <tr class="edited">
-                <td>
-                    <div class="icon star"></div>
-                </td>
-                <td>browser.zz.bool-edit</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-                <td>
-                    <select class="edit">
-                        <option>true</option>
-                        <option selected>false</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="submit" value="save">
-                </td>
-            </tr>
-            <tr class="odd edited">
-                <td>
-                    <div class="icon star"></div>
-                </td>
-                <td>browser.zz.user-added</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-                <td>some content</td>
-                <td>
-                    <div class="icon trash"></div>
-                </td>
-            </tr>
-            <tr class="blocked">
-                <td>
-                    <div class="icon lock"></div>
-                </td>
-                <td>browser.zz.yz.blocked</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-                <td>1337</td>
-                <td>
-                    <div class="icon copy"></div>
-                </td>
-            </tr>
-        </table>
-
-        <div class="spacer" style="height: 100px"></div>
-
-        <h4>Some information how this should work</h4>
-        <ul>
-            <li>the navigation filters components (before first dot)</li>
-            <li>the header should be sticky = always on top</li>
-            <li>the div with the border is only visible if the user clicked the "add entry" button</li>
-            <li>reset icon grey when already default value?</li>
-            <li>"save" should be replaced with a tick</li>
-            <li>edit option appears on (double?)-click. Maybe toggle button?!</li>
-        </ul>
     </div>
 </div>
+
 </body>
 </html>
