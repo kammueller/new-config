@@ -95,6 +95,9 @@
 .container {
     display: flex;
     flex-direction: row;
+    height: 100%;
+    width: 100%;
+    position: fixed;
 }
 
 .right {
@@ -111,11 +114,15 @@
 }
 
 .pane-container {
-    display: block;
     width: 664px;
+    overflow: auto;
 }
 
-.main-content{
-    overflow: auto;
-    height: 100%; /* TODO: this does not work, fix that ;-) (you have to scroll down for the scroll bar */
+.navigation {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main-content {
+    flex-grow: 1; /* such that the scrollbar is on the right border ;)*/
 }
