@@ -1,26 +1,4 @@
-/*body {
-    padding: 30px;
-    background-clip: #f9f9fa;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Helvetica Neue', sans-serif;
-}*/
-
-.spacer {
-    height: 5px;
-}
-
-.menu-item {
-    padding: 3px;
-    border-radius: 3px;
-}
-
-.menu-item:hover {
-    background: #ebebeb;
-}
-
-.menu-item.active-fake {
-    background: #dadada;
-}
-
+/* region ICONS */
 .icon {
     height: 16px;
     width: 16px;
@@ -36,7 +14,6 @@
 
 .icon.star.filled {
     background-image: url("bookmark-fill.svg");
-
 }
 
 .icon.search {
@@ -64,10 +41,69 @@
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/components/newtab/data/content/assets/glyph-delete-16.svg");
 }
 
+/* endregion */
+
+/* region CONTAINER */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.pane-container {
+    width: 664px;
+    overflow: auto;
+}
+
+.navigation {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main-content {
+    flex-grow: 1; /* such that the scrollbar is on the right border ;)*/
+}
+/* endregion */
+
+/* region NAVIGATION */
+#categories > .category.category-small{
+    min-height: 24px;
+}
+
+.spacer {
+    height: 5px;
+}
+
+.menu-item {
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.menu-item:hover {
+    background: #ebebeb;
+}
+
+.menu-item.active-fake {
+    background: #dadada;
+}
+/* endregion*/
+
+/* region STICKY */
 .search-bar {
     width: 100%;
 }
 
+.new-entry {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+/* endregion */
+
+/* region TABLE */
 .blocked {
     /*color: #555555;*/
     opacity: 0.6;
@@ -84,45 +120,4 @@
 .edit {
     width: 100%;
 }
-
-.new-entry {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-}
-
-.right {
-    width: 240px;
-    font-size: 16px;
-}
-
-.center {
-    width: 692px;
-}
-
-#categories > .category.category-small{
-    min-height: 24px;
-}
-
-.pane-container {
-    width: 664px;
-    overflow: auto;
-}
-
-.navigation {
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-.main-content {
-    flex-grow: 1; /* such that the scrollbar is on the right border ;)*/
-}
+/* endregion */
