@@ -51,14 +51,20 @@
                 <div class="spacer" style="clear: both"></div>
                 <!--this div should only be visible after the user clicked the "Add Entry" button-->
                 <div class="new-entry">
-                    <input type="text" placeholder="Name">
-                    Type: <select>
-                    <option>boolean</option>
-                    <option>integer</option>
-                    <option selected>string</option>
-                </select>
-                    <input type="text" placeholder="Value">
-                    <button>add</button>
+                    <div class="line">
+                        <input type="text" placeholder="Name" class="growth">
+                        <div class="fixed">
+                            Type:
+                            <input type="radio" name="gender" value="b"> Boolean
+                            <input type="radio" name="gender" value="i"> Integer
+                            <input type="radio" name="gender" value="s"> String
+                        </div>
+                    </div>
+                    <div class="line">
+                        <input type="text" placeholder="Value" class="growth" style="margin: 4px 0">
+                        <!-- TODO: this is ugly, but the button determines the line height =/ -->
+                        <button>add</button>
+                    </div>
                 </div>
                 <div class="spacer" style="clear: both"></div>
             </div>
@@ -107,7 +113,9 @@
                         </td>
                         <td><input type="text" value="old value" class="edit"></td>
                         <td>
-                            <button><div class="icon save"></div></button>
+                            <button>
+                                <div class="icon save"></div>
+                            </button>
                         </td>
                     </tr>
                     <tr class="odd">
@@ -138,7 +146,9 @@
                             </select>
                         </td>
                         <td>
-                            <button><div class="icon save"></div></button>
+                            <button>
+                                <div class="icon save"></div>
+                            </button>
                             <!-- TODO: this is bad style + size not correct -->
                         </td>
                     </tr>
