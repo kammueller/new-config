@@ -9,38 +9,42 @@
 }
 
 .icon.star {
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/icons/bookmark-hollow.svg");
+    background-image: url("chrome://browser/skin/bookmark-hollow.svg");
 }
 
 .icon.star.filled {
-    background-image: url("bookmark-fill.svg");
+    background-image: url("chrome://browser/skin/bookmark.svg");
 }
 
 .icon.search {
+    /*TODO: not sure which one I should use here...*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/extensions/onboarding/content/img/icons_singlesearch.svg");
 }
 
 .icon.add {
+    /*TODO: not sure which one I should use here...*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/themes/images/add.svg");
 }
 
 .icon.lock {
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/incontentprefs/privacy-security.svg");
+    background-image: url("chrome://browser/skin/preferences/in-content/privacy-security.svg");
 }
 
 .icon.copy {
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/extensions/screenshots/webextension/icons/copy.svg");
+    background-image: url("chrome://browser/skin/edit-copy.svg");
 }
 
 .icon.reset {
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/themes/shared/icons/undo.svg");
+    background-image: url("chrome://browser/skin/undo.svg");
 }
 
 .icon.trash {
+    /*probably browser/components/newtab/data/content/assets/glyph-delete-16.svg; but no chrome:// link for that one*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/components/newtab/data/content/assets/glyph-delete-16.svg");
 }
 
 .icon.save {
+    /*chrome://global/skin/icons/check.svg does not work (Win 10)*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/toolkit/themes/shared/icons/check.svg");
 }
 
