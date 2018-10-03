@@ -6,6 +6,7 @@
     margin-top: 3px;
     margin-right: 5px;
     background-size: 16px 16px;
+    background: no-repeat center;
 }
 
 .icon.star {
@@ -76,10 +77,11 @@
 .main-content {
     flex-grow: 1; /* such that the scrollbar is on the right border ;)*/
 }
+
 /* endregion */
 
 /* region NAVIGATION */
-#categories > .category.category-small{
+#categories > .category.category-small {
     min-height: 24px;
 }
 
@@ -101,18 +103,37 @@
 }
 
 @media (max-width: 830px) {
-    #categories > .category.category-small{
+    #categories > .category.category-small {
         margin-left: 5px;
         margin-right: 10px;
         padding-left: 5px;
         padding-right: 5px;
     }
 }
+
 /* endregion*/
 
 /* region STICKY */
-.search-bar {
-    width: 100%;
+.sticky-container {
+    /* TODO */
+}
+
+button.right {
+    margin-right: 0;
+}
+
+.search-box {
+    margin-left: -16px;
+    padding-left: 31px !important; /* regular + icon + icon-margin: 10+16+5*/
+    flex-grow: 1;
+}
+
+.icon.search.in-search-box {
+    margin: 0;
+    padding: 6px 0;
+    position: relative;
+    left: 10px; /* the 10px padding of the text field */
+    transform: scaleX(-1);
 }
 
 .new-entry {
@@ -134,9 +155,21 @@
     flex-grow: 1;
 }
 
-.line > .fixed {
-    padding: 5px 10px;
+.line > .selects {
+    margin: 4px;
+    padding: 3px;
 }
+
+.search-label {
+    bottom: 4px;
+    right: 0.5em;
+    position: relative;
+}
+
+.search-select {
+    margin: 4px;
+}
+
 /* endregion */
 
 /* region TABLE */
@@ -156,4 +189,5 @@
 .edit {
     width: 100%;
 }
+
 /* endregion */

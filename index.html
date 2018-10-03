@@ -36,16 +36,28 @@
     <div class="main-content">
         <div class="pane-container">
             <!-- this div should stick to the top and not be scrolled out of view -->
-            <div class="sticky">
+            <div class="sticky-container">
                 <div class="cnt-head">
-                    <input type="search" class="search-bar" placeholder="Search for something...">
-                    <div class="cntr-l" style="float: left">
-                        <input type="checkbox" checked> modified &nbsp; &nbsp;
-                        <input type="checkbox" checked> default &nbsp; &nbsp;
-                        <input type="checkbox" checked> Regexp search
+                    <div class="line">
+                        <div class="icon search in-search-box"></div>
+                        <input class="search-box" type="text" name="search" placeholder="Search for something...">
                     </div>
-                    <div class="cntr-r" style="float: right">
-                        <button>Add Entry</button>
+                    <div class="line">
+                        <div class="search-select">
+                            <input type="checkbox" id="modified" value="modified" checked>
+                            <label class="search-label" for="modified">modified</label>
+                        </div>
+                        <div class="search-select">
+                            <input type="checkbox" id="default" value="default" checked>
+                            <label class="search-label" for="default">default</label>
+                        </div>
+                        <div class="search-select growth">
+                            <input type="checkbox" id="Regexp" value="Regexp" checked>
+                            <label class="search-label" for="Regexp">Regexp search</label>
+                        </div>
+                        <div>
+                            <button class="right">Add Entry</button>
+                        </div>
                     </div>
                 </div>
                 <div class="spacer" style="clear: both"></div>
@@ -53,7 +65,7 @@
                 <div class="new-entry">
                     <div class="line">
                         <input type="text" placeholder="Name" class="growth">
-                        <div class="fixed">
+                        <div class="selects">
                             Type:
                             <input type="radio" name="gender" value="b"> Boolean
                             <input type="radio" name="gender" value="i"> Integer
@@ -208,11 +220,11 @@
                     <li>the navigation filters components (before first dot)</li>
                     <li>the header should be sticky = always on top</li>
                     <li>the div with the border is only visible if the user clicked the "add entry" button</li>
-                    <li>reset icon grey when already default value?</li>
-                    <li>"save" should be replaced with a tick</li>
-                    <li>edit option appears on (double?)-click. Maybe toggle button?!</li>
-                    <li>how should the navigation behave in the "collapsed" mode (&lt;830px width)</li>
+                    <li>reset icon disabled when already default value?</li>
+                    <li>edit option appears on click.</li>
                     <li>maybe the categories should also have a bottom padding of 70 px</li>
+                    <li>include svgs directly? Make search box magnifier grey?</li>
+                    <li>use CSS variables</li>
                 </ul>
             </div>
         </div>
