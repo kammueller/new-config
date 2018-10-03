@@ -66,7 +66,9 @@
 
 .pane-container {
     width: 664px;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .navigation {
@@ -115,7 +117,11 @@
 
 /* region STICKY */
 .sticky-container {
-    /* TODO */
+    position: sticky;
+    top: 0;
+    background-color: var(--in-content-page-background);
+    z-index: 1;
+    /* TODO: does not work */
 }
 
 button.right {
@@ -173,6 +179,15 @@ button.right {
 /* endregion */
 
 /* region TABLE */
+td > .icon {
+    margin: 0;
+}
+
+.pref-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
 .blocked {
     /*color: #555555;*/
     opacity: 0.6;
