@@ -2,61 +2,81 @@
 
 :root {
     --pane-width: 664px;
+    --button-margin: 4px;
+    --icon-size: 16px;
+    --icon-margin: 5px;
+    --texfield-padding-x: 10px;
+    --textfield-border-radius: 2px;
+    --main-content-y-padding: 40px;
+    --table-border-radius: 2px;
     /*TODO: more variables. Generalize!*/
+}
+
+.spacer {
+    height: 5px;
 }
 
 /* region ICONS */
 .icon {
-    height: 16px;
-    width: 16px;
-    float: left;
-    margin-top: 3px;
-    margin-right: 5px;
-    background-size: 16px 16px;
-    background: no-repeat center;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: var(--icon-size) var(--icon-size);
+    align-self: center;
 }
 
-.icon.star {
+span.icon{
+    float: left;
+    /* TODO I don't know why this is necessary*/
+}
+
+.icon-description {
+    padding-left: var(--icon-margin);
+    align-self: center;
+}
+
+.icon.icon--star {
     background-image: url("chrome://browser/skin/bookmark-hollow.svg");
 }
 
-.icon.star.filled {
+.icon.icon--filled-star {
     background-image: url("chrome://browser/skin/bookmark.svg");
 }
 
-.icon.search {
+.icon.icon--search {
     /*TODO: not sure which one I should use here...*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/extensions/onboarding/content/img/icons_singlesearch.svg");
 }
 
-.icon.add {
+.icon.icon--add {
     /*TODO: not sure which one I should use here...*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/themes/images/add.svg");
 }
 
-.icon.lock {
+.icon.icon--lock {
     background-image: url("chrome://browser/skin/preferences/in-content/privacy-security.svg");
 }
 
-.icon.copy {
+.icon.icon--copy {
     background-image: url("chrome://browser/skin/edit-copy.svg");
 }
 
-.icon.reset {
+.icon.icon--reset {
     background-image: url("chrome://browser/skin/undo.svg");
 }
 
-.icon.trash {
+.icon.icon--trash {
     /*probably browser/components/newtab/data/content/assets/glyph-delete-16.svg; but no chrome:// link for that one*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/components/newtab/data/content/assets/glyph-delete-16.svg");
 }
 
-.icon.save {
+.icon.icon--save {
     /*chrome://global/skin/icons/check.svg does not work (Win 10)*/
     background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/toolkit/themes/shared/icons/check.svg");
 }
 
-.icon.toggle {
+.icon.icon--toggle {
     background-image: url("chrome://browser/skin/developer.svg");
 }
 
@@ -91,33 +111,9 @@
 
 /* region NAVIGATION */
 #categories > .category.category-small {
+    display: flex;
+    flex-direction: row;
     min-height: 24px;
-}
-
-.spacer {
-    height: 5px;
-}
-
-.menu-item {
-    padding: 3px;
-    border-radius: 3px;
-}
-
-.menu-item:hover {
-    background: #ebebeb;
-}
-
-.menu-item.active-fake {
-    background: #dadada;
-}
-
-@media (max-width: 830px) {
-    #categories > .category.category-small {
-        margin-left: 5px;
-        margin-right: 10px;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
 }
 
 /* endregion*/
@@ -127,7 +123,7 @@
     /*TODO: this is an ugly trick...*/
     position: fixed;
     top: 0;
-    height: 70px;
+    height: var(--main-content-y-padding);
     width: var(--pane-width);
     background-color: var(--in-content-page-background);
     z-index: 1;
@@ -140,25 +136,23 @@
     z-index: 2;
 }
 
-button.right {
-    margin-right: 0;
-}
-
-.search-box {
-    margin-left: -16px;
-    padding-left: 31px !important; /* regular + icon + icon-margin: 10+16+5*/
+html|input[type="text"].search-box {
+    margin-left: calc(var(--button-margin) - var(--icon-size));
+    margin-right: var(--button-margin);
+    padding-left: calc(var(--texfield-padding-x) + var(--icon-margin) + var(--icon-size));
     flex-grow: 1;
 }
 
-.icon.search.in-search-box {
+.icon.icon--search.in-search-box {
     margin: 0;
     padding: 6px 0;
     position: relative;
-    left: 10px; /* the 10px padding of the text field */
+    left: var(--texfield-padding-x);
     transform: scaleX(-1);
 }
 
 .new-entry {
+    /*TODO: design that!*/
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
@@ -168,6 +162,7 @@ button.right {
 }
 
 .line {
+    /* TODO: use flex-breaks? */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -177,6 +172,7 @@ button.right {
     flex-grow: 1;
 }
 
+/* TODO: these are hacky! */
 .line > .selects {
     margin: 4px;
     padding: 3px;
@@ -195,10 +191,6 @@ button.right {
 /* endregion */
 
 /* region TABLE */
-.cell .icon {
-    margin: 0;
-}
-
 .pref-table {
     width: calc(var(--pane-width) - 2px);
     /*border-collapse: collapse;*/
@@ -206,14 +198,14 @@ button.right {
 
     font-size: 1em;
     border: 1px solid var(--in-content-box-border-color);
-    border-radius: 2px 2px 0 0;
+    border-radius: var(--table-border-radius) var(--table-border-radius) 0 0;
     background-color: var(--in-content-box-background);
     margin: 0;
 }
 
 .pref-table.snd-table {
     border-top: none;
-    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 var(--table-border-radius) var(--table-border-radius);
 }
 
 .pref-table .row {
@@ -265,7 +257,7 @@ button.right {
 }
 
 .col-1 {
-    width: 16px;
+    width: var(--icon-size);
 }
 
 .col-2 {
@@ -273,7 +265,7 @@ button.right {
 }
 
 .col-3 {
-    width: 16px;
+    width: var(--icon-size);
 }
 
 .col-4 {
@@ -281,7 +273,7 @@ button.right {
 }
 
 .col-5 {
-    width: 16px;
+    width: var(--icon-size);
 }
 
 .blocked {
@@ -299,11 +291,11 @@ button.right {
 
 /* endregion */
 
-/*TODO: make that nicer, photon colors etc*/
+/* region EDIT */
 .edit-flex {
     display: inline-flex;
     width: 100%;
-    border: 1px solid var(--in-content-box-border-color);
+    border: none;
     border-radius: 2px;
     overflow: hidden;
 }
@@ -317,4 +309,19 @@ html|button.edit-save {
     margin: 0;
     min-width: 0;
     border-radius: 0;
+    border-left: none;
 }
+
+/* endregion*/
+
+/* region COLLAPSED -- @media (max-width: 830px) */
+@media (max-width: 830px) {
+    #categories > .category.category-small {
+        margin-left: 5px;
+        margin-right: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* endregion */

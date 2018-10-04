@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>About:Config</title>
     <link rel="stylesheet" href="chrome://global/skin/in-content/common.css">
+    <link rel="stylesheet" href="photon-colors.css">
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -11,12 +12,12 @@
     <div class="navigation">
         <div id="categories">
             <div class="category category-small">
-                <div class="icon search"></div>
-                Everything
+                <div class="icon icon--search"></div>
+                <div class="icon-description">Everything</div>
             </div>
             <div class="category category-small">
-                <div class="icon star"></div>
-                Favourites
+                <div class="icon icon--star"></div>
+                <div class="icon-description">Favourites</div>
             </div>
             <div class="spacer"></div>
             <div class="category category-small">accessibility</div>
@@ -27,7 +28,7 @@
             <div class="category category-small">beacon</div>
             <div class="category category-small">bidi</div>
             <div class="category category-small">breakpad</div>
-            <div class="category category-small active-fake">browser</div>
+            <div class="category category-small" selected="true">browser</div>
             <div class="category category-small">canvas</div>
             <div class="category category-small">...</div>
         </div>
@@ -39,7 +40,7 @@
             <div class="sticky-container">
                 <div class="cnt-head">
                     <div class="line">
-                        <div class="icon search in-search-box"></div>
+                        <div class="icon icon--search in-search-box"></div>
                         <input class="search-box" type="text" name="search" placeholder="Search for something...">
                     </div>
                     <div class="line">
@@ -56,7 +57,7 @@
                             <label class="search-label" for="Regexp">Regexp search</label>
                         </div>
                         <div>
-                            <button class="right">Add Entry</button>
+                            <button>Add Entry</button>
                         </div>
                     </div>
                 </div>
@@ -94,232 +95,245 @@
                 <div class="pref-table snd-table">
                     <div class="row">
                         <div class="cell col-1">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell col-2">browser.a.value</div>
                         <div class="cell col-3">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell col-4">42</div>
                         <div class="cell col-5">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row blocked ">
                         <div class="cell">
-                            <div class="icon lock"></div>
+                            <div class="icon icon--lock"></div>
                         </div>
                         <div class="cell">browser.blocked</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">hello-world</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
+                        </div>
+                    </div>
+                    <div class="row blocked ">
+                        <div class="cell">
+                            <div class="icon icon--lock"></div>
+                        </div>
+                        <div class="cell">browser.blocked</div>
+                        <div class="cell">
+                            <div class="icon icon--copy"></div>
+                        </div>
+                        <div class="cell">hello-world</div>
+                        <div class="cell">
+                            <div class="icon icon--copy"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.in.edit</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell in-edit">
                             <div class="edit-flex">
                                 <input class="edit-box" type="text" placeholder="New Value" value="Old Value">
-                                <button class="edit-save"><span class="icon save"></span></button>
+                                <button class="edit-save"><span class="icon icon--save"></span></button>
                             </div>
                         </div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star filled"></div>
+                            <div class="icon icon--filled-star"></div>
                         </div>
                         <div class="cell">browser.fav.thing</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">true</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row edited">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zz.user-added</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some content</div>
                         <div class="cell">
-                            <div class="icon trash"></div>
+                            <div class="icon icon--trash"></div>
                         </div>
                     </div>
                     <div class="row blocked">
                         <div class="cell">
-                            <div class="icon lock"></div>
+                            <div class="icon icon--lock"></div>
                         </div>
                         <div class="cell">browser.zz.yz.blocked</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">1337</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                     </div>
                     <div class="row edited">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzt.bool-edit.new</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">
                             <div class="line">
                                 <div class="text growth">
                                     true
                                 </div>
-                                <div class="icon toggle"></div>
+                                <div class="icon icon--toggle"></div>
                             </div>
                         </div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                         <!-- TODO: fix height?! -->
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zzzz.more</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell">some values</div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                     <div class="row edited">
                         <div class="cell">
-                            <div class="icon star"></div>
+                            <div class="icon icon--star"></div>
                         </div>
                         <div class="cell">browser.zz.bool-edit.old</div>
                         <div class="cell">
-                            <div class="icon copy"></div>
+                            <div class="icon icon--copy"></div>
                         </div>
                         <div class="cell in-edit">
                             <select class="edit">
@@ -328,7 +342,7 @@
                             </select>
                         </div>
                         <div class="cell">
-                            <div class="icon reset"></div>
+                            <div class="icon icon--reset"></div>
                         </div>
                     </div>
                 </div>
