@@ -1,5 +1,7 @@
 @namespace html "http://www.w3.org/1999/xhtml";
 
+/* region UTILS */
+
 :root {
     --pane-width: 664px;
     --button-margin: 4px;
@@ -9,24 +11,38 @@
     --textfield-border-radius: 2px;
     --main-content-y-padding: 40px;
     --table-border-radius: 2px;
-    /*TODO: more variables. Generalize!*/
+    /*TODO: change these to photon colors?*/
+    --table-border-col: #c1c1c1;
+    --table-header-col: #808080;
 }
 
 .spacer {
     height: 5px;
 }
 
+.line {
+    /* TODO: use flex-line-breaks? */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.line > .growth {
+    flex-grow: 1;
+}
+
+/* endregion */
+
 /* region ICONS */
 .icon {
     height: var(--icon-size);
     width: var(--icon-size);
-    background-repeat: no-repeat;
-    background-position: center;
+    background: no-repeat center;
     background-size: var(--icon-size) var(--icon-size);
     align-self: center;
 }
 
-span.icon{
+span.icon {
     float: left;
     /* TODO I don't know why this is necessary*/
 }
@@ -136,6 +152,7 @@ span.icon{
     z-index: 2;
 }
 
+/* region search */
 html|input[type="text"].search-box {
     margin-left: calc(var(--button-margin) - var(--icon-size));
     margin-right: var(--button-margin);
@@ -151,84 +168,87 @@ html|input[type="text"].search-box {
     transform: scaleX(-1);
 }
 
-.new-entry {
+.search-select {
+    margin: var(--button-margin);
+    padding-right: var(--texfield-padding-x);
+    display: flex;
+    flex-direction: row;
+}
+
+.search-select input[type="checkbox"] {
+    align-self: center;
+    margin-right: var(--button-margin);
+}
+
+.search-select label {
+    align-self: center;
+}
+
+/* endregion */
+
+/* region add */
+.add-container {
     /*TODO: design that!*/
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid var(--table-border-col);
+    border-radius: var(--table-border-radius);
     padding: 5px;
     margin: 5px;
     /*display: flex;*/
     /*flex-direction: column;*/
 }
 
-.line {
-    /* TODO: use flex-breaks? */
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+.add-container__type {
+    align-self: center;
+    margin: var(--button-margin);
 }
 
-.line > .growth {
-    flex-grow: 1;
-}
-
-/* TODO: these are hacky! */
-.line > .selects {
-    margin: 4px;
-    padding: 3px;
-}
-
-.search-label {
-    bottom: 4px;
-    right: 0.5em;
-    position: relative;
-}
-
-.search-select {
-    margin: 4px;
+html|input[type="text"].add-container__value {
+    margin: var(--button-margin) 0;
 }
 
 /* endregion */
+/* endregion */
 
 /* region TABLE */
+/* region basics */
 .pref-table {
     width: calc(var(--pane-width) - 2px);
-    /*border-collapse: collapse;*/
     display: table;
 
-    font-size: 1em;
     border: 1px solid var(--in-content-box-border-color);
-    border-radius: var(--table-border-radius) var(--table-border-radius) 0 0;
     background-color: var(--in-content-box-background);
     margin: 0;
 }
 
-.pref-table.snd-table {
+.pref-table.pref-table--header {
+    border-bottom: 1px solid var(--table-border-col);
+    border-radius: var(--table-border-radius) var(--table-border-radius) 0 0;
+    color: var(--table-header-col);
+}
+
+.pref-table.pref-table--body {
     border-top: none;
     border-radius: 0 0 var(--table-border-radius) var(--table-border-radius);
 }
 
-.pref-table .row {
+.pref-table .pref-table__row {
     display: table-row;
 }
 
-.row .cell {
+.pref-table__row:nth-child(2n+0) {
+    background: var(--grey-20);
+}
+
+.pref-table__row .pref-table__cell {
     display: table-cell;
     vertical-align: middle;
     padding: 5px 10px;
 }
 
-.row .cell.in-edit {
-    padding: 3px 0 0 0; /* TODO: hack to make look symmetric */
-}
+/* endregion */
 
-.pref-table .header {
-    color: #808080; /* TODO change to grey-50? */
-    border-bottom: 1px solid #c1c1c1;
-    padding: 0;
-}
-
-.pref-table .head-cell {
+/* region header */
+.pref-table .pref-table__head-cell {
     display: table-cell;
     text-align: left;
     border: none;
@@ -236,26 +256,22 @@ html|input[type="text"].search-box {
     padding: 5px 10px;
 }
 
-.pref-table .head-cell:hover {
+.pref-table .pref-table__head-cell:hover {
     background-color: var(--in-content-box-background-active);
     color: var(--in-content-text-color);
 }
 
-.pref-table .head-cell:not(:first-child) {
-    /*display: table-cell;
-    border-left: 1px solid;
-    border-image: linear-gradient(transparent 0%, transparent 20%, hotpink 20%, hotpink 80%, transparent 80%, transparent 100%) 1 1;*/
+.pref-table .pref-table__head-cell:not(:first-child) {
     display: table-cell;
     border-left: 1px solid;
     padding-left: 9px;
-    border-image: linear-gradient(transparent 0%, transparent 20%, #c1c1c1 20%, #c1c1c1 80%, transparent 80%, transparent 100%) 1 1;
-    /*TODO: maybe change to photon colour?!*/
+    border-image: linear-gradient(transparent 0%, transparent 20%, var(--table-border-col) 20%,
+    var(--table-border-col) 80%, transparent 80%, transparent 100%) 1 1;
 }
 
-.row:nth-child(2n+0) {
-    background: var(--grey-20);
-}
+/* endregion */
 
+/* region widths */
 .col-1 {
     width: var(--icon-size);
 }
@@ -276,6 +292,13 @@ html|input[type="text"].search-box {
     width: var(--icon-size);
 }
 
+/* endregion */
+
+/* region edit&blocked */
+.pref-table__row .pref-table__cell.pref-table__cell--in-edit {
+    padding: 3px 0 0 0; /* TODO: hack to make look symmetric */
+}
+
 .blocked {
     /*color: #555555;*/
     opacity: 0.6;
@@ -290,13 +313,14 @@ html|input[type="text"].search-box {
 }
 
 /* endregion */
+/* endregion */
 
 /* region EDIT */
 .edit-flex {
     display: inline-flex;
     width: 100%;
     border: none;
-    border-radius: 2px;
+    border-radius: var(--textfield-border-radius);
     overflow: hidden;
 }
 

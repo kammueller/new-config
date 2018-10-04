@@ -38,7 +38,7 @@
         <div class="pane-container">
             <!-- this div should stick to the top and not be scrolled out of view -->
             <div class="sticky-container">
-                <div class="cnt-head">
+                <div class="search-container">
                     <div class="line">
                         <div class="icon icon--search in-search-box"></div>
                         <input class="search-box" type="text" name="search" placeholder="Search for something...">
@@ -61,12 +61,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="spacer" style="clear: both"></div>
+                <div class="spacer"></div>
                 <!--this div should only be visible after the user clicked the "Add Entry" button-->
-                <div class="new-entry">
+                <div class="add-container">
                     <div class="line">
                         <input type="text" placeholder="Name" class="growth">
-                        <div class="selects">
+                        <div class="add-container__type">
                             Type:
                             <input type="radio" name="gender" value="b"> Boolean
                             <input type="radio" name="gender" value="i"> Integer
@@ -74,130 +74,129 @@
                         </div>
                     </div>
                     <div class="line">
-                        <input type="text" placeholder="Value" class="growth" style="margin: 4px 0">
-                        <!-- TODO: this is ugly, but the button determines the line height =/ -->
+                        <input type="text" placeholder="Value" class="growth add-container__value">
                         <button>add</button>
                     </div>
                 </div>
-                <div class="spacer" style="clear: both"></div>
+                <div class="spacer"></div>
 
-                <div class="pref-table">
-                    <div class=" row header">
-                        <div class="head-cell col-1"></div>
-                        <div class="head-cell col-2">Name</div>
-                        <div class="head-cell col-3"></div>
-                        <div class="head-cell col-4">Value</div>
-                        <div class="head-cell col-5"></div>
+                <div class="pref-table pref-table--header">
+                    <div class=" pref-table__row">
+                        <div class="pref-table__head-cell col-1"></div>
+                        <div class="pref-table__head-cell col-2">Name</div>
+                        <div class="pref-table__head-cell col-3"></div>
+                        <div class="pref-table__head-cell col-4">Value</div>
+                        <div class="pref-table__head-cell col-5"></div>
                     </div>
                 </div>
             </div>
             <div class="table-wrap">
-                <div class="pref-table snd-table">
-                    <div class="row">
-                        <div class="cell col-1">
+                <div class="pref-table pref-table--body">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell col-1">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell col-2">browser.a.value</div>
-                        <div class="cell col-3">
+                        <div class="pref-table__cell col-2">browser.a.value</div>
+                        <div class="pref-table__cell col-3">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell col-4">42</div>
-                        <div class="cell col-5">
+                        <div class="pref-table__cell col-4">42</div>
+                        <div class="pref-table__cell col-5">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row blocked ">
-                        <div class="cell">
+                    <div class="pref-table__row blocked ">
+                        <div class="pref-table__cell">
                             <div class="icon icon--lock"></div>
                         </div>
-                        <div class="cell">browser.blocked</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.blocked</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">hello-world</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">hello-world</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
                     </div>
-                    <div class="row blocked ">
-                        <div class="cell">
+                    <div class="pref-table__row blocked ">
+                        <div class="pref-table__cell">
                             <div class="icon icon--lock"></div>
                         </div>
-                        <div class="cell">browser.blocked</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.blocked</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">hello-world</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">hello-world</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.in.edit</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.in.edit</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell in-edit">
+                        <div class="pref-table__cell pref-table__cell--in-edit">
                             <div class="edit-flex">
                                 <input class="edit-box" type="text" placeholder="New Value" value="Old Value">
                                 <button class="edit-save"><span class="icon icon--save"></span></button>
                             </div>
                         </div>
-                        <div class="cell">
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--filled-star"></div>
                         </div>
-                        <div class="cell">browser.fav.thing</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.fav.thing</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">true</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">true</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row edited">
-                        <div class="cell">
+                    <div class="pref-table__row edited">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zz.user-added</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zz.user-added</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some content</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some content</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--trash"></div>
                         </div>
                     </div>
-                    <div class="row blocked">
-                        <div class="cell">
+                    <div class="pref-table__row blocked">
+                        <div class="pref-table__cell">
                             <div class="icon icon--lock"></div>
                         </div>
-                        <div class="cell">browser.zz.yz.blocked</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zz.yz.blocked</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">1337</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">1337</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
                     </div>
-                    <div class="row edited">
-                        <div class="cell">
+                    <div class="pref-table__row edited">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzt.bool-edit.new</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzt.bool-edit.new</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">
+                        <div class="pref-table__cell">
                             <div class="line">
                                 <div class="text growth">
                                     true
@@ -205,143 +204,142 @@
                                 <div class="icon icon--toggle"></div>
                             </div>
                         </div>
-                        <div class="cell">
-                            <div class="icon icon--reset"></div>
-                        </div>
-                        <!-- TODO: fix height?! -->
-                    </div>
-                    <div class="row">
-                        <div class="cell">
-                            <div class="icon icon--star"></div>
-                        </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
-                            <div class="icon icon--copy"></div>
-                        </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell">some values</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="row edited">
-                        <div class="cell">
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="cell">browser.zz.bool-edit.old</div>
-                        <div class="cell">
+                        <div class="pref-table__cell">browser.zzzz.more</div>
+                        <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
-                        <div class="cell in-edit">
+                        <div class="pref-table__cell">some values</div>
+                        <div class="pref-table__cell">
+                            <div class="icon icon--reset"></div>
+                        </div>
+                    </div>
+                    <div class="pref-table__row edited">
+                        <div class="pref-table__cell">
+                            <div class="icon icon--star"></div>
+                        </div>
+                        <div class="pref-table__cell">browser.zz.bool-edit.old</div>
+                        <div class="pref-table__cell">
+                            <div class="icon icon--copy"></div>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--in-edit">
                             <select class="edit">
                                 <option>true</option>
                                 <option selected>false</option>
                             </select>
                         </div>
-                        <div class="cell">
+                        <div class="pref-table__cell">
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
@@ -349,21 +347,22 @@
 
                 <div class="spacer" style="height: 100px"></div>
 
-                <h4>Some information how this should work</h4>
+                <h4>TODOs</h4>
                 <ul>
                     <li>the navigation filters components (before first dot)</li>
-                    <li>the header should be sticky = always on top</li>
                     <li>the div with the border is only visible if the user clicked the "add entry" button</li>
                     <li>reset icon disabled when already default value?</li>
                     <li>edit option appears on click.</li>
                     <li>maybe the categories should also have a bottom padding of 70 px</li>
                     <li>include svgs directly? Make search box magnifier grey?</li>
                     <li>use CSS variables</li>
+                    <li>Dropdown is to wide. Will we use it at all or rather a toggle button?</li>
+                    <li>In which way should the edit-height change?</li>
+                    <li>table does margin 0, search & add the one of the button...</li>
                 </ul>
             </div>
         </div>
         <div class="tricky-hide"></div>
-        <!--TODO: the scrolling table is ~2px wider -.- -->
     </div>
 </div>
 
