@@ -1,5 +1,10 @@
 @namespace html "http://www.w3.org/1999/xhtml";
 
+:root {
+    --pane-width: 664px;
+    /*TODO: more variables. Generalize!*/
+}
+
 /* region ICONS */
 .icon {
     height: 16px;
@@ -67,7 +72,7 @@
 }
 
 .pane-container {
-    width: 664px;
+    width: var(--pane-width);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -123,7 +128,7 @@
     position: fixed;
     top: 0;
     height: 70px;
-    width:664px;
+    width: var(--pane-width);
     background-color: var(--in-content-page-background);
     z-index: 1;
 }
@@ -195,7 +200,7 @@ button.right {
 }
 
 .pref-table {
-    width: 100%;
+    width: calc(var(--pane-width) - 2px);
     /*border-collapse: collapse;*/
     display: table;
 
@@ -211,7 +216,7 @@ button.right {
     border-radius: 0 0 2px 2px;
 }
 
-.pref-table .row{
+.pref-table .row {
     display: table-row;
 }
 
@@ -219,6 +224,10 @@ button.right {
     display: table-cell;
     vertical-align: middle;
     padding: 5px 10px;
+}
+
+.row .cell.in-edit {
+    padding: 3px 0 0 0; /* TODO: hack to make look symmetric */
 }
 
 .pref-table .header {
@@ -255,19 +264,23 @@ button.right {
     background: var(--grey-20);
 }
 
-.col-1{
+.col-1 {
     width: 16px;
 }
-.col-2{
+
+.col-2 {
     width: 258px;
 }
-.col-3{
+
+.col-3 {
     width: 16px;
 }
-.col-4{
+
+.col-4 {
     width: 258px;
 }
-.col-5{
+
+.col-5 {
     width: 16px;
 }
 
@@ -286,7 +299,6 @@ button.right {
 
 /* endregion */
 
-
 /*TODO: make that nicer, photon colors etc*/
 .edit-flex {
     display: inline-flex;
@@ -297,7 +309,6 @@ button.right {
 }
 
 html|input[type="text"].edit-box {
-    padding: 0.5rem;
     flex: 1;
     border-radius: 0;
 }

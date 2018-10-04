@@ -126,11 +126,14 @@
                         <div class="cell">
                             <div class="icon copy"></div>
                         </div>
-                        <div class="cell"><input type="text" value="old value" class="edit"></div>
+                        <div class="cell in-edit">
+                            <div class="edit-flex">
+                                <input class="edit-box" type="text" placeholder="New Value" value="Old Value">
+                                <button class="edit-save"><span class="icon save"></span></button>
+                            </div>
+                        </div>
                         <div class="cell">
-                            <!--<button>-->
-                            <!--<div class="icon save"></div>-->
-                            <!--</button>-->
+                            <div class="icon reset"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -144,27 +147,6 @@
                         <div class="cell">true</div>
                         <div class="cell">
                             <div class="icon reset"></div>
-                        </div>
-                    </div>
-                    <div class="row edited">
-                        <div class="cell">
-                            <div class="icon star"></div>
-                        </div>
-                        <div class="cell">browser.zz.bool-edit.old</div>
-                        <div class="cell">
-                            <div class="icon copy"></div>
-                        </div>
-                        <div class="cell">
-                            <select class="edit">
-                                <option>true</option>
-                                <option selected>false</option>
-                            </select>
-                        </div>
-                        <div class="cell">
-                            <!--<button>-->
-                            <!--<div class="icon save"></div>-->
-                            <!--</button>-->
-                            <!-- TODO: this is bad style + size not correct -->
                         </div>
                     </div>
                     <div class="row edited">
@@ -331,19 +313,19 @@
                             <div class="icon reset"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row edited">
                         <div class="cell">
                             <div class="icon star"></div>
                         </div>
-                        <div class="cell">browser.zzzz.more</div>
+                        <div class="cell">browser.zz.bool-edit.old</div>
                         <div class="cell">
                             <div class="icon copy"></div>
                         </div>
-                        <div class="cell">
-                            <div class="edit-flex">
-                                <input class="edit-box" type="text" name="search" placeholder="Search...">
-                                <button class="edit-save"><span class="icon save"></span></button>
-                            </div>
+                        <div class="cell in-edit">
+                            <select class="edit">
+                                <option>true</option>
+                                <option selected>false</option>
+                            </select>
                         </div>
                         <div class="cell">
                             <div class="icon reset"></div>
