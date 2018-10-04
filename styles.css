@@ -116,12 +116,21 @@
 /* endregion*/
 
 /* region STICKY */
+.tricky-hide {
+    /*TODO: this is an ugly trick...*/
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width:664px;
+    background-color: var(--in-content-page-background);
+    z-index: 1;
+}
+
 .sticky-container {
     position: sticky;
     top: 0;
     background-color: var(--in-content-page-background);
-    z-index: 1;
-    /* TODO: does not work */
+    z-index: 2;
 }
 
 button.right {
@@ -181,7 +190,6 @@ button.right {
 /* region TABLE */
 .cell .icon {
     margin: 0;
-    padding: 1px;
 }
 
 .pref-table {
@@ -191,13 +199,14 @@ button.right {
 
     font-size: 1em;
     border: 1px solid var(--in-content-box-border-color);
-    /*border-radius: 2px; TODO: this does not work -> workaround?*/
+    border-radius: 2px 2px 0 0;
     background-color: var(--in-content-box-background);
     margin: 0;
 }
 
 .pref-table.snd-table {
     border-top: none;
+    border-radius: 0 0 2px 2px;
 }
 
 .pref-table .row{
@@ -206,8 +215,8 @@ button.right {
 
 .row .cell {
     display: table-cell;
-    /*border: 1px solid hotpink;*/ /* TODO: borders do not align */
     vertical-align: middle;
+    padding: 5px 10px;
 }
 
 .pref-table .header {
@@ -224,10 +233,6 @@ button.right {
     padding: 5px 10px;
 }
 
-.pref-table .head-cell.empty {
-    padding: 0;
-}
-
 .pref-table .head-cell:hover {
     background-color: var(--in-content-box-background-active);
     color: var(--in-content-text-color);
@@ -239,33 +244,34 @@ button.right {
     border-image: linear-gradient(transparent 0%, transparent 20%, hotpink 20%, hotpink 80%, transparent 80%, transparent 100%) 1 1;*/
     display: table-cell;
     border-left: 1px solid;
+    padding-left: 9px;
     border-image: linear-gradient(transparent 0%, transparent 20%, #c1c1c1 20%, #c1c1c1 80%, transparent 80%, transparent 100%) 1 1;
     /*TODO: maybe change to photon colour?!*/
 }
 
+.row:nth-child(2n+0) {
+    background: var(--grey-20);
+}
+
 .col-1{
-    width: 24px;
+    width: 16px;
 }
 .col-2{
-    width: 316px;
+    width: 258px;
 }
 .col-3{
-    width: 24px;
+    width: 16px;
 }
 .col-4{
-    width: 266px;
+    width: 258px;
 }
 .col-5{
-    width: 24px;
+    width: 16px;
 }
 
 .blocked {
     /*color: #555555;*/
     opacity: 0.6;
-}
-
-.odd {
-    /*background: #ebebeb;*/
 }
 
 .edited {
