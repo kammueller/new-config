@@ -283,3 +283,28 @@ button.right {
 }
 
 /* endregion */
+
+
+/*TODO: make that nicer, photon colors etc*/
+.edit-flex {
+    display: inline-flex;
+    flex: 1;
+    border: 1px solid var(--in-content-box-border-color);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.edit-box {
+    border: 0;
+    padding: 0.5rem;
+    flex: 1;
+    border-radius: 0;
+}
+
+.edit-save {
+    background: #538AC5;
+    border: 0;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0;
+}
