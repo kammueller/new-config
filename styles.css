@@ -186,6 +186,58 @@ td > .icon {
 .pref-table {
     width: 100%;
     border-collapse: collapse;
+
+    font-size: 1em;
+    border: 1px solid var(--in-content-box-border-color);
+    /*border-radius: 2px; TODO: this does not work -> workaround?*/
+    background-color: var(--in-content-box-background);
+    margin: 0;
+}
+
+.pref-table.snd-table {
+    border-top: none;
+}
+
+.pref-table tr.header {
+    color: #808080; /* TODO change to grey-50? */
+    border-bottom: 1px solid #c1c1c1;
+    padding: 0;
+}
+
+.pref-table th {
+    text-align: left;
+    border: none;
+    background-color: var(--in-content-box-background-hover);
+    padding: 5px 10px;
+}
+
+.pref-table th.empty {
+    padding: 0;
+}
+
+.pref-table th:hover {
+    background-color: var(--in-content-box-background-active);
+    color: var(--in-content-text-color);
+}
+
+.pref-table th:not(:first-child) {
+    border-left: 1px solid #c1c1c1;
+}
+
+.col-1{
+    width: 24px;
+}
+.col-2{
+    width: 316px;
+}
+.col-3{
+    width: 24px;
+}
+.col-4{
+    width: 266px;
+}
+.col-5{
+    width: 24px;
 }
 
 .blocked {
@@ -194,7 +246,7 @@ td > .icon {
 }
 
 .odd {
-    background: #ebebeb;
+    /*background: #ebebeb;*/
 }
 
 .edited {

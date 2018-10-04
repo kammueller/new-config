@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>About:Config</title>
-    <!--<link rel="stylesheet" href="chrome://global/skin/in-content/common.css">-->
-    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="chrome://global/skin/in-content/common.css">
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -80,26 +79,29 @@
                     </div>
                 </div>
                 <div class="spacer" style="clear: both"></div>
+
+                <table class="pref-table">
+                    <tr class="odd header">
+                        <th class="col-1 empty"></th>
+                        <th class="col-2">Name</th>
+                        <th class="col-3 empty"></th>
+                        <th class="col-4">Value</th>
+                        <th class="col-5 empty"></th>
+                    </tr>
+                </table>
             </div>
             <div class="table-wrap">
-                <table class="pref-table">
-                    <tr style="font-weight: bold" class="odd">
-                        <td width="24px"></td>
-                        <td width="316px">Name</td>
-                        <td width="24px"></td>
-                        <td width="266px">Value</td>
-                        <td width="24px"></td>
-                    </tr>
+                <table class="pref-table snd-table">
                     <tr>
-                        <td>
+                        <td class="col-1">
                             <div class="icon star"></div>
                         </td>
-                        <td>browser.a.value</td>
-                        <td>
+                        <td class="col-2">browser.a.value</td>
+                        <td class="col-3">
                             <div class="icon copy"></div>
                         </td>
-                        <td>42</td>
-                        <td>
+                        <td class="col-4">42</td>
+                        <td class="col-5">
                             <div class="icon reset"></div>
                         </td>
                     </tr>
