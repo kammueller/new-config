@@ -8,6 +8,7 @@
     --icon-size: 16px;
     --icon-margin: 5px;
     --texfield-padding-x: 10px;
+    --texfield-padding-y: 5px;
     --textfield-border-radius: 2px;
     --main-content-y-padding: 40px;
     --table-border-radius: 2px;
@@ -187,14 +188,23 @@ html|input[type="text"].search-box {
 /* endregion */
 
 /* region add */
-.add-container {
+#add-container {
     /*TODO: design that!*/
     border: 1px solid var(--table-border-col);
     border-radius: var(--table-border-radius);
-    padding: 5px;
-    margin: 5px;
-    /*display: flex;*/
-    /*flex-direction: column;*/
+    padding: var(--texfield-padding-y);
+    margin-bottom: var(--button-margin);
+}
+
+
+.add-container__caption {
+    /* inspired by about:preferences */
+    -moz-appearance: none;
+    font-size: 1.14em;
+    margin: 0;
+    padding: 4px var(--button-margin);
+    font-weight: 600;
+    line-height: 1.4em;
 }
 
 .add-container__type {
@@ -242,7 +252,7 @@ html|input[type="text"].add-container__value {
 .pref-table__row .pref-table__cell {
     display: table-cell;
     vertical-align: middle;
-    padding: 5px 10px;
+    padding: var(--texfield-padding-y) var(--texfield-padding-x);
 }
 
 /* endregion */
@@ -253,7 +263,7 @@ html|input[type="text"].add-container__value {
     text-align: left;
     border: none;
     background-color: var(--in-content-box-background-hover);
-    padding: 5px 10px;
+    padding: var(--texfield-padding-y) var(--texfield-padding-x);
 }
 
 .pref-table .pref-table__head-cell:hover {

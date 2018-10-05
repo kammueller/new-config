@@ -46,36 +46,40 @@
                     <div class="line">
                         <div class="search-select">
                             <input type="checkbox" id="modified" value="modified" checked>
-                            <label class="search-label" for="modified">modified</label>
+                            <label for="modified">modified</label>
                         </div>
                         <div class="search-select">
                             <input type="checkbox" id="default" value="default" checked>
-                            <label class="search-label" for="default">default</label>
+                            <label for="default">default</label>
                         </div>
                         <div class="search-select growth">
                             <input type="checkbox" id="Regexp" value="Regexp" checked>
-                            <label class="search-label" for="Regexp">Regexp search</label>
+                            <label for="Regexp">Regexp search</label>
                         </div>
                         <div>
-                            <button>Add Entry</button>
+                            <button onclick="showAdd()">Add an Entry</button>
                         </div>
                     </div>
                 </div>
                 <div class="spacer"></div>
                 <!--this div should only be visible after the user clicked the "Add Entry" button-->
-                <div class="add-container">
+                <div id="add-container" style="display: none">
+                    <p class="add-container__caption">Add a Preference</p>
                     <div class="line">
                         <input type="text" placeholder="Name" class="growth">
                         <div class="add-container__type">
                             Type:
-                            <input type="radio" name="gender" value="b"> Boolean
-                            <input type="radio" name="gender" value="i"> Integer
-                            <input type="radio" name="gender" value="s"> String
+                            <input type="radio" name="gender" value="b" id="boolean">
+                            <label for="boolean">Boolean</label>
+                            <input type="radio" name="gender" value="i" id="integer">
+                            <label for="integer">Integer</label>
+                            <input type="radio" name="gender" value="s" id="string">
+                            <label for="string">String</label>
                         </div>
                     </div>
                     <div class="line">
                         <input type="text" placeholder="Value" class="growth add-container__value">
-                        <button>add</button>
+                        <button onclick="addValue()">add</button>
                     </div>
                 </div>
                 <div class="spacer"></div>
@@ -350,15 +354,13 @@
                 <h4>TODOs</h4>
                 <ul>
                     <li>the navigation filters components (before first dot)</li>
-                    <li>the div with the border is only visible if the user clicked the "add entry" button</li>
                     <li>reset icon disabled when already default value?</li>
                     <li>edit option appears on click.</li>
                     <li>maybe the categories should also have a bottom padding of 70 px</li>
                     <li>include svgs directly? Make search box magnifier grey?</li>
-                    <li>use CSS variables</li>
                     <li>Dropdown is to wide. Will we use it at all or rather a toggle button?</li>
                     <li>In which way should the edit-height change?</li>
-                    <li>table does margin 0, search & add the one of the button...</li>
+                    <li>search-margin > add-margin = table-margin</li>
                 </ul>
             </div>
         </div>
@@ -366,5 +368,6 @@
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
