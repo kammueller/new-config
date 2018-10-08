@@ -5,6 +5,7 @@
     <title>About:Config</title>
     <link rel="stylesheet" href="chrome://global/skin/in-content/common.css">
     <link rel="stylesheet" href="photon-colors.css">
+    <link rel="stylesheet" href="button.css">
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -36,7 +37,6 @@
 
     <div class="main-content">
         <div class="pane-container">
-            <!-- this div should stick to the top and not be scrolled out of view -->
             <div class="sticky-container">
                 <div class="search-container">
                     <div class="line">
@@ -109,30 +109,63 @@
                             <div class="icon icon--reset"></div>
                         </div>
                     </div>
-                    <div class="pref-table__row blocked ">
-                        <div class="pref-table__cell">
-                            <div class="icon icon--lock"></div>
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
                         </div>
-                        <div class="pref-table__cell">browser.blocked</div>
-                        <div class="pref-table__cell">
-                            <div class="icon icon--copy"></div>
+                        <div class="pref-table__cell">Ghost-Button-Style, 2px margin</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--copy" aria-label="copy"></button>
                         </div>
-                        <div class="pref-table__cell">hello-world</div>
-                        <div class="pref-table__cell">
-                            <div class="icon icon--copy"></div>
+                        <div class="pref-table__cell" onclick="edit('Ghost-Button-Style, 2px margin')">42</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--reset" aria-label="reset"></button>
                         </div>
                     </div>
-                    <div class="pref-table__row blocked ">
-                        <div class="pref-table__cell">
-                            <div class="icon icon--lock"></div>
+
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
                         </div>
-                        <div class="pref-table__cell">browser.blocked</div>
-                        <div class="pref-table__cell">
-                            <div class="icon icon--copy"></div>
+                        <div class="pref-table__cell">Ghost-Button-Style, edit button</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
+                                    onclick="edit('Ghost-Button-Style, edit button')"></button>
                         </div>
-                        <div class="pref-table__cell">hello-world</div>
-                        <div class="pref-table__cell">
-                            <div class="icon icon--copy"></div>
+                        <div class="pref-table__cell">42</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--reset" aria-label="reset"></button>
+                        </div>
+                    </div>
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--lock" disabled="disabled"
+                                    aria-label="locked"></button>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--disabled">Ghost-Button-Style, blocked</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--copy" aria-label="copy"></button>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--disabled">42</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--reset" disabled="disabled"
+                                    aria-label="reset"></button>
+                        </div>
+                    </div>
+                    <div class="pref-table__row">
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--lock" disabled="disabled"
+                                    aria-label="locked"></button>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--disabled">Ghost-Button-Style, edit-blocked</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
+                                    disabled="disabled"></button>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--disabled">42</div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--ghost icon icon--reset" disabled="disabled"
+                                    aria-label="reset"></button>
                         </div>
                     </div>
                     <div class="pref-table__row">
@@ -179,7 +212,7 @@
                             <div class="icon icon--trash"></div>
                         </div>
                     </div>
-                    <div class="pref-table__row blocked">
+                    <div class="pref-table__row pref-table__cell--disabled">
                         <div class="pref-table__cell">
                             <div class="icon icon--lock"></div>
                         </div>
@@ -196,7 +229,7 @@
                         <div class="pref-table__cell">
                             <div class="icon icon--star"></div>
                         </div>
-                        <div class="pref-table__cell">browser.zzt.bool-edit.new</div>
+                        <div class="pref-table__cell">browser.zzt.bool-edit</div>
                         <div class="pref-table__cell">
                             <div class="icon icon--copy"></div>
                         </div>
@@ -351,16 +384,20 @@
 
                 <div class="spacer" style="height: 100px"></div>
 
+                <h4><a href="warning.html">Go back to the warning</a></h4>
+
                 <h4>TODOs</h4>
                 <ul>
                     <li>the navigation filters components (before first dot)</li>
                     <li>reset icon disabled when already default value?</li>
                     <li>edit option appears on click.</li>
                     <li>maybe the categories should also have a bottom padding of 70 px</li>
-                    <li>include svgs directly? Make search box magnifier grey?</li>
+                    <li> Make search box magnifier grey?</li>
                     <li>Dropdown is to wide. Will we use it at all or rather a toggle button?</li>
                     <li>In which way should the edit-height change?</li>
-                    <li>search-margin > add-margin = table-margin</li>
+                    <li>margin of containers</li>
+                    <li>New button style vs the "known" one from about:preferences?</li>
+                    <li>Copy-Paste for more lines; screen-reader a11y</li>
                 </ul>
             </div>
         </div>

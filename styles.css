@@ -191,9 +191,10 @@ html|input[type="text"].search-box {
 #add-container {
     /*TODO: design that!*/
     border: 1px solid var(--table-border-col);
-    border-radius: var(--table-border-radius);
-    padding: var(--texfield-padding-y);
-    margin-bottom: var(--button-margin);
+    border-left: none;
+    border-right: none;
+    padding: var(--texfield-padding-y) 0;
+    margin-bottom: calc(2 * var(--texfield-padding-y));
 }
 
 .add-container__caption {
@@ -308,9 +309,8 @@ html|input[type="text"].add-container__value {
     padding: 3px 0 0 0; /* TODO: hack to make look symmetric */
 }
 
-.blocked {
-    /*color: #555555;*/
-    opacity: 0.6;
+.pref-table__cell--disabled {
+    opacity: 0.4;
 }
 
 .edited {
@@ -319,6 +319,14 @@ html|input[type="text"].add-container__value {
 
 .edit {
     width: 100%;
+}
+
+.pref-table__row .pref-table__cell.pref-table__cell--button-cell {
+    padding: 0;
+}
+
+.pref-table__row .pref-table__cell.pref-table__cell--button-cell button {
+    margin: 2px;
 }
 
 /* endregion */

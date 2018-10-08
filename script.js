@@ -14,3 +14,7 @@ function addValue() {
 function ShowPrefs() {
     window.location = "index.html";
 }
+
+function edit(value) {
+    alert("editing " + value);
+}
