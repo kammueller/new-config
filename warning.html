@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About:Config</title>
+    <link rel="stylesheet" href="chrome://global/skin/in-content/common.css">
+    <link rel="stylesheet" href="chrome://global/skin/in-content/info-pages.css"/>
+    <link rel="stylesheet" href="photon-colors.css">
+    <link rel="stylesheet" href="warning.css"/>
+</head>
+<body>
+
+<div id="main" class="container">
+<!--TODO: the old warning had a 1:2 spacing, the "new design" has 1:1. Which one shall we take?!-->
+    <div class="title">
+        <h1 class="title-text">Dragon Warning</h1>
+    </div>
+
+    <div class="description">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium asperiores at aut beatae
+            consequatur culpa debitis doloribus ex, hic inventore ipsa itaque modi, obcaecati porro, unde veritatis
+            voluptate voluptates.
+        </p>
+    </div>
+
+    <div>
+        <div class="toggle-container-with-text">
+            <input type="checkbox" id="annoy-again" value="annoy-again" checked>
+            <label for="annoy-again">annoy me again, please</label>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="warningButton" class="primary" onclick="ShowPrefs();">I accept the risk!</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

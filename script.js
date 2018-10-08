@@ -10,3 +10,7 @@ function addValue() {
     // TODO: add value...
     hideAdd();
 }
+
+function ShowPrefs() {
+    window.location = "index.html";
+}

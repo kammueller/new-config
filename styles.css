@@ -196,7 +196,6 @@ html|input[type="text"].search-box {
     margin-bottom: var(--button-margin);
 }
 
-
 .add-container__caption {
     /* inspired by about:preferences */
     -moz-appearance: none;

@@ -1,0 +1,8 @@
+/* region WARNING */
+.title {
+    background-image: url("chrome://global/skin/icons/warning.svg");
+    -moz-context-properties: fill; /* TODO: find solution without -moz ? */
+    fill: #fcd100;
+}
+
+/* endregion */
