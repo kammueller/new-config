@@ -1,0 +1,15 @@
+=== Meeting 10/10/2018 ===
+
+- make value a textfield from the beginning
+- rest button inside text-field
+- make table 100% width
+- text buttons: reset, save
+- boolean: switcher / toggle button - TODO: amy
+
+NAV
+- add hairline -> clear separation
+- align text
+
+ADD
+- hide mechanism -> expand on click (dropdown arrow or plus symbol)
+
