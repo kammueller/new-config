@@ -1,9 +1,20 @@
 function showAdd() {
-    document.getElementById("add-container").style.display = "block";
+    document.getElementById("add-container__inner").style.display = "block";
+    document.getElementById("add-dropdown").classList.add("add-container__button--expanded");
 }
 
 function hideAdd() {
-    document.getElementById("add-container").style.display = "none";
+    document.getElementById("add-container__inner").style.display = "none";
+    document.getElementById("add-dropdown").classList.remove("add-container__button--expanded");
+
+}
+
+function toggleAdd() {
+    if (document.getElementById("add-container__inner").style.display === "block") {
+        hideAdd();
+    } else {
+        showAdd();
+    }
 }
 
 function addValue() {

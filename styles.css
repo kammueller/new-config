@@ -55,6 +55,10 @@ span.icon {
     /* TODO I don't know why this is necessary*/
 }
 
+.icon.icon--dropdown {
+    background-image: url("chrome://global/skin/icons/arrow-dropdown-16.svg");
+}
+
 .icon.icon--star {
     background-image: url("chrome://browser/skin/bookmark-hollow.svg");
 }
@@ -212,6 +216,10 @@ html|input[type="text"].search-box__input {
     flex-direction: row;
 }
 
+.search-select:last-child {
+    padding-right: 0;
+}
+
 .search-select input[type="checkbox"] {
     align-self: center;
     margin-right: var(--button-margin);
@@ -224,12 +232,9 @@ html|input[type="text"].search-box__input {
 /* endregion */
 
 /* region add */
-#add-container {
+.add-container {
     /*TODO: design that!*/
-    border: 1px solid var(--table-border-col);
-    border-left: none;
-    border-right: none;
-    padding: var(--texfield-padding-y) 0;
+    padding: var(--texfield-padding-y) 0 var(--texfield-padding-y) var(--button-margin);
     margin-bottom: calc(2 * var(--texfield-padding-y));
 }
 
@@ -241,6 +246,51 @@ html|input[type="text"].search-box__input {
     padding: 4px var(--button-margin);
     font-weight: 600;
     line-height: 1.4em;
+}
+
+.add-container__button {
+    color: var(--blue-50);
+    cursor: pointer;
+    -moz-context-properties: fill;
+    fill: currentColor;
+    border: none;
+    margin: 0;
+    padding: 0 45px 0 0;
+    font: inherit;
+    position: relative;
+}
+
+.add-container__button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("chrome://global/skin/icons/arrow-dropdown-16.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right center;
+}
+
+.add-container__button.add-container__button--expanded::after {
+    transform: scaleY(-1);
+}
+
+html|button.add-container__button:hover {
+    background-color: transparent;
+}
+
+html|button.add-container__button:active {
+    background-color: transparent;
+}
+
+html|button.add-container__button:hover:active {
+    background-color: transparent;
+}
+
+#add-container__type {
+    /*TODO*/
 }
 
 .add-container__type {

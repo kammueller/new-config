@@ -85,29 +85,29 @@
                         <label for="Regexp">Regexp search</label>
                     </div>
                 </div>
-                <div>
-                    <button class="button" onclick="showAdd()">Add an Entry</button>
-                    <!--TODO: rly this button style?!-->
-                </div>
-                <div class="spacer"></div>
+                <div class="spacer"></div><!-- TODO: spacing -->
                 <!--this div should only be visible after the user clicked the "Add Entry" button-->
-                <div id="add-container" style="display: none">
-                    <p class="add-container__caption">Add a Preference</p>
-                    <div class="line">
-                        <input type="text" placeholder="Name" class="growth">
-                        <div class="add-container__type">
-                            Type:
-                            <input type="radio" name="gender" value="b" id="boolean">
-                            <label for="boolean">Boolean</label>
-                            <input type="radio" name="gender" value="i" id="integer">
-                            <label for="integer">Integer</label>
-                            <input type="radio" name="gender" value="s" id="string">
-                            <label for="string">String</label>
+                <div class="add-container">
+                    <button onclick="toggleAdd()" class="add-container__button" id="add-dropdown">
+                        Add a Preference
+                    </button>
+                    <div id="add-container__inner" style="display: none">
+                        <div class="line">
+                            <input type="text" placeholder="Name" class="growth">
+                            <div class="add-container__type">
+                                Type:
+                                <input type="radio" name="gender" value="b" id="boolean">
+                                <label for="boolean">Boolean</label>
+                                <input type="radio" name="gender" value="i" id="integer">
+                                <label for="integer">Integer</label>
+                                <input type="radio" name="gender" value="s" id="string">
+                                <label for="string">String</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="line">
-                        <input type="text" placeholder="Value" class="growth add-container__value">
-                        <button class="button" onclick="addValue()">add</button>
+                        <div class="line">
+                            <input type="text" placeholder="Value" class="growth add-container__value">
+                            <button class="button" onclick="addValue()">add</button>
+                        </div>
                     </div>
                 </div>
                 <div class="spacer"></div>
@@ -230,7 +230,8 @@
                     </div>
                     <div class="pref-table__row pref-table__row--edited">
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--filled-star" aria-label="is favourite"></button>
+                            <button class="button button--ghost icon icon--filled-star"
+                                    aria-label="is favourite"></button>
                         </div>
                         <div class="pref-table__cell">New Design, User Created</div>
                         <div class="pref-table__cell pref-table__cell--in-edit">
@@ -415,7 +416,7 @@
                 <h4>TODOs</h4>
                 <ul>
                     <li>Table-col-width needs to be fixed for the "fix" columns => flexbox? grid?</li>
-                    <!--wordwraps, wbrs, flex-basis necessary-->
+                    <!--wordwraps, wbrs, flex-basis necessary: http://jsfiddle.net/y9x1czp8/-->
                     <li>Table needs sticks header again</li>
                     <li>Design for add-container</li>
                     <li>maybe the categories should also have a bottom padding of 70 px</li>
