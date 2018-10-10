@@ -6,15 +6,20 @@
     --pane-width: 664px;
     --button-margin: 4px;
     --icon-size: 16px;
-    --icon-margin: 5px;
+    --icon-padding: 8px;
     --texfield-padding-x: 10px;
     --texfield-padding-y: 5px;
     --textfield-border-radius: 2px;
     --main-content-y-padding: 40px;
+    --table-border: 1px;
     --table-border-radius: 2px;
     /*TODO: change these to photon colors?*/
     --table-border-col: #c1c1c1;
     --table-header-col: #808080;
+
+    --table-width: calc(var(--pane-width) - 2 * var(--table-border));
+    --icon-col-width: calc(var(--icon-size) + 2 * var(--icon-padding) + 2 * var(--button-margin) - 2 * var(--texfield-padding-x));
+    --remaining-col-width: calc(0.5 * (var(--table-width) - 3 * var(--icon-col-width) - 10 * var(--texfield-padding-x)));
 }
 
 .spacer {
@@ -49,7 +54,7 @@ span.icon {
 }
 
 .icon-description {
-    padding-left: var(--icon-margin);
+    padding-left: var(--icon-padding);
     align-self: center;
 }
 
@@ -157,7 +162,7 @@ span.icon {
 html|input[type="text"].search-box {
     margin-left: calc(var(--button-margin) - var(--icon-size));
     margin-right: var(--button-margin);
-    padding-left: calc(var(--texfield-padding-x) + var(--icon-margin) + var(--icon-size));
+    padding-left: calc(var(--texfield-padding-x) + var(--icon-padding) + var(--icon-size));
     flex-grow: 1;
 }
 
@@ -222,16 +227,16 @@ html|input[type="text"].add-container__value {
 /* region TABLE */
 /* region basics */
 .pref-table {
-    width: calc(var(--pane-width) - 2px);
+    width: calc(var(--pane-width) - 2 * var(--table-border));
     display: table;
 
-    border: 1px solid var(--in-content-box-border-color);
+    border: var(--table-border) solid var(--in-content-box-border-color);
     background-color: var(--in-content-box-background);
     margin: 0;
 }
 
 .pref-table.pref-table--header {
-    border-bottom: 1px solid var(--table-border-col);
+    border-bottom: var(--table-border) solid var(--table-border-col);
     border-radius: var(--table-border-radius) var(--table-border-radius) 0 0;
     color: var(--table-header-col);
 }
@@ -273,8 +278,8 @@ html|input[type="text"].add-container__value {
 
 .pref-table .pref-table__head-cell:not(:first-child) {
     display: table-cell;
-    border-left: 1px solid;
-    padding-left: 9px;
+    border-left: var(--table-border) solid;
+    padding-left: calc(var(--texfield-padding-x) - var(--table-border));
     border-image: linear-gradient(transparent 0%, transparent 20%, var(--table-border-col) 20%,
     var(--table-border-col) 80%, transparent 80%, transparent 100%) 1 1;
 }
@@ -283,37 +288,47 @@ html|input[type="text"].add-container__value {
 
 /* region widths */
 .col-1 {
-    width: var(--icon-size);
+    width: var(--icon-col-width);
 }
 
 .col-2 {
-    width: 258px;
+    width: var(--remaining-col-width);
 }
 
 .col-3 {
-    width: var(--icon-size);
+    width: var(--icon-col-width);
 }
 
 .col-4 {
-    width: 258px;
+    width: var(--remaining-col-width);
+
 }
 
 .col-5 {
-    width: var(--icon-size);
+    width: var(--icon-col-width);
 }
 
 /* endregion */
 
 /* region edit&blocked */
 .pref-table__row .pref-table__cell.pref-table__cell--in-edit {
-    padding: 3px 0 0 0; /* TODO: hack to make look symmetric */
+    padding: var(--button-margin) 0;
+}
+
+.pref-table__row .pref-table__cell.pref-table__cell--in-edit .hacky-thing {
+    display: flex;
+    align-self: center;
+}
+
+.pref-table__row .pref-table__cell.pref-table__cell--in-edit input[type="text"] {
+    flex-grow: 1;
 }
 
 .pref-table__cell--disabled {
     opacity: 0.4;
 }
 
-.edited {
+.pref-table__row--edited {
     font-weight: bold;
 }
 
@@ -325,8 +340,8 @@ html|input[type="text"].add-container__value {
     padding: 0;
 }
 
-.pref-table__row .pref-table__cell.pref-table__cell--button-cell button {
-    margin: 2px;
+button.button.button--ghost.icon--save {
+    background-color: var(--grey-90-a10);
 }
 
 /* endregion */
