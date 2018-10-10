@@ -45,17 +45,12 @@
     width: var(--icon-size);
     background: no-repeat center;
     background-size: var(--icon-size) var(--icon-size);
-    align-self: center;
+    flex-shrink: 0;
 }
 
 span.icon {
     float: left;
     /* TODO I don't know why this is necessary*/
-}
-
-.icon-description {
-    padding-left: var(--icon-padding);
-    align-self: center;
 }
 
 .icon.icon--star {
@@ -123,19 +118,37 @@ span.icon {
 .navigation {
     overflow-x: hidden;
     overflow-y: auto;
+    flex-shrink: 0;
 }
 
 .main-content {
     flex-grow: 1; /* such that the scrollbar is on the right border ;)*/
+    flex-shrink: 0;
 }
 
 /* endregion */
 
 /* region NAVIGATION */
-#categories > .category.category-small {
+#categories > .category.category--small {
     display: flex;
     flex-direction: row;
+    align-self: center;
     min-height: 24px;
+}
+
+.category__label {
+    padding-left: var(--icon-padding);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex-shrink: 1;
+}
+
+#categories > .category.category--small.category--spacer {
+    margin-top: var(--texfield-padding-y);
+    margin-bottom: var(--texfield-padding-y);
+    border-top: 1px solid var(--table-border-col);
+    height: 0;
+    min-height: 0;
 }
 
 /* endregion*/
@@ -372,7 +385,8 @@ html|button.edit-save {
 
 /* region COLLAPSED -- @media (max-width: 830px) */
 @media (max-width: 830px) {
-    #categories > .category.category-small {
+    #categories > .category.category--small {
+        /* TODO design*/
         margin-left: 5px;
         margin-right: 10px;
         padding-left: 5px;
