@@ -92,22 +92,18 @@
                         Add a Preference
                     </button>
                     <div id="add-container__inner" style="display: none">
-                        <div class="line">
-                            <input type="text" placeholder="Name" class="growth">
-                            <div class="add-container__type">
-                                Type:
-                                <input type="radio" name="gender" value="b" id="boolean">
-                                <label for="boolean">Boolean</label>
-                                <input type="radio" name="gender" value="i" id="integer">
-                                <label for="integer">Integer</label>
-                                <input type="radio" name="gender" value="s" id="string">
-                                <label for="string">String</label>
-                            </div>
+                        <input type="text" placeholder="Name">
+                        <div class="add-container__type">
+                            Type:
+                            <input type="radio" name="gender" value="b" id="boolean">
+                            <label for="boolean">Boolean</label>
+                            <input type="radio" name="gender" value="i" id="integer">
+                            <label for="integer">Integer</label>
+                            <input type="radio" name="gender" value="s" id="string">
+                            <label for="string">String</label>
                         </div>
-                        <div class="line">
-                            <input type="text" placeholder="Value" class="growth add-container__value">
-                            <button class="button" onclick="addValue()">add</button>
-                        </div>
+                        <input type="text" placeholder="Value">
+                        <button class="button button--primary" onclick="addValue()">add</button>
                     </div>
                 </div>
                 <div class="spacer"></div>
@@ -144,7 +140,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small">reset</button>
@@ -162,7 +158,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -177,7 +173,7 @@
                             true
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">toggle</button>
+                            <button class="button button--small">toggle</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -192,7 +188,7 @@
                             true
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">toggle</button>
+                            <button class="button button--small">toggle</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small">reset</button>
@@ -207,7 +203,7 @@
                             42
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small" disabled>save</button>
+                            <button class="button button--small" disabled>save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -222,7 +218,7 @@
                             42
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small" disabled>save</button>
+                            <button class="button button--small" disabled>save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -238,7 +234,7 @@
                             true
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">toggle</button>
+                            <button class="button button--small">toggle</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small">delete</button>
@@ -257,7 +253,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -275,7 +271,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -293,7 +289,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -311,7 +307,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -329,7 +325,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -347,7 +343,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -365,7 +361,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -383,7 +379,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -401,7 +397,7 @@
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--primary button--small">save</button>
+                            <button class="button button--small">save</button>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--small" disabled>reset</button>
@@ -418,7 +414,7 @@
                     <li>Table-col-width needs to be fixed for the "fix" columns => flexbox? grid?</li>
                     <!--wordwraps, wbrs, flex-basis necessary: http://jsfiddle.net/y9x1czp8/-->
                     <li>Table needs sticks header again</li>
-                    <li>Design for add-container</li>
+                    <li>add-container: button position if on single line?!</li>
                     <li>maybe the categories should also have a bottom padding of 70 px</li>
                     <li>Copy-Paste for multiple lines; screen-reader a11y</li>
                     <li>Use photon colours for table?!</li>

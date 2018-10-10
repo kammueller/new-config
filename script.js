@@ -1,5 +1,5 @@
 function showAdd() {
-    document.getElementById("add-container__inner").style.display = "block";
+    document.getElementById("add-container__inner").style.display = "flex";
     document.getElementById("add-dropdown").classList.add("add-container__button--expanded");
 }
 
@@ -10,7 +10,7 @@ function hideAdd() {
 }
 
 function toggleAdd() {
-    if (document.getElementById("add-container__inner").style.display === "block") {
+    if (document.getElementById("add-container__inner").style.display === "flex") {
         hideAdd();
     } else {
         showAdd();

@@ -289,17 +289,22 @@ html|button.add-container__button:hover:active {
     background-color: transparent;
 }
 
-#add-container__type {
-    /*TODO*/
+#add-container__inner {
+    /*display: flex;*/
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /*TODO: button position if on single line?!*/
+}
+
+#add-container__inner input[type="text"] {
+    flex-grow: 1;
 }
 
 .add-container__type {
-    align-self: center;
+    flex-shrink: 0;
     margin: var(--button-margin);
-}
-
-html|input[type="text"].add-container__value {
-    margin: var(--button-margin) 0;
 }
 
 /* endregion */
