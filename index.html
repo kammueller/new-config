@@ -114,162 +114,169 @@
 
                 <div class="pref-table pref-table--header">
                     <div class=" pref-table__row">
-                        <div class="pref-table__head-cell col-1"></div>
-                        <div class="pref-table__head-cell col-2">Name</div>
-                        <div class="pref-table__head-cell col-3"></div>
-                        <div class="pref-table__head-cell col-4">Value</div>
-                        <div class="pref-table__head-cell col-5"></div>
+                        <div class="pref-table__head-cell"></div>
+                        <div class="pref-table__head-cell">Name</div>
+                        <div class="pref-table__head-cell">Value</div>
+                        <div class="pref-table__head-cell"></div>
+                        <div class="pref-table__head-cell"></div>
                     </div>
+                    <!--TODO: adjust sizes... -->
                 </div>
             </div>
             <div class="table-wrap">
                 <div class="pref-table pref-table--body">
-                    <!--<div class="pref-table__row">
-                        <div class="pref-table__cell col-1">
-                            <div class="icon icon&#45;&#45;star"></div>
-                        </div>
-                        <div class="pref-table__cell col-2">browser.a.value</div>
-                        <div class="pref-table__cell col-3">
-                            <div class="icon icon&#45;&#45;copy"></div>
-                        </div>
-                        <div class="pref-table__cell col-4">42</div>
-                        <div class="pref-table__cell col-5">
-                            <div class="icon icon&#45;&#45;reset"></div>
-                        </div>
-                    </div>-->
-                    <div class="pref-table__row pref-table__row--edited">
-                        <div class="pref-table__cell pref-table__cell--button-cell col-1">
-                            <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
-                        </div>
-                        <div class="pref-table__cell col-2">Ghost-Button-Style, edited pref</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell col-3">
-                            <button class="button button--ghost icon icon--copy" aria-label="copy"></button>
-                        </div>
-                        <div class="pref-table__cell col-4" onclick="edit('Ghost-Button-Style, 2px margin')">42</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell col-5">
-                            <button class="button button--ghost icon icon--reset" aria-label="reset"></button>
-                        </div>
-                    </div>
+
                     <div class="pref-table__row">
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
                         </div>
-                        <div class="pref-table__cell">Ghost-Button-Style, edit button</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
-                                    onclick="edit('Ghost-Button-Style, edit button')"></button>
-                        </div>
-                        <div class="pref-table__cell">42</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--reset" aria-label="reset" disabled></button>
-                        </div>
-                    </div>
-                    <div class="pref-table__row pref-table__row--edited">
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--lock" disabled="disabled"
-                                    aria-label="locked"></button>
-                        </div>
-                        <div class="pref-table__cell pref-table__cell--disabled">Ghost-Button-Style, blocked</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--copy" aria-label="copy"></button>
-                        </div>
-                        <div class="pref-table__cell pref-table__cell--disabled">42</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--reset" disabled="disabled"
-                                    aria-label="reset"></button>
-                        </div>
-                    </div>
-                    <div class="pref-table__row">
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--lock" disabled="disabled"
-                                    aria-label="locked"></button>
-                        </div>
-                        <div class="pref-table__cell pref-table__cell--disabled">Ghost-Button-Style, edit-blocked</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
-                                    disabled="disabled"></button>
-                        </div>
-                        <div class="pref-table__cell pref-table__cell--disabled">42</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--reset" disabled="disabled"
-                                    aria-label="reset"></button>
-                        </div>
-                    </div>
-                    <div class="pref-table__row">
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
-                        </div>
-                        <div class="pref-table__cell">Ghost-Button-Style, in edit</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
-                                    onclick="edit('-- wait, what shall this do?')"></button>
-                        </div>
+                        <div class="pref-table__cell">New Design</div>
                         <div class="pref-table__cell pref-table__cell--in-edit">
                             <div class="hacky-thing">
                                 <input type="text" placeholder="New Value" value="Old Value">
                             </div>
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--save" aria-label="save changes"></button>
+                            <button class="button button--primary button--small">save</button>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--small">reset</button>
                         </div>
                     </div>
-                    <div class="pref-table__row pref-table__row--edited">
+                    <div class="pref-table__row">
                         <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--filled-star"
+                            <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
+                        </div>
+                        <div class="pref-table__cell">New Design, test with an incredibly long name</div>
+                        <div class="pref-table__cell pref-table__cell--in-edit">
+                            <div class="hacky-thing">
+                                <input type="text" placeholder="New Value"
+                                       value="and a pretty long value, which does not want to end.">
+                            </div>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--primary button--small">save</button>
+                        </div>
+                        <div class="pref-table__cell pref-table__cell--button-cell">
+                            <button class="button button--small">reset</button>
+                        </div>
+                    </div>
+
+                    <!-- <div class="pref-table__row pref-table__row&#45;&#45;edited">
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell col-1">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;star" aria-label="make favourite"></button>
+                         </div>
+                         <div class="pref-table__cell col-2">Ghost-Button-Style, edited pref</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell col-3">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;copy" aria-label="copy"></button>
+                         </div>
+                         <div class="pref-table__cell col-4" onclick="edit('Ghost-Button-Style, 2px margin')">42</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell col-5">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;reset" aria-label="reset"></button>
+                         </div>
+                     </div>
+                     <div class="pref-table__row">
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;star" aria-label="make favourite"></button>
+                         </div>
+                         <div class="pref-table__cell">Ghost-Button-Style, edit button</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;toggle" aria-label="edit"
+                                     onclick="edit('Ghost-Button-Style, edit button')"></button>
+                         </div>
+                         <div class="pref-table__cell">42</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;reset" aria-label="reset" disabled></button>
+                         </div>
+                     </div>
+                     <div class="pref-table__row pref-table__row&#45;&#45;edited">
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;lock" disabled="disabled"
+                                     aria-label="locked"></button>
+                         </div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;disabled">Ghost-Button-Style, blocked</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;copy" aria-label="copy"></button>
+                         </div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;disabled">42</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;reset" disabled="disabled"
+                                     aria-label="reset"></button>
+                         </div>
+                     </div>
+                     <div class="pref-table__row">
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;lock" disabled="disabled"
+                                     aria-label="locked"></button>
+                         </div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;disabled">Ghost-Button-Style, edit-blocked</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;toggle" aria-label="edit"
+                                     disabled="disabled"></button>
+                         </div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;disabled">42</div>
+                         <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                             <button class="button button&#45;&#45;ghost icon icon&#45;&#45;reset" disabled="disabled"
+                                     aria-label="reset"></button>
+                         </div>
+                     </div>-->
+                    <!--<div class="pref-table__row pref-table__row&#45;&#45;edited">
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;filled-star"
                                     aria-label="is favourite"></button>
                         </div>
                         <div class="pref-table__cell">Ghost-Button-Style, fav in edit</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
-                                    onclick="edit('-- wait, what shall this do?')"></button>
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;toggle" aria-label="edit"
+                                    onclick="edit('&#45;&#45; wait, what shall this do?')"></button>
                         </div>
-                        <div class="pref-table__cell pref-table__cell--in-edit">
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;in-edit">
                             <div class="hacky-thing">
                                 <input type="text" placeholder="New Value" value="Old Value">
                             </div>
                         </div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--save" aria-label="save changes"></button>
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;save" aria-label="save changes"></button>
                         </div>
                     </div>
                     <div class="pref-table__row">
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;star" aria-label="make favourite"></button>
                         </div>
                         <div class="pref-table__cell">Ghost-Button-Style, edit button, with a really really long
                             name
                         </div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;toggle" aria-label="edit"
                                     onclick="edit('Ghost-Button-Style, edit button')"></button>
                         </div>
                         <div class="pref-table__cell">42</div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--reset" aria-label="reset" disabled></button>
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;reset" aria-label="reset" disabled></button>
                         </div>
                     </div>
-                    <div class="pref-table__row pref-table__row--edited">
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--star" aria-label="is favourite"></button>
+                    <div class="pref-table__row pref-table__row&#45;&#45;edited">
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;star" aria-label="is favourite"></button>
                         </div>
                         <div class="pref-table__cell">
                             Ghost-Button-Style,.edit.button,.<wbr>with.a.really.really.long.name,.in.edit
                         </div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--toggle" aria-label="edit"
-                                    onclick="edit('-- wait, what shall this do?')"></button>
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;toggle" aria-label="edit"
+                                    onclick="edit('&#45;&#45; wait, what shall this do?')"></button>
                         </div>
-                        <div class="pref-table__cell pref-table__cell--in-edit">
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;in-edit">
                             <div class="hacky-thing">
                                 <input type="text" placeholder="New Value"
                                        value="The really long old Value, which is even longer than one might expect">
                             </div>
                         </div>
-                        <div class="pref-table__cell pref-table__cell--button-cell">
-                            <button class="button button--ghost icon icon--save" aria-label="save changes"
+                        <div class="pref-table__cell pref-table__cell&#45;&#45;button-cell">
+                            <button class="button button&#45;&#45;ghost icon icon&#45;&#45;save" aria-label="save changes"
                                     style="background-color: transparent"></button>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="spacer" style="height: 100px"></div>

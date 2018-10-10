@@ -19,7 +19,7 @@
     --table-border-col: #c1c1c1;
     --table-header-col: #808080;
 
-    --table-width: calc(var(--pane-width) - 2 * var(--table-border));
+    --table-width: calc(var(--pane-width) - 2 * var(--table-border) - 2 * var(--button-margin));
     --icon-col-width: calc(var(--icon-size) + 2 * var(--icon-padding) + 2 * var(--button-margin) - 2 * var(--texfield-padding-x));
     --remaining-col-width: calc(0.5 * (var(--table-width) - 3 * var(--icon-col-width) - 10 * var(--texfield-padding-x)));
 }
@@ -258,23 +258,25 @@ html|input[type="text"].add-container__value {
 /* region TABLE */
 /* region basics */
 .pref-table {
-    width: calc(var(--pane-width) - 2 * var(--table-border));
+    width: var(--table-width);
     display: table;
 
     border: var(--table-border) solid var(--in-content-box-border-color);
     background-color: var(--in-content-box-background);
-    margin: 0;
+    margin: var(--button-margin);
 }
 
 .pref-table.pref-table--header {
     border-bottom: var(--table-border) solid var(--table-border-col);
     border-radius: var(--table-border-radius) var(--table-border-radius) 0 0;
     color: var(--table-header-col);
+    margin-bottom: 0;
 }
 
 .pref-table.pref-table--body {
     border-top: none;
     border-radius: 0 0 var(--table-border-radius) var(--table-border-radius);
+    margin-top: 0;
 }
 
 .pref-table .pref-table__row {
@@ -343,10 +345,6 @@ html|input[type="text"].add-container__value {
 /* endregion */
 
 /* region edit&blocked */
-.pref-table__row .pref-table__cell.pref-table__cell--in-edit {
-    padding: var(--button-margin) 0;
-}
-
 .pref-table__row .pref-table__cell.pref-table__cell--in-edit .hacky-thing {
     display: flex;
     align-self: center;
@@ -374,6 +372,11 @@ html|input[type="text"].add-container__value {
 
 button.button.button--ghost.icon--save {
     background-color: var(--grey-90-a10);
+}
+
+
+button.button.button--small {
+    min-width: 66px;
 }
 
 /* endregion */
