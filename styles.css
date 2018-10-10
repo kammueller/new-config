@@ -3,7 +3,9 @@
 /* region UTILS */
 
 :root {
-    --pane-width: 664px;
+    --pane-width: 100%;
+    --pane-min-width: 664px;
+    --main-content-padding-x: 28px;
     --button-margin: 4px;
     --icon-size: 16px;
     --icon-padding: 8px;
@@ -63,7 +65,7 @@ span.icon {
 
 .icon.icon--search {
     /*TODO: not sure which one I should use here...*/
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/extensions/onboarding/content/img/icons_singlesearch.svg");
+    background-image: url("chrome://browser/skin/preferences/in-content/search.svg");
 }
 
 .icon.icon--add {
@@ -108,13 +110,6 @@ span.icon {
     position: fixed;
 }
 
-.pane-container {
-    width: var(--pane-width);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
 .navigation {
     overflow-x: hidden;
     overflow-y: auto;
@@ -123,7 +118,15 @@ span.icon {
 
 .main-content {
     flex-grow: 1; /* such that the scrollbar is on the right border ;)*/
-    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.pane-container {
+    width: var(--pane-width);
+    min-width: var(--pane-min-width);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* endregion */
@@ -158,8 +161,9 @@ span.icon {
     /*TODO: this is an ugly trick...*/
     position: fixed;
     top: 0;
+    left: 0;
     height: var(--main-content-y-padding);
-    width: var(--pane-width);
+    width: calc(var(--pane-width) - var(--main-content-padding-x)); /* such that it does not conceal the scroll bar*/
     background-color: var(--in-content-page-background);
     z-index: 1;
 }
@@ -172,19 +176,33 @@ span.icon {
 }
 
 /* region search */
-html|input[type="text"].search-box {
+.search-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-box {
+    flex: 1 0 auto;
+    display: flex;
+    align-self: center;
+}
+
+html|input[type="text"].search-box__input {
     margin-left: calc(var(--button-margin) - var(--icon-size));
     margin-right: var(--button-margin);
     padding-left: calc(var(--texfield-padding-x) + var(--icon-padding) + var(--icon-size));
     flex-grow: 1;
 }
 
-.icon.icon--search.in-search-box {
+.icon.icon--search.icon--in-search {
     margin: 0;
-    padding: 6px 0;
+    align-self: center;
     position: relative;
     left: var(--texfield-padding-x);
     transform: scaleX(-1);
+
+    -moz-context-properties: fill; /* TODO: find solution without -moz ? */
+    fill: var(--grey-40);
 }
 
 .search-select {
@@ -306,6 +324,7 @@ html|input[type="text"].add-container__value {
 
 .col-2 {
     width: var(--remaining-col-width);
+    max-width: var(--remaining-col-width);
 }
 
 .col-3 {
@@ -314,7 +333,7 @@ html|input[type="text"].add-container__value {
 
 .col-4 {
     width: var(--remaining-col-width);
-
+    max-width: var(--remaining-col-width);
 }
 
 .col-5 {

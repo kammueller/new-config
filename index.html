@@ -68,28 +68,26 @@
         <div class="pane-container">
             <div class="sticky-container">
                 <div class="search-container">
-                    <div class="line">
-                        <div class="icon icon--search in-search-box"></div>
-                        <input class="search-box" type="text" name="search" placeholder="Search for something...">
+                    <div class="search-box">
+                        <div class="icon icon--search icon--in-search"></div>
+                        <input class="search-box__input" type="text" name="search" placeholder="Search a preference">
                     </div>
-                    <div class="line">
-                        <div class="search-select">
-                            <input type="checkbox" id="modified" value="modified" checked>
-                            <label for="modified">modified</label>
-                        </div>
-                        <div class="search-select">
-                            <input type="checkbox" id="default" value="default" checked>
-                            <label for="default">default</label>
-                        </div>
-                        <div class="search-select growth">
-                            <input type="checkbox" id="Regexp" value="Regexp" checked>
-                            <label for="Regexp">Regexp search</label>
-                        </div>
-                        <div>
-                            <button class="button" onclick="showAdd()">Add an Entry</button>
-                            <!--TODO: rly this button style?!-->
-                        </div>
+                    <div class="search-select">
+                        <input type="checkbox" id="modified" value="modified" checked>
+                        <label for="modified">modified</label>
                     </div>
+                    <div class="search-select">
+                        <input type="checkbox" id="default" value="default" checked>
+                        <label for="default">default</label>
+                    </div>
+                    <div class="search-select growth">
+                        <input type="checkbox" id="Regexp" value="Regexp" checked>
+                        <label for="Regexp">Regexp search</label>
+                    </div>
+                </div>
+                <div>
+                    <button class="button" onclick="showAdd()">Add an Entry</button>
+                    <!--TODO: rly this button style?!-->
                 </div>
                 <div class="spacer"></div>
                 <!--this div should only be visible after the user clicked the "Add Entry" button-->
@@ -255,9 +253,7 @@
                             <button class="button button--ghost icon icon--star" aria-label="is favourite"></button>
                         </div>
                         <div class="pref-table__cell">
-                            Ghost-Button-Style,.edit.button,.
-                            <wbr>
-                            with.a.really.really.long.name,.in.edit
+                            Ghost-Button-Style,.edit.button,.<wbr>with.a.really.really.long.name,.in.edit
                         </div>
                         <div class="pref-table__cell pref-table__cell--button-cell">
                             <button class="button button--ghost icon icon--toggle" aria-label="edit"
@@ -284,7 +280,6 @@
                 <ul>
                     <li>the navigation filters components (before first dot)</li>
                     <li>maybe the categories should also have a bottom padding of 70 px</li>
-                    <li>Make search box magnifier grey?</li>
                     <li>Workflow to change booleans? => toggle button</li>
                     <li>margin of containers</li>
                     <li>New button style vs the "known" one from about:preferences? => new</li>
