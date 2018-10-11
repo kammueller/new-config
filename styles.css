@@ -316,7 +316,6 @@ html|button.add-container__button:hover:active {
     width: var(--table-width);
     display: grid;
     align-items: stretch; /* center */
-    /*todo: stretch for odd-even-colouring, but then the text is not centered => inner flex box?*/
     grid-template-columns: auto 1fr 1fr auto auto;
 
     border: var(--table-border) solid var(--in-content-box-border-color);
@@ -336,6 +335,7 @@ html|button.add-container__button:hover:active {
     margin-top: 0;
 }
 
+/*TODO: this is a bit messy, but probably still better than JS-determined ".odd"*/
 .pref-table__cell:not(.pref-table--header):nth-child(10n+1),
 .pref-table__cell:not(.pref-table--header):nth-child(10n+2),
 .pref-table__cell:not(.pref-table--header):nth-child(10n+3),
@@ -347,13 +347,17 @@ html|button.add-container__button:hover:active {
 .pref-table__cell {
     /*padding: var(--texfield-padding-y) var(--texfield-padding-x);*/
     /*todo review padding*/
+    display: flex;
+    align-items: center;
 }
 
 /* endregion */
 
 /* region header */
 .pref-table .pref-table__head-cell {
-    display: table-cell;
+    display: flex;
+    align-items: center;
+
     text-align: left;
     border: none;
     background-color: var(--in-content-box-background-hover);
@@ -381,18 +385,12 @@ html|button.add-container__button:hover:active {
     padding: 0;
 }
 
-.pref-table__cell.pref-table__cell--in-edit .hacky-thing {
-    display: flex;
-    align-self: center;
-}
-
 .pref-table__cell.pref-table__cell--in-edit input[type="text"] {
     flex-grow: 1;
 }
 
 .pref-table__cell--disabled {
     opacity: 0.4;
-    /*TODO affects background, too =(*/
 }
 
 .pref-table__cell--edited {
