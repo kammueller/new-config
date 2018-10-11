@@ -315,6 +315,8 @@ html|button.add-container__button:hover:active {
 .pref-table {
     width: var(--table-width);
     display: grid;
+    align-items: stretch; /* center */
+    /*todo: stretch for odd-even-colouring, but then the text is not centered => inner flex box?*/
     grid-template-columns: auto 1fr 1fr auto auto;
 
     border: var(--table-border) solid var(--in-content-box-border-color);
@@ -334,14 +336,16 @@ html|button.add-container__button:hover:active {
     margin-top: 0;
 }
 
-.pref-table__row:nth-child(2n+1) {
-    /*TODO: find alternative to do that, broken with grid*/
+.pref-table__cell:not(.pref-table--header):nth-child(10n+1),
+.pref-table__cell:not(.pref-table--header):nth-child(10n+2),
+.pref-table__cell:not(.pref-table--header):nth-child(10n+3),
+.pref-table__cell:not(.pref-table--header):nth-child(10n+4),
+.pref-table__cell:not(.pref-table--header):nth-child(10n+5) {
     background: var(--grey-20);
 }
 
 .pref-table__cell {
-    align-self: center;
-    padding: var(--texfield-padding-y) var(--texfield-padding-x);
+    /*padding: var(--texfield-padding-y) var(--texfield-padding-x);*/
     /*todo review padding*/
 }
 
@@ -388,6 +392,7 @@ html|button.add-container__button:hover:active {
 
 .pref-table__cell--disabled {
     opacity: 0.4;
+    /*TODO affects background, too =(*/
 }
 
 .pref-table__cell--edited {
