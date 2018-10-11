@@ -318,7 +318,7 @@ html|button.add-container__button:hover:active {
 
     border: var(--table-border) solid var(--in-content-box-border-color);
     background-color: var(--in-content-box-background);
-    margin: var(--button-margin);
+    margin: 0 var(--button-margin);
 }
 
 .pref-table.pref-table--header {
