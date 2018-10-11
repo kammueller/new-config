@@ -314,7 +314,8 @@ html|button.add-container__button:hover:active {
 /* region basics */
 .pref-table {
     width: var(--table-width);
-    display: table;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr auto auto;
 
     border: var(--table-border) solid var(--in-content-box-border-color);
     background-color: var(--in-content-box-background);
@@ -333,18 +334,15 @@ html|button.add-container__button:hover:active {
     margin-top: 0;
 }
 
-.pref-table .pref-table__row {
-    display: table-row;
-}
-
 .pref-table__row:nth-child(2n+1) {
+    /*TODO: find alternative to do that, broken with grid*/
     background: var(--grey-20);
 }
 
-.pref-table__row .pref-table__cell {
-    display: table-cell;
-    vertical-align: middle;
+.pref-table__cell {
+    align-self: center;
     padding: var(--texfield-padding-y) var(--texfield-padding-x);
+    /*todo review padding*/
 }
 
 /* endregion */
@@ -375,24 +373,24 @@ html|button.add-container__button:hover:active {
 /* endregion */
 
 /* region edit&blocked */
-.pref-table__row .pref-table__cell.pref-table__cell--in-edit {
+.pref-table__cell.pref-table__cell--in-edit {
     padding: 0;
 }
 
-.pref-table__row .pref-table__cell.pref-table__cell--in-edit .hacky-thing {
+.pref-table__cell.pref-table__cell--in-edit .hacky-thing {
     display: flex;
     align-self: center;
 }
 
-.pref-table__row .pref-table__cell.pref-table__cell--in-edit input[type="text"] {
+.pref-table__cell.pref-table__cell--in-edit input[type="text"] {
     flex-grow: 1;
 }
 
-.pref-table__row--disabled .pref-table__cell {
+.pref-table__cell--disabled {
     opacity: 0.4;
 }
 
-.pref-table__row--edited {
+.pref-table__cell--edited {
     font-weight: bold;
 }
 
@@ -400,7 +398,7 @@ html|button.add-container__button:hover:active {
     width: 100%;
 }
 
-.pref-table__row .pref-table__cell.pref-table__cell--button-cell {
+.pref-table__cell.pref-table__cell--button-cell {
     padding: 0;
 }
 
