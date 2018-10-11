@@ -9,8 +9,8 @@
     --button-margin: 4px;
     --icon-size: 16px;
     --icon-padding: 8px;
-    --texfield-padding-x: 10px;
-    --texfield-padding-y: 5px;
+    --textfield-padding-x: 10px;
+    --textfield-padding-y: 5px;
     --textfield-border-radius: 2px;
     --main-content-y-padding: 40px;
     --table-border: 1px;
@@ -20,23 +20,8 @@
     --table-header-col: #808080;
 
     --table-width: calc(var(--pane-width) - 2 * var(--table-border) - 2 * var(--button-margin));
-    --icon-col-width: calc(var(--icon-size) + 2 * var(--icon-padding) + 2 * var(--button-margin) - 2 * var(--texfield-padding-x));
-    --remaining-col-width: calc(0.5 * (var(--table-width) - 3 * var(--icon-col-width) - 10 * var(--texfield-padding-x)));
-}
-
-.spacer {
-    height: 5px;
-}
-
-.line {
-    /* TODO: use flex-line-breaks? */
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.line > .growth {
-    flex-grow: 1;
+    --icon-col-width: calc(var(--icon-size) + 2 * var(--icon-padding) + 2 * var(--button-margin) - 2 * var(--textfield-padding-x));
+    --remaining-col-width: calc(0.5 * (var(--table-width) - 3 * var(--icon-col-width) - 10 * var(--textfield-padding-x)));
 }
 
 /* endregion */
@@ -48,11 +33,6 @@
     background: no-repeat center;
     background-size: var(--icon-size) var(--icon-size);
     flex-shrink: 0;
-}
-
-span.icon {
-    float: left;
-    /* TODO I don't know why this is necessary*/
 }
 
 .icon.icon--dropdown {
@@ -68,13 +48,7 @@ span.icon {
 }
 
 .icon.icon--search {
-    /*TODO: not sure which one I should use here...*/
     background-image: url("chrome://browser/skin/preferences/in-content/search.svg");
-}
-
-.icon.icon--add {
-    /*TODO: not sure which one I should use here...*/
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/themes/images/add.svg");
 }
 
 .icon.icon--lock {
@@ -90,17 +64,8 @@ span.icon {
 }
 
 .icon.icon--trash {
-    /*probably browser/components/newtab/data/content/assets/glyph-delete-16.svg; but no chrome:// link for that one*/
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/components/newtab/data/content/assets/glyph-delete-16.svg");
-}
-
-.icon.icon--save {
-    /*chrome://global/skin/icons/check.svg does not work (Win 10)*/
-    background-image: url("https://hg.mozilla.org/mozilla-central/raw-file/tip/toolkit/themes/shared/icons/check.svg");
-}
-
-.icon.icon--toggle {
-    background-image: url("chrome://browser/skin/developer.svg");
+    /* TODO: maybe better link ?!*/
+    background-image: url("resource://activity-stream/data/content/assets/glyph-delete-16.svg");
 }
 
 /* endregion */
@@ -151,8 +116,8 @@ span.icon {
 }
 
 #categories > .category.category--small.category--spacer {
-    margin-top: var(--texfield-padding-y);
-    margin-bottom: var(--texfield-padding-y);
+    margin-top: var(--textfield-padding-y);
+    margin-bottom: var(--textfield-padding-y);
     border-top: 1px solid var(--table-border-col);
     height: 0;
     min-height: 0;
@@ -194,7 +159,7 @@ span.icon {
 html|input[type="text"].search-box__input {
     margin-left: calc(var(--button-margin) - var(--icon-size));
     margin-right: var(--button-margin);
-    padding-left: calc(var(--texfield-padding-x) + var(--icon-padding) + var(--icon-size));
+    padding-left: calc(var(--textfield-padding-x) + var(--icon-padding) + var(--icon-size)); /* space for icon */
     flex-grow: 1;
 }
 
@@ -202,7 +167,7 @@ html|input[type="text"].search-box__input {
     margin: 0;
     align-self: center;
     position: relative;
-    left: var(--texfield-padding-x);
+    left: var(--textfield-padding-x);
     transform: scaleX(-1);
 
     -moz-context-properties: fill; /* TODO: find solution without -moz ? */
@@ -211,9 +176,10 @@ html|input[type="text"].search-box__input {
 
 .search-select {
     margin: var(--button-margin);
-    padding-right: var(--texfield-padding-x);
+    padding-right: var(--textfield-padding-x);
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .search-select:last-child {
@@ -221,12 +187,7 @@ html|input[type="text"].search-box__input {
 }
 
 .search-select input[type="checkbox"] {
-    align-self: center;
     margin-right: var(--button-margin);
-}
-
-.search-select label {
-    align-self: center;
 }
 
 /* endregion */
@@ -234,18 +195,8 @@ html|input[type="text"].search-box__input {
 /* region add */
 .add-container {
     /*TODO: design that!*/
-    padding: var(--texfield-padding-y) 0 var(--texfield-padding-y) var(--button-margin);
-    margin-bottom: calc(2 * var(--texfield-padding-y));
-}
-
-.add-container__caption {
-    /* inspired by about:preferences */
-    -moz-appearance: none;
-    font-size: 1.14em;
-    margin: 0;
-    padding: 4px var(--button-margin);
-    font-weight: 600;
-    line-height: 1.4em;
+    padding: var(--textfield-padding-y) 0 var(--textfield-padding-y) var(--button-margin);
+    margin-bottom: calc(2 * var(--textfield-padding-y));
 }
 
 .add-container__button {
@@ -277,14 +228,8 @@ html|input[type="text"].search-box__input {
     transform: scaleY(-1);
 }
 
-html|button.add-container__button:hover {
-    background-color: transparent;
-}
-
-html|button.add-container__button:active {
-    background-color: transparent;
-}
-
+html|button.add-container__button:hover,
+html|button.add-container__button:active,
 html|button.add-container__button:hover:active {
     background-color: transparent;
 }
@@ -323,6 +268,7 @@ html|button.add-container__button:hover:active {
     margin: 0 var(--button-margin);
 }
 
+/* TODO: those two were necessary for split header table...*/
 .pref-table.pref-table--header {
     border-radius: var(--table-border-radius) var(--table-border-radius) 0 0;
     color: var(--table-header-col);
@@ -336,44 +282,37 @@ html|button.add-container__button:hover:active {
 }
 
 /*TODO: this is a bit messy, but probably still better than JS-determined ".odd"*/
-.pref-table__cell:not(.pref-table--header):nth-child(10n+1),
-.pref-table__cell:not(.pref-table--header):nth-child(10n+2),
-.pref-table__cell:not(.pref-table--header):nth-child(10n+3),
-.pref-table__cell:not(.pref-table--header):nth-child(10n+4),
-.pref-table__cell:not(.pref-table--header):nth-child(10n+5) {
+.pref-table__cell:nth-child(10n+1),
+.pref-table__cell:nth-child(10n+2),
+.pref-table__cell:nth-child(10n+3),
+.pref-table__cell:nth-child(10n+4),
+.pref-table__cell:nth-child(10n+5) {
     background: var(--grey-20);
 }
 
 .pref-table__cell {
-    /*padding: var(--texfield-padding-y) var(--texfield-padding-x);*/
-    /*todo review padding*/
     display: flex;
     align-items: center;
+    padding: var(--button-margin);
 }
 
 /* endregion */
 
 /* region header */
-.pref-table .pref-table__head-cell {
-    display: flex;
-    align-items: center;
-
-    text-align: left;
-    border: none;
+.pref-table__cell--header {
     background-color: var(--in-content-box-background-hover);
-    padding: var(--texfield-padding-y) var(--texfield-padding-x);
+    padding: var(--textfield-padding-y) var(--textfield-padding-x);
     border-bottom: var(--table-border) solid;
     border-image: linear-gradient(transparent 0%, transparent 20%, var(--table-border-col) 20%,
     var(--table-border-col) 80%, transparent 80%, transparent 97%, var(--table-border-col) 97%, var(--table-border-col) 100%) 1 1;
 }
 
-.pref-table .pref-table__head-cell:not(:first-child) {
-    display: table-cell;
-    padding-left: calc(var(--texfield-padding-x) - var(--table-border));
+.pref-table__cell--header:not(:first-child) {
+    padding-left: calc(var(--textfield-padding-x) - var(--table-border));
     border-left: var(--table-border) solid;
 }
 
-.pref-table .pref-table__head-cell:hover {
+.pref-table__cell--header:hover {
     background-color: var(--in-content-box-background-active);
     color: var(--in-content-text-color);
 }
@@ -381,32 +320,20 @@ html|button.add-container__button:hover:active {
 /* endregion */
 
 /* region edit&blocked */
-.pref-table__cell.pref-table__cell--in-edit {
-    padding: 0;
-}
-
-.pref-table__cell.pref-table__cell--in-edit input[type="text"] {
-    flex-grow: 1;
-}
-
-.pref-table__cell--disabled {
-    opacity: 0.4;
-}
-
 .pref-table__cell--edited {
     font-weight: bold;
 }
 
-.edit {
-    width: 100%;
+.pref-table__cell input[type="text"] {
+    flex-grow: 1;
 }
 
-.pref-table__cell.pref-table__cell--button-cell {
-    padding: 0;
+.pref-table__cell button {
+    margin: 0;
 }
 
-button.button.button--ghost.icon--save {
-    background-color: var(--grey-90-a10);
+.pref-table__cell__disabled-text {
+    opacity: 0.4;
 }
 
 button.button.button--small {
@@ -415,29 +342,6 @@ button.button.button--small {
 
 /* endregion */
 /* endregion */
-
-/* region EDIT */
-.edit-flex {
-    display: inline-flex;
-    width: 100%;
-    border: none;
-    border-radius: var(--textfield-border-radius);
-    overflow: hidden;
-}
-
-html|input[type="text"].edit-box {
-    flex: 1;
-    border-radius: 0;
-}
-
-html|button.edit-save {
-    margin: 0;
-    min-width: 0;
-    border-radius: 0;
-    border-left: none;
-}
-
-/* endregion*/
 
 /* region COLLAPSED -- @media (max-width: 830px) */
 @media (max-width: 830px) {
