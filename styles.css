@@ -268,10 +268,9 @@ html|button.add-container__button:hover:active {
     margin: 0 var(--button-margin);
 }
 
-/* TODO: those two were necessary for split header table...*/
 .pref-table.pref-table--header {
+    border-bottom: none;
     border-radius: var(--table-border-radius) var(--table-border-radius) 0 0;
-    color: var(--table-header-col);
     margin-bottom: 0;
 }
 
@@ -282,11 +281,11 @@ html|button.add-container__button:hover:active {
 }
 
 /*TODO: this is a bit messy, but probably still better than JS-determined ".odd"*/
-.pref-table__cell:nth-child(10n+1),
-.pref-table__cell:nth-child(10n+2),
-.pref-table__cell:nth-child(10n+3),
-.pref-table__cell:nth-child(10n+4),
-.pref-table__cell:nth-child(10n+5) {
+.pref-table__cell:nth-child(10n+6),
+.pref-table__cell:nth-child(10n+7),
+.pref-table__cell:nth-child(10n+8),
+.pref-table__cell:nth-child(10n+9),
+.pref-table__cell:nth-child(10n+10) {
     background: var(--grey-20);
 }
 
@@ -296,25 +295,36 @@ html|button.add-container__button:hover:active {
     padding: var(--button-margin);
 }
 
+.pref-table__cell span {
+    padding: 0 calc(var(--textfield-padding-x) - var(--button-margin));
+}
+
 /* endregion */
 
 /* region header */
 .pref-table__cell--header {
+    color: var(--table-header-col);
     background-color: var(--in-content-box-background-hover);
-    padding: var(--textfield-padding-y) var(--textfield-padding-x);
     border-bottom: var(--table-border) solid;
     border-image: linear-gradient(transparent 0%, transparent 20%, var(--table-border-col) 20%,
     var(--table-border-col) 80%, transparent 80%, transparent 97%, var(--table-border-col) 97%, var(--table-border-col) 100%) 1 1;
 }
 
 .pref-table__cell--header:not(:first-child) {
-    padding-left: calc(var(--textfield-padding-x) - var(--table-border));
+    padding-left: calc(var(--button-margin) - var(--table-border));
     border-left: var(--table-border) solid;
 }
 
 .pref-table__cell--header:hover {
     background-color: var(--in-content-box-background-active);
     color: var(--in-content-text-color);
+}
+
+.pref-table__cell--header button.button--header-dummy {
+    opacity: 0 !important;
+    max-height: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
 }
 
 /* endregion */

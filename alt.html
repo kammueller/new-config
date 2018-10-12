@@ -105,50 +105,49 @@
                     </div>
                 </div>
 
-                <!--TODO: add sticky header again-->
-                <!--<div class="pref-table pref-table&#45;&#45;header">-->
-                <!--<div class=" pref-table__row">-->
-                <!--<div class="pref-table__head-cell"></div>-->
-                <!--<div class="pref-table__head-cell">Name</div>-->
-                <!--<div class="pref-table__head-cell">Value</div>-->
-                <!--<div class="pref-table__head-cell"></div>-->
-                <!--<div class="pref-table__head-cell"></div>-->
-                <!--</div>-->
-                <!--</div>-->
+                <div class="pref-table pref-table--header">
+                    <div class="pref-table__cell pref-table__cell--header">
+                        <button class="button button--ghost button--header-dummy"></button>
+                    </div>
+                    <div class="pref-table__cell pref-table__cell--header">
+                        <span>Name</span>
+                    </div>
+                    <div class="pref-table__cell pref-table__cell--header">
+                        <span>Value</span>
+                    </div>
+                    <div class="pref-table__cell pref-table__cell--header">
+                        <button class="button button--small button--header-dummy">save</button>
+                    </div>
+                    <div class="pref-table__cell pref-table__cell--header">
+                        <button class="button button--ghost button--header-dummy">reset</button>
+                    </div>
+                </div>
             </div>
-            <!--TODO: use cell spacing better...-->
             <div class="table-wrap">
-                <div class="pref-table"> <!-- needs pref-table--body if sticky header is back -->
-                    <div class="pref-table__cell pref-table__cell--header"></div>
-                    <div class="pref-table__cell pref-table__cell--header">Name</div>
-                    <div class="pref-table__cell pref-table__cell--header">Value</div>
-                    <div class="pref-table__cell pref-table__cell--header"></div>
-                    <div class="pref-table__cell pref-table__cell--header"></div>
+                <div class="pref-table pref-table--body">
 
                     <div class="pref-table__cell">
-                            <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
+                        <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
                     </div>
                     <div class="pref-table__cell pref-table__cell--edited">
-                            New Design<br>
-                            Test<br>
-                            Test<br>
-                            Test<br>
-                            Test<br>
+                        <span>New Design, with icons as in the last column</span>
                     </div>
                     <div class="pref-table__cell">
                         <input type="text" placeholder="New Value" value="Old Value">
                     </div>
                     <div class="pref-table__cell">
-                            <button class="button button--small">save</button>
+                        <button class="button button--small">save</button>
                     </div>
                     <div class="pref-table__cell">
-                            <button class="button button--ghost icon icon--reset"></button>
+                        <button class="button button--ghost icon icon--reset"></button>
                     </div>
 
                     <div class="pref-table__cell">
                         <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
                     </div>
-                    <div class="pref-table__cell">New Design, test with an incredibly long name</div>
+                    <div class="pref-table__cell">
+                        <span>New Design, test with an incredibly long name</span>
+                    </div>
                     <div class="pref-table__cell">
                         <input type="text" placeholder="New Value"
                                value="and a pretty long value, which does not want to end.">
@@ -163,9 +162,11 @@
                     <div class="pref-table__cell">
                         <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
                     </div>
-                    <div class="pref-table__cell">New Design, boolean</div>
                     <div class="pref-table__cell">
-                        true
+                        <span>New Design, boolean</span>
+                    </div>
+                    <div class="pref-table__cell">
+                        <span>true</span>
                     </div>
                     <div class="pref-table__cell">
                         <button class="button button--small">toggle</button>
@@ -177,8 +178,9 @@
                     <div class="pref-table__cell">
                         <button class="button button--ghost icon icon--star" aria-label="make favourite"></button>
                     </div>
-                    <div class="pref-table__cell pref-table__cell--edited">New Design, boolean test with an incredibly
-                        long name
+                    <div class="pref-table__cell pref-table__cell--edited">
+                        <span>New Design, boolean test with an incredibly long name, which is even longer than
+                            the last one</span>
                     </div>
                     <div class="pref-table__cell pref-table__cell--edited">
                         true
@@ -226,9 +228,11 @@
                         <button class="button button--ghost icon icon--filled-star"
                                 aria-label="is favourite"></button>
                     </div>
-                    <div class="pref-table__cell pref-table__cell--edited">New Design, User Created</div>
                     <div class="pref-table__cell pref-table__cell--edited">
-                        true
+                        <span>New Design, User Created</span>
+                    </div>
+                    <div class="pref-table__cell pref-table__cell--edited">
+                        <span>true</span>
                     </div>
                     <div class="pref-table__cell">
                         <button class="button button--small">toggle</button>
@@ -242,6 +246,8 @@
 
                 <h4><a href="index.html">Go back to the original</a></h4>
                 <h4><a href="warning.html">Go back to the warning</a></h4>
+
+                <div style="height: 100px"></div>
             </div>
         </div>
         <div class="tricky-hide"></div>
