@@ -303,6 +303,8 @@ html|button.add-container__button:hover:active {
 
 /* region header */
 .pref-table__cell--header {
+    display: flex;
+    flex-direction: column;
     color: var(--table-header-col);
     background-color: var(--in-content-box-background-hover);
     border-bottom: var(--table-border) solid;
@@ -339,6 +341,7 @@ html|button.add-container__button:hover:active {
 }
 
 .pref-table__cell button {
+    flex-grow: 1;
     margin: 0;
 }
 
