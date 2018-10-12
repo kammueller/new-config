@@ -303,8 +303,8 @@ html|button.add-container__button:hover:active {
 
 /* region header */
 .pref-table__cell--header {
-    display: flex;
     flex-direction: column;
+    align-items: start;
     color: var(--table-header-col);
     background-color: var(--in-content-box-background-hover);
     border-bottom: var(--table-border) solid;
