@@ -25,11 +25,12 @@
     --remaining-col-width: calc(0.5 * (var(--table-width) - 3 * var(--icon-col-width) - 10 * var(--textfield-padding-x)));
 }
 
+/* region textfield */
 input[type="text"] {
     border-color: var(--grey-90-a30);
 }
 
-input[type="text"]:hover{
+input[type="text"]:hover {
     border-color: var(--grey-90-a50);
 }
 
@@ -48,6 +49,9 @@ input[type="text"]:invalid:focus {
     box-shadow: 0 0 0 1px var(--red-50), 0 0 0 4px var(--red-50-a30);
 }
 
+/* endregion */
+
+/* region checkbox */
 html|input[type="checkbox"] {
     height: 16px;
     width: 16px;
@@ -87,6 +91,8 @@ html|input[type="checkbox"]:focus {
 html|input[type="checkbox"]:disabled ~ label {
     opacity: 0.4;
 }
+
+/* endregion */
 
 /* endregion */
 
