@@ -334,7 +334,13 @@ html|button.add-container__button:hover:active {
     font-weight: bold;
 }
 
-.pref-table__cell input[type="text"] {
+.pref-table__cell form {
+    flex-grow: 1;
+    display: flex;
+}
+
+.pref-table__cell input[type="text"],
+.pref-table__cell form input[type="text"] {
     flex-grow: 1;
 }
 
