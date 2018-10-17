@@ -241,7 +241,17 @@ html|button.add-container__button:hover:active {
     /*TODO: button position if on single line?!*/
 }
 
-#add-container__inner input[type="text"] {
+#add-container__inner .add-container__text-wrapper{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.add-container__text-wrapper label {
+    margin-right: var(--button-margin);
+}
+
+.add-container__text-wrapper input[type="text"] {
     flex-grow: 1;
 }
 

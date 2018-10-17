@@ -90,7 +90,10 @@
                         Add a Preference
                     </button>
                     <div id="add-container__inner" style="display: none">
-                        <input type="text" placeholder="Name">
+                        <div class="add-container__text-wrapper">
+                            <label for="new-name">Name:</label>
+                            <input type="text" placeholder="component.foo.bar" id="new-name">
+                        </div>
                         <div class="add-container__type">
                             Type:
                             <input type="radio" name="gender" value="b" id="boolean">
@@ -100,8 +103,11 @@
                             <input type="radio" name="gender" value="s" id="string">
                             <label for="string">String</label>
                         </div>
-                        <input type="text" placeholder="Value">
-                        <button class="button button--primary" onclick="addValue()">add</button>
+                        <div class="add-container__text-wrapper">
+                            <label for="new-value">Value:</label>
+                            <input type="text" placeholder="42" id="new-value">
+                        </div>
+                        <button class="button button--primary">add</button>
                     </div>
                 </div>
 
@@ -267,7 +273,8 @@
                         <span>Other error (e.g. could not be saved?!)</span>
                     </div>
                     <div class="pref-table__cell">
-                        <span>Input field is replaced with <a href="https://design.firefox.com/photon/components/message-bars.html">
+                        <span>Input field is replaced with <a
+                                href="https://design.firefox.com/photon/components/message-bars.html">
                             error message-bar</a>
                             </span>
                     </div>
