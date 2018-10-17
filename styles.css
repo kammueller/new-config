@@ -67,6 +67,15 @@
     background-image: url("resource://activity-stream/data/content/assets/glyph-delete-16.svg");
 }
 
+.icon.icon--dismiss {
+    background-image: url("resource://activity-stream/data/content/assets/glyph-dismiss-16.svg");
+}
+
+.icon.icon--error {
+    background-image: url("error.svg");
+
+}
+
 /* endregion */
 
 /* region CONTAINER */
@@ -241,7 +250,7 @@ html|button.add-container__button:hover:active {
     /*TODO: button position if on single line?!*/
 }
 
-#add-container__inner .add-container__text-wrapper{
+#add-container__inner .add-container__text-wrapper {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -368,6 +377,46 @@ button.button.button--small {
 }
 
 /* endregion */
+/* endregion */
+
+/* region MESSAGE-BAR */
+.message-bar {
+    width: 100%;
+    display: flex;
+    /*min-height: 32px; TODO: this is nonsense */
+    border-radius: 4px;
+    padding: 4px;
+    background-color: var(--grey-20);
+    color: var(--grey-90);
+}
+
+.message-bar.message-bar--small-container {
+    width: auto;
+}
+
+.message-bar.message-bar--error {
+    background-color: var(--red-60);
+    color: var(--white-100);
+}
+
+.message-bar .icon {
+    padding: 4px;
+}
+
+.message-bar button.button.button--ghost {
+    align-self: start;
+    padding: 4px;
+    margin: 0;
+    min-height: 16px;
+    min-width: 16px;
+    height: 16px;
+    width: 16px;
+}
+
+.message-bar span {
+    flex-grow: 1;
+}
+
 /* endregion */
 
 /* region COLLAPSED -- @media (max-width: 830px) */
