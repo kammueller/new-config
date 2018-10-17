@@ -15,9 +15,8 @@
     --main-content-y-padding: 40px;
     --table-border: 1px;
     --table-border-radius: 2px;
-    /*TODO: change these to photon colors?*/
-    --table-border-col: #c1c1c1;
-    --table-header-col: #808080;
+    --table-border-col: var(--grey-40);
+    --table-header-col: var(--grey-50);
 
     --table-width: calc(var(--pane-width) - 2 * var(--table-border) - 2 * var(--button-margin));
     --icon-col-width: calc(var(--icon-size) + 2 * var(--icon-padding) + 2 * var(--button-margin) - 2 * var(--textfield-padding-x));
@@ -194,7 +193,6 @@ html|input[type="text"].search-box__input {
 
 /* region add */
 .add-container {
-    /*TODO: design that!*/
     padding: var(--textfield-padding-y) 0 var(--textfield-padding-y) var(--button-margin);
     margin-bottom: calc(2 * var(--textfield-padding-y));
 }
