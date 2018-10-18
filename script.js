@@ -34,46 +34,48 @@ function ShowPrefs() {
 function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
     // TODO: codestyle!!
     document.getElementById("pref-table").innerHTML +=
-        '<div class="pref-table__cell">\n' +
+        '<ul class="pref-table__row' + (isModified ? ' pref-table__row--edited' : '') +
+        '" aria-label="Preference ' + name + '" role="list">\n' +
+        '<li class="pref-table__cell">\n' +
         (isLocked
             ? '<button class="button button--ghost icon icon--lock" title="locked" disabled></button>\n'
             : (isFav
                     ? '<button class="button button--ghost icon icon--filled-star" title="is favourite"></button>\n'
                     : '<button class="button button--ghost icon icon--star" title="make favourite"></button>\n'
             )) +
-        '</div>\n' +
-        '<div class="pref-table__cell' + (isModified ? ' pref-table__cell--edited' : '') + '">\n' +
+        '</li>\n' +
+        '<li class="pref-table__cell">\n' +
         '<span' + (isLocked ? ' class="pref-table__cell__disabled-text"' : '') +
         '>' + name.split(".").join(".<wbr>") + '</span>\n' +
-        '</div>\n' +
+        '</li>\n' +
         (Type === "bool"
-                ? '<div class="pref-table__cell' + (isModified ? ' pref-table__cell--edited' : '') + '"><span' +
-                (isLocked ? ' class="pref-table__cell__disabled-text"' : '') + '\n>' + value + '</span></div>'
+                ? '<li class="pref-table__cell"><span' +
+                (isLocked ? ' class="pref-table__cell__disabled-text"' : '') + '\n>' + value + '</span></li>'
 
-                : '<div class="pref-table__cell">\n' + (isLocked
+                : '<li class="pref-table__cell">\n' + (isLocked
                 ? '<span class="pref-table__cell__disabled-text">' + value + '</span>\n'
-                : '<form id="test-form">\n' +
-                '<input type="text" placeholder="New Value" value="' + value + '"' +
+                : '<form id="test-form" aria-label="Edit Value">\n' +
+                '<input type="text" value="' + value + '"' +
                 (Type === "int"
                         ? 'pattern="[0-9]*" title="Please enter an integer value">\n'
                         : 'title="Please enter the value">\n'
                 ) +
                 '</form>\n') +
-                '</div>\n'
+                '</li>\n'
         ) +
-        '<div class="pref-table__cell">\n' +
+        '<li class="pref-table__cell">\n' +
         '<button class="button button--small" type="submit" form="test-form"' +
         (isLocked ? ' disabled' : '') + '>' +
         (Type === "bool" ? 'toggle' : 'save') + '</button>\n' +
-        '</div>\n' +
-        '<div class="pref-table__cell">\n' +
+        '</li>\n' +
+        '<li class="pref-table__cell">\n' +
         '<button class="button button--ghost icon ' +
         (isUser
                 ? 'icon--trash" title="delete preference"'
                 : 'icon--reset" ' + (isModified ? 'title="reset value to default"' : '')
         ) +
         (isLocked || (!isModified) ? ' disabled' : '') +
-        '></button>\n' + '</div>';
+        '></button> </li>\n';
 }
 
 function addTests() {
@@ -82,13 +84,13 @@ function addTests() {
     for (var key in testValues) {
         console.log(key + '=>' + testValues[key]);
         addItem("testing.mock.foo." + key, testValues[key], false, false, key, false, false);
-        addItem("testing.mock.foo." + key+".fav", testValues[key], false, false, key, true, false);
-        addItem("testing.mock.foo." + key+".user", testValues[key], false, true, key, false, true);
-        addItem("testing.mock.foo." + key+".locked", testValues[key], true, false, key, false, false);
-        addItem("testing.mock.foo." + key+".modified", testValues[key], false, true, key, false, false);
-        addItem("testing.mock.foo." + key+".locked&modified", testValues[key], true, true, key, false, false);
-        addItem("testing.mock.foo." + key+".locked&user", testValues[key], true, true, key, false, true);
-        addItem("testing.mock.foo." + key+".locked&user&fav", testValues[key], true, true, key, true, true);
-        addItem("testing.mock.foo." + key+".locked&fav", testValues[key], true, true, key, true, false);
+        addItem("testing.mock.foo." + key + ".fav", testValues[key], false, false, key, true, false);
+        addItem("testing.mock.foo." + key + ".user", testValues[key], false, true, key, false, true);
+        addItem("testing.mock.foo." + key + ".locked", testValues[key], true, false, key, false, false);
+        addItem("testing.mock.foo." + key + ".modified", testValues[key], false, true, key, false, false);
+        addItem("testing.mock.foo." + key + ".locked&modified", testValues[key], true, true, key, false, false);
+        addItem("testing.mock.foo." + key + ".locked&user", testValues[key], true, true, key, false, true);
+        addItem("testing.mock.foo." + key + ".locked&user&fav", testValues[key], true, true, key, true, true);
+        addItem("testing.mock.foo." + key + ".locked&fav", testValues[key], true, false, key, true, false);
     }
 }

@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="navigation">
+    <div class="navigation" aria-label="Navigation">
         <div id="categories">
             <div class="category category--small">
                 <div class="icon icon--search"></div>
@@ -65,9 +65,9 @@
         </div>
     </div>
 
-    <div class="main-content">
-        <div class="sticky-container">
-            <div class="search-container">
+    <div class="main-content" aria-label="Display and Edit Preferences">
+        <div class="sticky-container" aria-label="Search and Add Preferences">
+            <div class="search-container" aria-label="Search for Preferences">
                 <div class="search-box">
                     <div class="icon icon--search icon--in-search"></div>
                     <input class="search-box__input" type="text" name="search" placeholder="Search a preference">
@@ -85,7 +85,7 @@
                     <label for="Regexp">Regexp search</label>
                 </div>
             </div>
-            <div class="add-container">
+            <div class="add-container" aria-label="Add a Preference">
                 <button onclick="toggleAdd()" class="add-container__button" id="add-dropdown">
                     Add a Preference
                 </button>
@@ -131,139 +131,155 @@
             </div>
         </div>
         <div class="pane-container">
-            <div class="pref-table pref-table--body" id="pref-table">
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
-                    <span>New Design, with icons as in the last column</span>
-                </div>
-                <div class="pref-table__cell">
-                    <input type="text" placeholder="New Value" value="Old Value">
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small">save</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--reset" title="reset value to default"></button>
-                </div>
+            <div class="pref-table pref-table--body" id="pref-table" aria-label="Table of Preferences" role="list">
+                <ul class="pref-table__row pref-table__row--edited" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>New Design,<br> with icons<br> as in<br> the last<br> column</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <input type="text" placeholder="Edit Value" value="Old Value" aria-label="Edit Value">
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small">save</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--reset" title="reset value to default"></button>
+                    </li>
+                </ul>
 
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
-                </div>
-                <div class="pref-table__cell">
-                    <span>New Design, test with an incredibly long name</span>
-                </div>
-                <div class="pref-table__cell">
-                    <input type="text" placeholder="New Value"
-                           value="and a pretty long value, which does not want to end.">
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small">save</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--reset" disabled></button>
-                </div>
+                <ul class="pref-table__row" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>New Design, test with an incredibly long name</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <input type="text" placeholder="Edit Value"
+                               value="and a pretty long value, which does not want to end.">
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small">save</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--reset" disabled></button>
+                    </li>
+                </ul>
 
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
-                </div>
-                <div class="pref-table__cell">
-                    <span>New Design, boolean</span>
-                </div>
-                <div class="pref-table__cell">
-                    <span>true</span>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small">long toggle text</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--reset" disabled></button>
-                </div>
+                <ul class="pref-table__row" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>New Design, boolean</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>true</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small">long toggle text</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--reset" disabled></button>
+                    </li>
+                </ul>
 
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
+                <ul class="pref-table__row pref-table__row--edited" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                    </li>
+                    <li class="pref-table__cell">
                         <span>New Design, boolean test with an incredibly long name, which is even longer than
                             the last one</span>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
-                    <span>true</span>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small">long toggle text</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--reset"></button>
-                </div>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>true</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small">long toggle text</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--reset"></button>
+                    </li>
+                </ul>
 
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
-                    <span class="pref-table__cell__disabled-text">new Blocked demo</span>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
-                    <span class="pref-table__cell__disabled-text">42</span>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small" disabled>save</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--reset" disabled></button>
-                </div>
+                <ul class="pref-table__row pref-table__row--edited" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span class="pref-table__cell__disabled-text">new Blocked demo</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span class="pref-table__cell__disabled-text">42</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small" disabled>save</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--reset" disabled></button>
+                    </li>
+                </ul>
 
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
-                </div>
-                <div class="pref-table__cell">
-                    <span class="pref-table__cell__disabled-text">new Blocked demo</span>
-                </div>
-                <div class="pref-table__cell">
-                    <span class="pref-table__cell__disabled-text">42</span>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small" disabled>save</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--reset" disabled></button>
-                </div>
+                <ul class="pref-table__row" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span class="pref-table__cell__disabled-text">new Blocked demo</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span class="pref-table__cell__disabled-text">42</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small" disabled>save</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--reset" disabled></button>
+                    </li>
+                </ul>
 
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
-                    <span>New Design, User Created</span>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
-                    <span>true</span>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small">toggle</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--trash" title="delete preference"></button>
-                </div>
+                <ul class="pref-table__row pref-table__row--edited" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>New Design, User Created</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>true</span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small">toggle</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--trash" title="delete preference"></button>
+                    </li>
+                </ul>
 
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
-                </div>
-                <div class="pref-table__cell pref-table__cell--edited">
-                    <span>New Design, Edit Int (try enter a string, click save, and see the error!)  </span>
-                </div>
-                <div class="pref-table__cell">
-                    <form id="test-form">
-                        <input type="text" placeholder="New Value" value="42" pattern="[0-9]*"
-                               title="Please enter an integer value">
-                    </form>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--small" type="submit" form="test-form">save</button>
-                </div>
-                <div class="pref-table__cell">
-                    <button class="button button--ghost icon icon--trash" title="delete preference"></button>
-                </div>
+                <ul class="pref-table__row pref-table__row--edited" aria-label="Preference xyz" role="list">
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <span>New Design, Edit Int (try enter a string, click save, and see the error!)  </span>
+                    </li>
+                    <li class="pref-table__cell">
+                        <form id="test-form">
+                            <input type="text" placeholder="Edit Value" value="42" pattern="[0-9]*"
+                                   title="Please enter an integer value">
+                        </form>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--small" type="submit" form="test-form">save</button>
+                    </li>
+                    <li class="pref-table__cell">
+                        <button class="button button--ghost icon icon--trash" title="delete preference"></button>
+                    </li>
+                </ul>
             </div>
 
             <div style="height: 100px"></div>

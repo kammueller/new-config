@@ -247,6 +247,7 @@ html|button.add-container__button:hover:active {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: var(--button-margin);
     /*TODO: button position if on single line?!*/
 }
 
@@ -297,12 +298,11 @@ html|button.add-container__button:hover:active {
     margin-top: 0;
 }
 
-/*TODO: this is a bit messy, but probably still better than JS-determined ".odd"*/
-.pref-table__cell:nth-child(10n+6),
-.pref-table__cell:nth-child(10n+7),
-.pref-table__cell:nth-child(10n+8),
-.pref-table__cell:nth-child(10n+9),
-.pref-table__cell:nth-child(10n+10) {
+.pref-table__row {
+    display: contents;
+}
+
+.pref-table__row:nth-of-type(2n) {
     background: var(--grey-20);
 }
 
@@ -310,6 +310,7 @@ html|button.add-container__button:hover:active {
     display: flex;
     align-items: center;
     padding: var(--button-margin);
+    background: inherit;
 }
 
 .pref-table__cell span {
@@ -349,7 +350,7 @@ html|button.add-container__button:hover:active {
 /* endregion */
 
 /* region edit&blocked */
-.pref-table__cell--edited {
+.pref-table__row--edited {
     font-weight: bold;
 }
 
