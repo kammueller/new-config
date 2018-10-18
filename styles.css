@@ -266,7 +266,7 @@ html|button.add-container__button:hover:active {
 
 .add-container__type {
     flex-shrink: 0;
-    margin: var(--button-margin);
+    margin: var(--button-margin) var(--textfield-padding-x);
 }
 
 /* endregion */
