@@ -65,208 +65,205 @@
     </div>
 
     <div class="main-content">
-        <div class="pane-container">
-            <div class="sticky-container">
-                <div class="search-container">
-                    <div class="search-box">
-                        <div class="icon icon--search icon--in-search"></div>
-                        <input class="search-box__input" type="text" name="search" placeholder="Search a preference">
-                    </div>
-                    <div class="search-select">
-                        <input type="checkbox" id="modified" value="modified" checked>
-                        <label for="modified">modified</label>
-                    </div>
-                    <div class="search-select">
-                        <input type="checkbox" id="default" value="default" checked>
-                        <label for="default">default</label>
-                    </div>
-                    <div class="search-select growth">
-                        <input type="checkbox" id="Regexp" value="Regexp" checked>
-                        <label for="Regexp">Regexp search</label>
-                    </div>
+        <div class="sticky-container">
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="icon icon--search icon--in-search"></div>
+                    <input class="search-box__input" type="text" name="search" placeholder="Search a preference">
                 </div>
-                <div class="add-container">
-                    <button onclick="toggleAdd()" class="add-container__button" id="add-dropdown">
-                        Add a Preference
-                    </button>
-                    <div id="add-container__inner" style="display: none">
-                        <div class="add-container__text-wrapper">
-                            <label for="new-name">Name:</label>
-                            <input type="text" placeholder="component.foo.bar" id="new-name">
-                        </div>
-                        <div class="add-container__type">
-                            Type:
-                            <input type="radio" name="gender" value="b" id="boolean">
-                            <label for="boolean">Boolean</label>
-                            <input type="radio" name="gender" value="i" id="integer">
-                            <label for="integer">Integer</label>
-                            <input type="radio" name="gender" value="s" id="string">
-                            <label for="string">String</label>
-                        </div>
-                        <div class="add-container__text-wrapper">
-                            <label for="new-value">Value:</label>
-                            <input type="text" placeholder="42" id="new-value">
-                        </div>
-                        <button class="button button--primary">add</button>
-                    </div>
+                <div class="search-select">
+                    <input type="checkbox" id="modified" value="modified" checked>
+                    <label for="modified">modified</label>
                 </div>
-
-                <div class="pref-table pref-table--header">
-                    <div class="pref-table__cell pref-table__cell--header">
-                        <button class="button button--ghost button--header-dummy" disabled></button>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--header">
-                        <span>Name</span>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--header">
-                        <span>Value</span>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--header">
-                        <button class="button button--small button--header-dummy" disabled>save</button>
-                        <button class="button button--small button--header-dummy" disabled>long toggle text</button>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--header">
-                        <button class="button button--ghost button--header-dummy" disabled></button>
-                    </div>
+                <div class="search-select">
+                    <input type="checkbox" id="default" value="default" checked>
+                    <label for="default">default</label>
+                </div>
+                <div class="search-select growth">
+                    <input type="checkbox" id="Regexp" value="Regexp" checked>
+                    <label for="Regexp">Regexp search</label>
                 </div>
             </div>
-            <div class="table-wrap">
-                <div class="pref-table pref-table--body" id="pref-table">
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
+            <div class="add-container">
+                <button onclick="toggleAdd()" class="add-container__button" id="add-dropdown">
+                    Add a Preference
+                </button>
+                <div id="add-container__inner" style="display: none">
+                    <div class="add-container__text-wrapper">
+                        <label for="new-name">Name:</label>
+                        <input type="text" placeholder="component.foo.bar" id="new-name">
                     </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
-                        <span>New Design, with icons as in the last column</span>
+                    <div class="add-container__type">
+                        Type:
+                        <input type="radio" name="gender" value="b" id="boolean">
+                        <label for="boolean">Boolean</label>
+                        <input type="radio" name="gender" value="i" id="integer">
+                        <label for="integer">Integer</label>
+                        <input type="radio" name="gender" value="s" id="string">
+                        <label for="string">String</label>
                     </div>
-                    <div class="pref-table__cell">
-                        <input type="text" placeholder="New Value" value="Old Value">
+                    <div class="add-container__text-wrapper">
+                        <label for="new-value">Value:</label>
+                        <input type="text" placeholder="42" id="new-value">
                     </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small">save</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--reset" title="reset value to default"></button>
-                    </div>
+                    <button class="button button--primary">add</button>
+                </div>
+            </div>
 
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <span>New Design, test with an incredibly long name</span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <input type="text" placeholder="New Value"
-                               value="and a pretty long value, which does not want to end.">
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small">save</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--reset" disabled></button>
-                    </div>
+            <div class="pref-table pref-table--header">
+                <div class="pref-table__cell pref-table__cell--header">
+                    <button class="button button--ghost button--header-dummy" disabled></button>
+                </div>
+                <div class="pref-table__cell pref-table__cell--header">
+                    <span>Name</span>
+                </div>
+                <div class="pref-table__cell pref-table__cell--header">
+                    <span>Value</span>
+                </div>
+                <div class="pref-table__cell pref-table__cell--header">
+                    <button class="button button--small button--header-dummy" disabled>save</button>
+                    <button class="button button--small button--header-dummy" disabled>long toggle text</button>
+                </div>
+                <div class="pref-table__cell pref-table__cell--header">
+                    <button class="button button--ghost button--header-dummy" disabled></button>
+                </div>
+            </div>
+        </div>
+        <div class="pane-container">
+            <div class="pref-table pref-table--body" id="pref-table">
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
+                    <span>New Design, with icons as in the last column</span>
+                </div>
+                <div class="pref-table__cell">
+                    <input type="text" placeholder="New Value" value="Old Value">
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small">save</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--reset" title="reset value to default"></button>
+                </div>
 
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <span>New Design, boolean</span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <span>true</span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small">long toggle text</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--reset" disabled></button>
-                    </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                </div>
+                <div class="pref-table__cell">
+                    <span>New Design, test with an incredibly long name</span>
+                </div>
+                <div class="pref-table__cell">
+                    <input type="text" placeholder="New Value"
+                           value="and a pretty long value, which does not want to end.">
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small">save</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--reset" disabled></button>
+                </div>
 
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--star" title="make favourite"></button>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                </div>
+                <div class="pref-table__cell">
+                    <span>New Design, boolean</span>
+                </div>
+                <div class="pref-table__cell">
+                    <span>true</span>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small">long toggle text</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--reset" disabled></button>
+                </div>
+
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--star" title="make favourite"></button>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
                         <span>New Design, boolean test with an incredibly long name, which is even longer than
                             the last one</span>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
-                        true
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small">long toggle text</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--reset" disabled></button>
-                    </div>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
+                    true
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small">long toggle text</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--reset" disabled></button>
+                </div>
 
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
-                        <span class="pref-table__cell__disabled-text">new Blocked demo</span>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
-                        <span class="pref-table__cell__disabled-text">42</span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small" disabled>save</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--reset" disabled></button>
-                    </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
+                    <span class="pref-table__cell__disabled-text">new Blocked demo</span>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
+                    <span class="pref-table__cell__disabled-text">42</span>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small" disabled>save</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--reset" disabled></button>
+                </div>
 
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <span class="pref-table__cell__disabled-text">new Blocked demo</span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <span class="pref-table__cell__disabled-text">42</span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small" disabled>save</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--reset" disabled></button>
-                    </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--lock" title="locked" disabled></button>
+                </div>
+                <div class="pref-table__cell">
+                    <span class="pref-table__cell__disabled-text">new Blocked demo</span>
+                </div>
+                <div class="pref-table__cell">
+                    <span class="pref-table__cell__disabled-text">42</span>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small" disabled>save</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--reset" disabled></button>
+                </div>
 
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
-                        <span>New Design, User Created</span>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
-                        <span>true</span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small">toggle</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--trash" title="delete preference"></button>
-                    </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
+                    <span>New Design, User Created</span>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
+                    <span>true</span>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small">toggle</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--trash" title="delete preference"></button>
+                </div>
 
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
-                    </div>
-                    <div class="pref-table__cell pref-table__cell--edited">
-                        <span>New Design, Edit Int (try enter a string, click save, and see the error!)  </span>
-                    </div>
-                    <div class="pref-table__cell">
-                        <form id="test-form">
-                            <input type="text" placeholder="New Value" value="42" pattern="[0-9]*"
-                                   title="Please enter an integer value">
-                        </form>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--small" type="submit" form="test-form">save</button>
-                    </div>
-                    <div class="pref-table__cell">
-                        <button class="button button--ghost icon icon--trash" title="delete preference"></button>
-                    </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--filled-star" title="is favourite"></button>
+                </div>
+                <div class="pref-table__cell pref-table__cell--edited">
+                    <span>New Design, Edit Int (try enter a string, click save, and see the error!)  </span>
+                </div>
+                <div class="pref-table__cell">
+                    <form id="test-form">
+                        <input type="text" placeholder="New Value" value="42" pattern="[0-9]*"
+                               title="Please enter an integer value">
+                    </form>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--small" type="submit" form="test-form">save</button>
+                </div>
+                <div class="pref-table__cell">
+                    <button class="button button--ghost icon icon--trash" title="delete preference"></button>
                 </div>
             </div>
-
 
             <div style="height: 100px"></div>
 
