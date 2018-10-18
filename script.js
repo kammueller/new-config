@@ -21,16 +21,6 @@ function ShowPrefs() {
     window.location = "index.html";
 }
 
-function edit(value) {
-    alert("editing " + value);
-}
-
-function hideOldStuff() {
-    Array.from(document.getElementsByClassName("old")).forEach(function (elem) {
-        elem.style.display = "none"
-    })
-}
-
 /**
  *
  * @param name name of the pref
