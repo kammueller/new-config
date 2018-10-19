@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid performance test</title>
+    <link rel="stylesheet" href="styles.css"/>
+
+</head>
+<body>
+<div class="table" id="table">
+    <ul class="row">
+        <li class="cell">1 fr</li>
+        <li class="cell">auto</li>
+        <li class="cell">3 fr</li>
+    </ul>
+</div>
+<div id="thing"></div>
+<script>
+    var t = '';
+    var i = 0;
+    for (var c = 0; c < 20; c++) {
+        for (i = 0; i < 100; i++) {
+            t +=
+                '<ul class="row"><li class="cell">1</li><li class="cell">' + i + '</li><li class="cell">3</li></ul>\n';
+        }
+        var s = '';
+        for (i = 0; i < c + 1; i++) {
+            s += 'hi';
+        }
+        t +=
+            '<ul class="row"><li class="cell">1</li><li class="cell">' + s + '</li><li class="cell">3</li></ul>\n';
+    }
+    document.getElementById('thing').innerText = t;
+</script>
+</body>
+</html>

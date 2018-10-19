@@ -1,0 +1,10 @@
+.table { display: grid;
+    border: 3px solid lime;
+    width: 400px;
+    grid-template-columns: 1fr auto 3fr;}
+
+tbody,.row {display: contents;}
+
+.cell {border: 1px solid hotpink; text-align: center;}
+
+li {list-style-type: none;}
