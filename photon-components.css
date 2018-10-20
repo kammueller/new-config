@@ -14,7 +14,7 @@ input[type="text"]:hover {
 }
 
 input[type="text"]:focus {
-    border-color: var(--blue-50);
+    border:none;
     box-shadow: 0 0 0 1px var(--blue-50), 0 0 0 4px var(--blue-50-a30);
 }
 
@@ -73,7 +73,46 @@ html|input[type="checkbox"]:disabled ~ label {
 
 /* endregion */
 
-/* region radiobox */
-/*TODO*/
+/* region radiobutton */
+input[type=radio]:checked {
+    background: var(--blue-60) url('radiobutton-marker-16.svg');
+    background-size: 16px;
+    border: none
+}
+
+input[type=radio] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: var(--grey-90-a10) no-repeat 50%;
+    background-size: 4px;
+    border: 1px solid var(--grey-90-a30);
+    border-radius: 100%;
+    font-size: 14px;
+    height: 16px;
+    margin-right: 4px;
+    width: 16px
+}
+
+input[type=radio]:hover {
+    background-color: var(--grey-90-a20)
+}
+
+input[type=radio]:hover:active {
+    background-color: var(--grey-90-a30)
+}
+
+input[type=radio]:focus {
+    animation: none;
+    border: 0;
+    box-shadow: 0 0 0 1px var(--blue-50) inset, 0 0 0 1px var(--blue-50), 0 0 0 4px var(--blue-50-a30)
+}
+
+input[type=radio]:checked:hover {
+    background-color: var(--blue-70)
+}
+
+input[type=radio]:checked:hover:active {
+    background-color: var(--blue-80)
+}
 
 /* endregion */

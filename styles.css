@@ -19,8 +19,6 @@
     --table-header-col: var(--grey-50);
 
     --table-width: calc(var(--pane-width) - 2 * var(--table-border) - 2 * var(--button-margin));
-    --icon-col-width: calc(var(--icon-size) + 2 * var(--icon-padding) + 2 * var(--button-margin) - 2 * var(--textfield-padding-x));
-    --remaining-col-width: calc(0.5 * (var(--table-width) - 3 * var(--icon-col-width) - 10 * var(--textfield-padding-x)));
 }
 
 /* endregion */
@@ -150,6 +148,7 @@
     top: 0;
     background-color: var(--in-content-page-background);
     z-index: 2;
+    min-width: var(--pane-min-width);
 }
 
 /* region search */
@@ -167,7 +166,7 @@
 html|input[type="text"].search-box__input {
     margin-left: calc(var(--button-margin) - var(--icon-size));
     margin-right: var(--button-margin);
-    padding-left: calc(var(--textfield-padding-x) + var(--icon-padding) + var(--icon-size)); /* space for icon */
+    padding-left: calc(var(--textfield-padding-x) + var(--icon-size)); /* space for icon */
     flex-grow: 1;
 }
 
@@ -179,12 +178,11 @@ html|input[type="text"].search-box__input {
     transform: scaleX(-1);
 
     -moz-context-properties: fill; /* TODO: find solution without -moz ? */
-    fill: var(--grey-40);
+    fill: var(--grey-90-a40);
 }
 
 .search-select {
     margin: var(--button-margin);
-    padding-right: var(--textfield-padding-x);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -268,6 +266,8 @@ html|button.add-container__button:hover:active {
 .add-container__type {
     flex-shrink: 0;
     margin: var(--button-margin) var(--textfield-padding-x);
+    display: flex;
+    align-items: center;
 }
 
 /* endregion */
