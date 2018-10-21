@@ -1,12 +1,13 @@
 function showAdd() {
     document.getElementById("add-container__inner").style.display = "flex";
     document.getElementById("add-dropdown").classList.add("add-container__button--expanded");
+    document.getElementById("add-dropdown").setAttribute('aria-expanded', 'true');
 }
 
 function hideAdd() {
     document.getElementById("add-container__inner").style.display = "none";
     document.getElementById("add-dropdown").classList.remove("add-container__button--expanded");
-
+    document.getElementById("add-dropdown").setAttribute('aria-expanded', 'false');
 }
 
 function toggleAdd() {

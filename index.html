@@ -12,57 +12,57 @@
 <body>
 <div class="container">
     <div class="navigation" aria-label="Navigation">
-        <div id="categories">
-            <div class="category category--small">
+        <ul id="categories" aria-label="List of Components">
+            <li class="category category--small">
                 <div class="icon icon--search"></div>
                 <div class="category__label">Everything</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon icon--star"></div>
                 <div class="category__label">Favourites</div>
-            </div>
-            <div class="category category--small category--spacer"></div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small category--spacer" aria-hidden="true"></li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">accessibility</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">advanced</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">alerts</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">app</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">apz</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">beacon</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">bidi</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">breakpad</div>
-            </div>
-            <div class="category category--small" selected="true">
+            </li>
+            <li class="category category--small" selected="true">
                 <div class="icon"></div>
                 <div class="category__label">browser</div>
-            </div>
-            <div class="category category--small">
+            </li>
+            <li class="category category--small">
                 <div class="icon"></div>
                 <div class="category__label">canvas</div>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
 
     <div class="main-content" aria-label="Display and Edit Preferences">
@@ -86,32 +86,34 @@
                 </div>
             </div>
             <div class="add-container" aria-label="Add a Preference">
-                <button onclick="toggleAdd()" class="add-container__button" id="add-dropdown">
+                <button onclick="toggleAdd()" class="add-container__button" id="add-dropdown"
+                        aria-controls="add-container__inner">
                     Add a Preference
                 </button>
-                <div id="add-container__inner" style="display: none">
-                    <div class="add-container__text-wrapper">
-                        <label for="new-name">Name:</label>
+                <div id="add-container__inner" style="display: none" aria-label="Dialogue to add a Preference">
+                    <div class="add-container__text-wrapper" aria-label="Define the Name">
+                        <label for="new-name" aria-hidden="true">Name:</label>
                         <input type="text" placeholder="component.foo.bar" id="new-name">
                     </div>
-                    <div class="add-container__type">
-                        <span>Type:</span>
+                    <div class="add-container__type" aria-label="Define the Type">
+                        <span aria-hidden="true">Type:</span>
                         <input type="radio" name="gender" value="b" id="boolean">
-                        <label for="boolean">Boolean</label>
+                        <label for="boolean" aria-hidden="true">Boolean</label>
                         <input type="radio" name="gender" value="i" id="integer">
-                        <label for="integer">Integer</label>
+                        <label for="integer" aria-hidden="true">Integer</label>
                         <input type="radio" name="gender" value="s" id="string">
-                        <label for="string">String</label>
+                        <label for="string" aria-hidden="true">String</label>
                     </div>
-                    <div class="add-container__text-wrapper">
-                        <label for="new-value">Value:</label>
+                    <div class="add-container__text-wrapper" aria-label="Define the Value">
+                        <label for="new-value" aria-hidden="true">Value:</label>
+                        <label for="new-value" aria-hidden="true">Value:</label>
                         <input type="text" placeholder="42" id="new-value">
                     </div>
                     <button class="button button--primary">add</button>
                 </div>
             </div>
 
-            <div class="pref-table pref-table--header">
+            <div class="pref-table pref-table--header" aria-hidden="true">
                 <div class="pref-table__cell pref-table__cell--header">
                     <button class="button button--ghost button--header-dummy" disabled></button>
                 </div>
@@ -302,7 +304,7 @@
 
             <div style="min-height: 100px"></div>
         </div>
-        <div class="tricky-hide"></div>
+        <div class="tricky-hide" aria-hidden="true"></div>
     </div>
 </div>
 

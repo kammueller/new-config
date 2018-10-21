@@ -107,6 +107,11 @@
 /* endregion */
 
 /* region NAVIGATION */
+#categories {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 #categories > .category.category--small {
     display: flex;
     flex-direction: row;
