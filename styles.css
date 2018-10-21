@@ -245,13 +245,16 @@ html|button.add-container__button:hover:active {
 }
 
 #add-container__inner {
-    /*display: flex;*/
+    margin-top: var(--button-margin);
+    /*TODO: button position if on single line?!*/
+}
+
+#add-container__inner form {
+    display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: var(--button-margin);
-    /*TODO: button position if on single line?!*/
 }
 
 #add-container__inner .add-container__text-wrapper {

@@ -1,5 +1,5 @@
 function showAdd() {
-    document.getElementById("add-container__inner").style.display = "flex";
+    document.getElementById("add-container__inner").style.display = "block";
     document.getElementById("add-dropdown").classList.add("add-container__button--expanded");
     document.getElementById("add-dropdown").setAttribute('aria-expanded', 'true');
 }
@@ -11,11 +11,20 @@ function hideAdd() {
 }
 
 function toggleAdd() {
-    if (document.getElementById("add-container__inner").style.display === "flex") {
+    if (document.getElementById("add-container__inner").style.display === "block") {
         hideAdd();
     } else {
         showAdd();
     }
+}
+
+function addPref() {
+    document.getElementById('new-name').setCustomValidity("Name of Preference must be unique!");
+}
+
+function editPref() {
+    alert("should be saved...");
+    // TODO: prevent reload of page?!
 }
 
 function ShowPrefs() {
@@ -55,7 +64,7 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
 
                 : '<li class="pref-table__cell">\n' + (isLocked
                 ? '<span class="pref-table__cell__disabled-text">' + value + '</span>\n'
-                : '<form id="test-form" aria-label="Edit Value">\n' +
+                : '<form id="edit-form-' + name + '" aria-label="Edit Value" onsubmit="editPref()">\n' +
                 '<input type="text" value="' + value + '"' +
                 (Type === "int"
                         ? 'pattern="[0-9]*" title="Please enter an integer value">\n'
@@ -65,7 +74,7 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
                 '</li>\n'
         ) +
         '<li class="pref-table__cell">\n' +
-        '<button class="button button--small" type="submit" form="test-form"' +
+        '<button class="button button--small" form="edit-form-' + name + '"' +
         (isLocked ? ' disabled' : '') + '>' +
         (Type === "bool" ? 'toggle' : 'save') + '</button>\n' +
         '</li>\n' +
