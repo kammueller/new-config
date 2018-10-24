@@ -157,7 +157,7 @@
     top: 0;
     left: 0;
     height: var(--main-content-y-padding);
-    width: calc(var(--pane-width) - var(--main-content-padding-x)); /* such that it does not conceal the scroll bar*/
+    width: 100%;
     background-color: var(--in-content-page-background);
     z-index: -1;
 }
