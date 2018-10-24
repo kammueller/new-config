@@ -292,6 +292,10 @@ html|button.add-container__button:hover:active {
     align-items: center;
 }
 
+.textfield-label {
+    font-size: 13px;
+}
+
 /* endregion */
 /* endregion */
 
