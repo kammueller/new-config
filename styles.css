@@ -95,6 +95,7 @@
 
 .main-content {
     flex-grow: 1; /* such that the scrollbar is on the right border ;)*/
+    padding-top: 0;
     overflow-y: auto;
 }
 
@@ -150,18 +151,8 @@
 /* endregion*/
 
 /* region STICKY */
-.tricky-hide {
-    /*TODO: this is an ugly trick...*/
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: var(--main-content-y-padding);
-    width: 100%;
-    background-color: var(--in-content-page-background);
-    z-index: -1;
-}
-
 .sticky-container {
+    padding-top: var(--main-content-y-padding);
     position: sticky;
     top: 0;
     background-color: var(--in-content-page-background);
@@ -321,7 +312,6 @@ html|button.add-container__button:hover:active {
     border-top: none;
     border-radius: 0 0 var(--table-border-radius) var(--table-border-radius);
     margin-top: 0;
-    z-index: -2; /* needed so that the table scrolls behind the tricky hide */
 }
 
 .pref-table__row {
