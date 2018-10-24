@@ -103,7 +103,6 @@
     min-width: var(--pane-min-width);
     display: flex;
     flex-direction: column;
-    height: 100%;
     margin-bottom: var(--small-category-height);
 }
 
