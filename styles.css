@@ -17,6 +17,7 @@
     --table-border-radius: 2px;
     --table-border-col: var(--grey-40);
     --table-header-col: var(--grey-50);
+    --small-category-height: 36px;
 
     --table-width: calc(var(--pane-width) - 2 * var(--table-border) - 2 * var(--button-margin));
 }
@@ -103,6 +104,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    margin-bottom: var(--small-category-height);
 }
 
 /* endregion */
@@ -117,13 +119,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-height: 36px;
+    min-height: var(--small-category-height);
     cursor: default;
     padding: 0;
 }
 
 .category.category--small:last-of-type {
-    margin-bottom: 36px;
+    margin-bottom: var(--small-category-height);
 }
 
 .category__icon {
@@ -157,7 +159,7 @@
     height: var(--main-content-y-padding);
     width: calc(var(--pane-width) - var(--main-content-padding-x)); /* such that it does not conceal the scroll bar*/
     background-color: var(--in-content-page-background);
-    z-index: 1;
+    z-index: -1;
 }
 
 .sticky-container {
@@ -316,6 +318,7 @@ html|button.add-container__button:hover:active {
     border-top: none;
     border-radius: 0 0 var(--table-border-radius) var(--table-border-radius);
     margin-top: 0;
+    z-index: -2; /* needed so that the table scrolls behind the tricky hide */
 }
 
 .pref-table__row {
@@ -398,46 +401,6 @@ button.button.button--small {
 }
 
 /* endregion */
-/* endregion */
-
-/* region MESSAGE-BAR */
-.message-bar {
-    width: 100%;
-    display: flex;
-    /*min-height: 32px; TODO: this is nonsense */
-    border-radius: 4px;
-    padding: 4px;
-    background-color: var(--grey-20);
-    color: var(--grey-90);
-}
-
-.message-bar.message-bar--small-container {
-    width: auto;
-}
-
-.message-bar.message-bar--error {
-    background-color: var(--red-60);
-    color: var(--white-100);
-}
-
-.message-bar .icon {
-    padding: 4px;
-}
-
-.message-bar button.button.button--ghost {
-    align-self: start;
-    padding: 4px;
-    margin: 0;
-    min-height: 16px;
-    min-width: 16px;
-    height: 16px;
-    width: 16px;
-}
-
-.message-bar span {
-    flex-grow: 1;
-}
-
 /* endregion */
 
 /* region COLLAPSED -- @media (max-width: 830px) */

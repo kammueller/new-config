@@ -88,19 +88,10 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
         '></button> </li>\n';
 }
 
-function addTests() {
-    var testValues = {'string': 'just a test', 'int': '42', 'bool': 'true'};
-    console.log(testValues['int']);
-    for (var key in testValues) {
-        console.log(key + '=>' + testValues[key]);
-        addItem("testing.mock.foo." + key, testValues[key], false, false, key, false, false);
-        addItem("testing.mock.foo." + key + ".fav", testValues[key], false, false, key, true, false);
-        addItem("testing.mock.foo." + key + ".user", testValues[key], false, true, key, false, true);
-        addItem("testing.mock.foo." + key + ".locked", testValues[key], true, false, key, false, false);
-        addItem("testing.mock.foo." + key + ".modified", testValues[key], false, true, key, false, false);
-        addItem("testing.mock.foo." + key + ".locked&modified", testValues[key], true, true, key, false, false);
-        addItem("testing.mock.foo." + key + ".locked&user", testValues[key], true, true, key, false, true);
-        addItem("testing.mock.foo." + key + ".locked&user&fav", testValues[key], true, true, key, true, true);
-        addItem("testing.mock.foo." + key + ".locked&fav", testValues[key], true, false, key, true, false);
-    }
-}
+addItem("captivedetect.canonicalContent", "success", true, false, 'string', false, false);
+addItem("captivedetect.canonicalURL", "http://detectportal.firefox.com/success.txt", false, true, 'string', false, false);
+addItem("captivedetect.maxRetryCount", 5, true, true, 'int', true, false);
+addItem("captivedetect.maxWaitingTime", 5000, false, false, 'int', false, false);
+addItem("captivedetect.pollingTime", 3000, false, true, 'int', false, false);
+addItem("clipboard.autocopy", false, false, false, 'bool', true, false);
+addItem("clipboard.plainTextOnly", false, false, true, 'bool', false, true);
