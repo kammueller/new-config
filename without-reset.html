@@ -8,64 +8,60 @@
     <link rel="stylesheet" href="photon-button.css">
     <link rel="stylesheet" href="photon-components.css">
     <link rel="stylesheet" href="styles.css"/>
-    <style>
-        button:disabled.button.button--ghost.icon.icon--reset {
-            background-image: none;
-        }
-    </style>
+    <link rel="stylesheet" href="alt-styles.css"/>
 </head>
 <body>
 <div class="container">
     <div class="navigation" aria-label="Navigation">
         <ul id="categories" aria-label="List of Components">
             <li class="category category--small">
-                <div class="icon icon--search"></div>
+                <div class="category__icon icon icon--search"></div>
                 <div class="category__label">Everything</div>
             </li>
             <li class="category category--small">
-                <div class="icon icon--star"></div>
+                <div class="category__icon icon icon--star"></div>
                 <div class="category__label">Favourites</div>
             </li>
             <li class="category category--small category--spacer" aria-hidden="true"></li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">accessibility</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="accessibility">accessibility</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">advanced</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="advanced">advanced</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">alerts</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="alerts">alerts</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">app</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="app">app</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">apz</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="apz">apz</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">beacon</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="beacon">beacon</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">bidi</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="bidi">bidi</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">breakpad</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="breakpad">breakpad</div>
             </li>
             <li class="category category--small" selected="true">
-                <div class="icon"></div>
-                <div class="category__label">browser</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="browser">browser</div>
             </li>
             <li class="category category--small">
-                <div class="icon"></div>
-                <div class="category__label">canvas</div>
+                <div class="category__icon icon"></div>
+                <div class="category__label" title="canvas">canvas</div>
             </li>
         </ul>
     </div>
@@ -75,7 +71,8 @@
             <div class="search-container" aria-label="Search for Preferences">
                 <div class="search-box">
                     <div class="icon icon--search icon--in-search"></div>
-                    <input class="search-box__input" type="text" name="search" placeholder="Search a preference">
+                    <input class="search-box__input" type="text" name="search" placeholder="Search a preference"
+                           id="search-field">
                 </div>
                 <div class="search-select">
                     <input type="checkbox" id="modified" value="modified" checked>
@@ -86,7 +83,7 @@
                     <label for="default">default</label>
                 </div>
                 <div class="search-select growth">
-                    <input type="checkbox" id="Regexp" value="Regexp" checked>
+                    <input type="checkbox" id="Regexp" value="Regexp">
                     <label for="Regexp">Regexp search</label>
                 </div>
             </div>
@@ -96,25 +93,26 @@
                     Add a Preference
                 </button>
                 <div id="add-container__inner" style="display: none" aria-label="Dialogue to add a Preference">
-                    <div class="add-container__text-wrapper" aria-label="Define the Name">
-                        <label for="new-name" aria-hidden="true">Name:</label>
-                        <input type="text" placeholder="component.foo.bar" id="new-name">
-                    </div>
-                    <div class="add-container__type" aria-label="Define the Type">
-                        <span aria-hidden="true">Type:</span>
-                        <input type="radio" name="gender" value="b" id="boolean">
-                        <label for="boolean" aria-hidden="true">Boolean</label>
-                        <input type="radio" name="gender" value="i" id="integer">
-                        <label for="integer" aria-hidden="true">Integer</label>
-                        <input type="radio" name="gender" value="s" id="string">
-                        <label for="string" aria-hidden="true">String</label>
-                    </div>
-                    <div class="add-container__text-wrapper" aria-label="Define the Value">
-                        <label for="new-value" aria-hidden="true">Value:</label>
-                        <label for="new-value" aria-hidden="true">Value:</label>
-                        <input type="text" placeholder="42" id="new-value">
-                    </div>
-                    <button class="button button--primary">add</button>
+                    <form>
+                        <div class="add-container__text-wrapper" aria-label="Define the Name">
+                            <label for="new-name" aria-hidden="true">Name:</label>
+                            <input type="text" placeholder="component.foo.bar" id="new-name">
+                        </div>
+                        <div class="add-container__type" aria-label="Define the Type">
+                            <span aria-hidden="true">Type:</span>
+                            <input type="radio" name="gender" value="b" id="boolean">
+                            <label for="boolean" aria-hidden="true">Boolean</label>
+                            <input type="radio" name="gender" value="i" id="integer">
+                            <label for="integer" aria-hidden="true">Integer</label>
+                            <input type="radio" name="gender" value="s" id="string">
+                            <label for="string" aria-hidden="true">String</label>
+                        </div>
+                        <div class="add-container__text-wrapper" aria-label="Define the Value">
+                            <label for="new-value" aria-hidden="true">Value:</label>
+                            <input type="text" placeholder="42" id="new-value">
+                        </div>
+                        <button class="button button--primary" onclick="addPref()">add</button>
+                    </form>
                 </div>
             </div>
 
@@ -275,7 +273,7 @@
                         <span>New Design, Edit Int (try enter a string, click save, and see the error!)  </span>
                     </li>
                     <li class="pref-table__cell">
-                        <form id="test-form">
+                        <form id="test-form" onsubmit="editPref()">
                             <input type="text" placeholder="Edit Value" value="42" pattern="[0-9]*"
                                    title="Please enter an integer value">
                         </form>
