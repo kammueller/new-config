@@ -7,7 +7,27 @@
 
 </head>
 <body>
+<script>
+  function long() {
+    document.getElementById("test").innerHTML =
+      "this is some rly long testing value";
+  }
+
+  function vlong() {
+    document.getElementById("test").innerHTML =
+      "this is some rly long testing value, which is even longer than the other";
+  }
+
+  function short() {
+    document.getElementById("test").innerHTML =
+      "Short value again";
+  }
+</script>
 <h1> Testing grid with 2000 rows</h1>
+<a onclick="vlong()">Very long test</a> &bull;
+<a onclick="long()">Long test</a> &bull;
+<a onclick="short()">Short test</a>
+<br><br>
 <div class="table" id="table">
     <ul class="row">
         <li class="cell">1 fr</li>
@@ -86,7 +106,7 @@
     </ul>
     <ul class="row">
         <li class="cell">1</li>
-        <li class="cell">14</li>
+        <li class="cell" id="test">14</li>
         <li class="cell">3</li>
     </ul>
     <ul class="row">
