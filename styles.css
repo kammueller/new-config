@@ -130,6 +130,8 @@
 
 .category__icon {
     margin: 10px 10px 10px 15px;
+    -moz-context-properties: fill;
+    fill: currentColor;
 }
 
 .category__label {
