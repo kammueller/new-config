@@ -70,9 +70,8 @@
     background-image: url("resource://activity-stream/data/content/assets/glyph-dismiss-16.svg");
 }
 
-.icon.icon--error {
-    background-image: url("error.svg");
-
+.icon.icon--add {
+    background-image: url("resource://activity-stream/data/content/assets/glyph-add-16.svg");
 }
 
 /* endregion */
@@ -210,82 +209,90 @@ html|input[type="text"].search-box__input {
 /* endregion */
 
 /* region add */
-.add-container {
-    padding: var(--textfield-padding-y) 0 var(--textfield-padding-y) var(--button-margin);
-    margin-bottom: calc(2 * var(--textfield-padding-y));
-}
-
-.add-container__button {
-    color: var(--blue-50);
-    cursor: pointer;
+button.button.button--ghost.button--ghost--primary {
+    background-color: var(--blue-60);
     -moz-context-properties: fill;
-    fill: currentColor;
-    border: none;
-    margin: 0;
-    padding: 0 45px 0 0;
-    font: inherit;
-    position: relative;
+    fill: white;
 }
 
-.add-container__button::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: url("chrome://global/skin/icons/arrow-dropdown-16.svg");
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-position: right center;
+button.button.button--ghost.button--ghost--primary:hover {
+    background-color: var(--blue-70);
 }
 
-.add-container__button.add-container__button--expanded::after {
-    transform: scaleY(-1);
-}
-
-html|button.add-container__button:hover,
-html|button.add-container__button:active,
-html|button.add-container__button:hover:active {
-    background-color: transparent;
-}
-
-#add-container__inner {
-    margin-top: var(--button-margin);
-    /*TODO: button position if on single line?!*/
-}
-
-#add-container__inner form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-#add-container__inner .add-container__text-wrapper {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-}
-
-.add-container__text-wrapper label {
-    margin-right: var(--button-margin);
-}
-
-.add-container__text-wrapper input[type="text"] {
-    flex-grow: 1;
-}
-
-.add-container__type {
-    flex-shrink: 0;
-    margin: var(--button-margin) var(--textfield-padding-x);
-    display: flex;
-    align-items: center;
+button.button.button--ghost.button--ghost--primary:active {
+    background-color: var(--blue-80);
 }
 
 .textfield-label {
     font-size: 13px;
+}
+
+#dialog-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialog-overlay__background {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-box {
+    z-index: 1;
+    margin-top: 70px; /* todo */
+    background-color: var(--grey-10);
+    background-clip: content-box;
+    color: var(--grey-60);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dialog-box__title-bar {
+    margin-top: 0;
+    padding: 3px 0;
+    background-color: var(--grey-20);
+    border-bottom: 1px solid var(--grey-40);
+    text-align: center;
+    line-height: 1.8em;
+    font-size: .9em;
+    font-weight: 600;
+    -moz-user-select: none;
+}
+
+.dialog-box__frame {
+    margin: 20px;
+    width: 66ch;
+}
+
+.dialog-box__frame__form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.dialog-box__frame__form label {
+    margin-right: 5px;
+}
+
+.dialog-box__frame__form input[type="text"] {
+    margin: 4px;
+}
+
+.dialog-box__frame__submit {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
 }
 
 /* endregion */

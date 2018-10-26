@@ -405,38 +405,12 @@
                     <input type="checkbox" id="default" value="default" checked>
                     <label for="default">default</label>
                 </div>
-                <div class="search-select growth">
+                <div class="search-select">
                     <input type="checkbox" id="Regexp" value="Regexp">
                     <label for="Regexp">Regexp search</label>
                 </div>
-            </div>
-            <div class="add-container" aria-label="Add a Preference">
-                <button onclick="toggleAdd()" class="add-container__button" id="add-dropdown"
-                        aria-controls="add-container__inner">
-                    Add a Preference
-                </button>
-                <div id="add-container__inner" style="display: none" aria-label="Dialogue to add a Preference">
-                    <form>
-                        <div class="add-container__text-wrapper" aria-label="Define the Name">
-                            <label class="textfield-label" for="new-name" aria-hidden="true">Name</label>
-                            <input type="text" placeholder="component.foo.bar" id="new-name">
-                        </div>
-                        <div class="add-container__type" aria-label="Define the Type">
-                            <span class="textfield-label"aria-hidden="true">Type</span>
-                            <input type="radio" name="gender" value="b" id="boolean">
-                            <label for="boolean" aria-hidden="true">Boolean</label>
-                            <input type="radio" name="gender" value="i" id="integer">
-                            <label for="integer" aria-hidden="true">Integer</label>
-                            <input type="radio" name="gender" value="s" id="string">
-                            <label for="string" aria-hidden="true">String</label>
-                        </div>
-                        <div class="add-container__text-wrapper" aria-label="Define the Value">
-                            <label class="textfield-label" for="new-value" aria-hidden="true">Value</label>
-                            <input type="text" placeholder="42" id="new-value">
-                        </div>
-                        <button class="button button--primary" onclick="addPref()">add</button>
-                    </form>
-                </div>
+                <button class="button button--ghost button--ghost--primary icon icon--add" onclick="showAdd()"
+                        title="Add a Preference"></button>
             </div>
 
             <div class="pref-table pref-table--header" aria-hidden="true">
@@ -464,6 +438,37 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="dialog-overlay" aria-label="Dialogue to add a Preference" style="display: none">
+    <div class="dialog-box">
+        <div class="dialog-box__title-bar">
+            Add a Preference
+        </div>
+        <div class="dialog-box__frame">
+            <form class="dialog-box__frame__form" id="addPref" aria-label="Define the new Preference">
+                <label class="textfield-label" for="new-name" aria-hidden="true">Name</label>
+                <input type="text" placeholder="component.foo.bar" id="new-name">
+                <span class="textfield-label" aria-hidden="true">Type</span>
+                <div class="dialog__input">
+                    <input type="radio" name="gender" value="b" id="boolean">
+                    <label for="boolean" aria-hidden="true">Boolean</label>
+                    <input type="radio" name="gender" value="i" id="integer">
+                    <label for="integer" aria-hidden="true">Integer</label>
+                    <input type="radio" name="gender" value="s" id="string">
+                    <label for="string" aria-hidden="true">String</label>
+                </div>
+                <label class="textfield-label" for="new-value" aria-hidden="true">Value</label>
+                <input type="text" placeholder="42" id="new-value">
+                <div aria-hidden="true"></div>
+            </form>
+            <div class="dialog-box__frame__submit">
+                <button class="button" onclick="hideAdd()">cancel</button>
+                <button class="button button--primary" onclick="addPref()" form="addPref">add</button>
+            </div>
+        </div>
+    </div>
+    <div class="dialog-overlay__background" onclick="hideAdd()"></div>
 </div>
 
 <script src="script.js"></script>

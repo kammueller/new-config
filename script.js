@@ -1,21 +1,13 @@
 function showAdd() {
-  document.getElementById("add-container__inner").style.display = "block";
-  document.getElementById("add-dropdown").classList.add("add-container__button--expanded");
-  document.getElementById("add-dropdown").setAttribute('aria-expanded', 'true');
+  document.getElementById("dialog-overlay").style.display = "flex";
 }
 
 function hideAdd() {
-  document.getElementById("add-container__inner").style.display = "none";
-  document.getElementById("add-dropdown").classList.remove("add-container__button--expanded");
-  document.getElementById("add-dropdown").setAttribute('aria-expanded', 'false');
+  document.getElementById("dialog-overlay").style.display = "none";
 }
 
 function toggleAdd() {
-  if (document.getElementById("add-container__inner").style.display === "block") {
-    hideAdd();
-  } else {
-    showAdd();
-  }
+ alert("deprecated")
 }
 
 function addPref() {
