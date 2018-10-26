@@ -74,6 +74,11 @@
     background-image: url("resource://activity-stream/data/content/assets/glyph-add-16.svg");
 }
 
+button:disabled.button.button--ghost.icon.icon--reset {
+    /*TODO: ugly*/
+    background-image: none;
+}
+
 /* endregion */
 
 /* region CONTAINER */

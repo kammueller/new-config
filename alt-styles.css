@@ -1,9 +1,5 @@
 @namespace html "http://www.w3.org/1999/xhtml";
 
-button:disabled.button.button--ghost.icon.icon--reset {
-    background-image: none;
-}
-
 @media (max-width: 830px) {
     .category__icon {
         width: 0;
