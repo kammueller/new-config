@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="photon-button.css">
     <link rel="stylesheet" href="photon-components.css">
     <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="alt-styles.css"/>
 </head>
 <body>
 <div class="container">
@@ -392,7 +391,7 @@
 
     <div class="main-content" aria-label="Display and Edit Preferences">
         <div class="sticky-container" aria-label="Search and Add Preferences">
-            <div class="search-container" aria-label="Search for Preferences">
+            <div class="search-container" aria-label="Search for Preferences" style="margin-bottom: 6px">
                 <div class="search-box">
                     <div class="icon icon--search icon--in-search"></div>
                     <input class="search-box__input" type="text" name="search" placeholder="Search a preference"
@@ -410,9 +409,11 @@
                     <input type="checkbox" id="Regexp" value="Regexp">
                     <label for="Regexp">Regexp search</label>
                 </div>
-                <button class="button button--ghost button--ghost--primary icon icon--add" onclick="showAdd()"
-                        title="Add a Preference"></button>
             </div>
+
+            <button class="button button--primary" onclick="showAdd()" title="Add a Preference" style="margin-bottom: 10px">
+                <span class="icon icon--add"></span> Add a Preference
+            </button>
 
             <div class="pref-table pref-table--header" aria-hidden="true">
                 <div class="pref-table__cell pref-table__cell--header">

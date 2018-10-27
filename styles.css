@@ -74,6 +74,7 @@
     background-image: url("resource://activity-stream/data/content/assets/glyph-add-16.svg");
 }
 
+button:disabled.button.button--ghost.icon.icon--trash,
 button:disabled.button.button--ghost.icon.icon--reset {
     /*TODO: ugly*/
     background-image: none;
@@ -218,6 +219,12 @@ button.button.button--ghost.button--ghost--primary {
     background-color: var(--blue-60);
     -moz-context-properties: fill;
     fill: white;
+}
+
+button.button.button--primary span.icon {
+    -moz-context-properties: fill;
+    fill: white;
+    margin-right: var(--button-margin);
 }
 
 button.button.button--ghost.button--ghost--primary:hover {
@@ -426,6 +433,12 @@ button.button.button--small {
         margin-right: 10px;
         padding-left: 5px;
         padding-right: 5px;
+    }
+
+    .category__icon {
+        width: 0;
+        padding: 0;
+        margin: 0;
     }
 }
 

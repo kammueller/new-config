@@ -1,9 +1,0 @@
-@namespace html "http://www.w3.org/1999/xhtml";
-
-@media (max-width: 830px) {
-    .category__icon {
-        width: 0;
-        padding: 0;
-        margin: 0;
-    }
-}
