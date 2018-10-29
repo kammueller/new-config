@@ -7,7 +7,7 @@ function hideAdd() {
 }
 
 function toggleAdd() {
- alert("deprecated")
+  alert("deprecated")
 }
 
 function addPref() {
@@ -40,10 +40,10 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
     '" aria-label="Preference ' + name + '" role="list">\n' +
     '<li class="pref-table__cell">\n' +
     (isLocked
-      ? '<button class="button button--ghost icon icon--lock" title="locked" disabled></button>\n'
+      ? '<button class="button--ghost icon icon--lock" title="locked" disabled></button>\n'
       : (isFav
-          ? '<button class="button button--ghost icon icon--filled-star" title="is favourite"></button>\n'
-          : '<button class="button button--ghost icon icon--star" title="make favourite"></button>\n'
+          ? '<button class="button--ghost icon icon--filled-star" title="is favourite"></button>\n'
+          : '<button class="button--ghost icon icon--star" title="make favourite"></button>\n'
       )) +
     '</li>\n' +
     '<li class="pref-table__cell">\n' +
@@ -66,12 +66,12 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
         '</li>\n'
     ) +
     '<li class="pref-table__cell">\n' +
-    '<button class="button button--small" form="edit-form-' + name + '"' +
+    '<button class="button--small" form="edit-form-' + name + '"' +
     (isLocked ? ' disabled' : '') + '>' +
     (Type === "bool" ? 'toggle' : 'save') + '</button>\n' +
     '</li>\n' +
     '<li class="pref-table__cell">\n' +
-    '<button class="button button--ghost icon ' +
+    '<button class="button--ghost icon ' +
     (isUser
         ? 'icon--trash" title="delete preference"'
         : 'icon--reset" ' + (isModified ? 'title="reset value to default"' : '')
@@ -109,3 +109,8 @@ addItem('more.accessibility.typeaheadfind.enablesound', true, false, true, 'bool
 addItem('more.accessibility.typeaheadfind.flashBar', 1, true, true, 'int', false, true);
 addItem('more.accessibility.typeaheadfind.linksonly', false, false, false, 'bool', false, false);
 addItem('more.accessibility.typeaheadfind.manual', true, false, true, 'bool', false, false);
+
+/*
+// get a list of all components
+let nav = [...new Set(gPrefArray.map(value => value.name.split('.')[0]))];
+  */

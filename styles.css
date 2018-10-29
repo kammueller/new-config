@@ -74,8 +74,8 @@
     background-image: url("resource://activity-stream/data/content/assets/glyph-add-16.svg");
 }
 
-button:disabled.button.button--ghost.icon.icon--trash,
-button:disabled.button.button--ghost.icon.icon--reset {
+button:disabled.button--ghost.icon.icon--trash,
+button:disabled.button--ghost.icon.icon--reset {
     /*TODO: ugly*/
     background-image: none;
 }
@@ -215,23 +215,23 @@ html|input[type="text"].search-box__input {
 /* endregion */
 
 /* region add */
-button.button.button--ghost.button--ghost--primary {
+button.button--ghost.button--ghost--primary {
     background-color: var(--blue-60);
     -moz-context-properties: fill;
     fill: white;
 }
 
-button.button.button--primary span.icon {
+button.button--primary span.icon {
     -moz-context-properties: fill;
     fill: white;
     margin-right: var(--button-margin);
 }
 
-button.button.button--ghost.button--ghost--primary:hover {
+button.button--ghost.button--ghost--primary:hover {
     background-color: var(--blue-70);
 }
 
-button.button.button--ghost.button--ghost--primary:active {
+button.button--ghost.button--ghost--primary:active {
     background-color: var(--blue-80);
 }
 
@@ -410,7 +410,7 @@ button.button.button--ghost.button--ghost--primary:active {
     opacity: 0.4;
 }
 
-button.button.button--small {
+button.button--small {
     min-width: 66px;
 }
 
@@ -428,7 +428,6 @@ button.button.button--small {
     }
 
     #categories > .category.category--small {
-        /* TODO design*/
         margin-left: 5px;
         margin-right: 10px;
         padding-left: 5px;

@@ -48,10 +48,10 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
     '" aria-label="Preference ' + name + '" role="list">\n' +
     '<li class="pref-table__cell">\n' +
     (isLocked
-      ? '<button class="button button--ghost icon icon--lock" title="locked" disabled></button>\n'
+      ? '<button class="button--ghost icon icon--lock" title="locked" disabled></button>\n'
       : (isFav
-          ? '<button class="button button--ghost icon icon--filled-star" title="is favourite"></button>\n'
-          : '<button class="button button--ghost icon icon--star" title="make favourite"></button>\n'
+          ? '<button class="button--ghost icon icon--filled-star" title="is favourite"></button>\n'
+          : '<button class="button--ghost icon icon--star" title="make favourite"></button>\n'
       )) +
     '</li>\n' +
     '<li class="pref-table__cell">\n' +
@@ -61,7 +61,7 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
     (Type === "bool"
         ? '<li class="pref-table__cell">' +
         (isLocked ? '<span class="pref-table__cell__disabled-text"'
-          : '<button class="button button--small button--toggle"') + '>' + value +
+          : '<button class="button--small button--toggle"') + '>' + value +
         (isLocked ? '</span>' : '</button>') + '</li>'
 
         : '<li class="pref-table__cell">\n' + (isLocked
@@ -76,12 +76,12 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
         '</li>\n'
     ) +
     '<li class="pref-table__cell">\n' +
-    (Type === "bool" ? '' : '<button class="button button--small"' +
+    (Type === "bool" ? '' : '<button class="button--small"' +
       ' form="edit-form-' + name + '"' +
       (isLocked ? ' disabled' : '') + '>save</button>\n') +
     '</li>\n' +
     '<li class="pref-table__cell">\n' +
-    '<button class="button button--ghost icon ' +
+    '<button class="button--ghost icon ' +
     (isUser
         ? 'icon--trash" title="delete preference"'
         : 'icon--reset" ' + (isModified ? 'title="reset value to default"' : '')

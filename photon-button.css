@@ -1,6 +1,6 @@
 /* taken from https://github.com/FirefoxUX/photon-components-web/*/
 
-button.button,
+button,
 a.button {
     background-color: var(--grey-90-a10);
     border: 0 none;
@@ -25,19 +25,19 @@ a.button {
 
 /* Primary style */
 
-button.button.button--primary,
+button.button--primary,
 a.button.button--primary {
     background-color: var(--blue-60);
     color: #fff;
     font-weight: 300;
 }
 
-button.button.button--primary:hover,
+button.button--primary:hover,
 a.button.button--primary:hover {
     background-color: var(--blue-70);
 }
 
-button.button.button--primary:active,
+button.button--primary:active,
 a.button.button--primary:active {
     background-color: var(--blue-80);
 }
@@ -45,7 +45,7 @@ a.button.button--primary:active {
 
 /* Ghost style */
 
-button.button.button--ghost,
+button.button--ghost,
 a.button.button--ghost {
     background-color: transparent;
     background-position: center;
@@ -61,7 +61,7 @@ a.button.button--ghost {
 
 /* Micro size */
 
-button.button.button--micro,
+button.button--micro,
 a.button.button--micro {
     border-radius: 2px;
     font-size: 11px;
@@ -73,7 +73,7 @@ a.button.button--micro {
 
 /* Puffy size */
 
-button.button.button--puffy,
+button.button--puffy,
 a.button.button--puffy {
     border-radius: 4px;
     font-size: 15px;
@@ -85,34 +85,34 @@ a.button.button--puffy {
 
 /* Hover, Active states */
 
-button.button:hover,
+button:hover,
 a.button:hover {
     background-color: var(--grey-90-a20);
 }
 
-button.button:active,
+button:active,
 a.button:active {
     background-color: var(--grey-90-a30);
 }
 
-button.button.button--ghost:hover,
+button.button--ghost:hover,
 a.button.button--ghost:hover {
     background-color: var(--grey-90-a10);
 }
 
-button.button.button--ghost:active,
+button.button--ghost:active,
 a.button.button--ghost:active {
     background-color: var(--grey-90-a20);
 }
 
-button.button::-moz-focusring {
+button::-moz-focusring {
     outline: none;
 }
-button.button::-moz-focus-inner {
+button::-moz-focus-inner {
     border: 0;
 }
 
-button.button:focus,
+button:focus,
 a.button:focus {
     box-shadow:
             0 0 0 1px var(--blue-50) inset,
@@ -120,7 +120,7 @@ a.button:focus {
             0 0 0 4px var(--blue-50-a30);
 }
 
-button.button[disabled],
+button[disabled],
 a.button[aria-disabled],
 a.button.button--disabled {
     opacity: .4;
