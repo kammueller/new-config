@@ -22,6 +22,60 @@ function ShowPrefs() {
   window.location = "index.html";
 }
 
+function editItem(name, value, isNr) {
+  var formName = "form-" + name;
+  var row = document.getElementById(name);
+
+  function getThirdCol() {
+    var cell = document.createElement("li");
+    cell.className = "pref-table__cell";
+    var inner;
+    inner = document.createElement("form");
+    inner.id = formName;
+    inner.setAttribute("aria-label", "Edit Value");
+    inner.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+    });
+    var field = document.createElement("input");
+    field.type = "text";
+    field.value = value;
+    if (isNr) {
+      field.setAttribute("pattern", "-?[0-9]*");
+      field.title = "Please enter an integer value";
+    } else {
+      field.title = "Please enter the value";
+    }
+    inner.appendChild(field);
+
+    cell.appendChild(inner);
+    return cell;
+  }
+
+
+  function getFourthCol() {
+    var cell = document.createElement("li");
+    cell.className = "pref-table__cell";
+    var button = document.createElement("button");
+    button.classList.add("button", "button--small", "button--primary");
+    button.setAttribute("form", formName);
+    button.innerText = "save";
+    button.addEventListener("click", dummy);
+
+    cell.appendChild(button);
+    return cell;
+  }
+
+  var col1 = row.childNodes[0];
+  var col2 = row.childNodes[1];
+  var col5 = row.childNodes[4];
+  row.innerHTML = "";
+  row.appendChild(col1);
+  row.appendChild(col2);
+  row.appendChild(getThirdCol());
+  row.appendChild(getFourthCol());
+  row.appendChild(col5);
+}
+
 /**
  *
  * @param name name of the pref
@@ -85,29 +139,10 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
     var cell = document.createElement("li");
     cell.className = "pref-table__cell";
     var inner;
-    if (type === "Boolean" || isLocked) {
-      inner = document.createElement("span");
-      inner.innerText = value;
-      if (isLocked) {
-        inner.className = "pref-table__cell__disabled-text";
-      }
-    } else {
-      inner = document.createElement("form");
-      inner.id = formName;
-      inner.setAttribute("aria-label", "Edit Value");
-      inner.addEventListener("submit", function (ev) {
-        ev.preventDefault();
-      });
-      var field = document.createElement("input");
-      field.type = "text";
-      field.value = value;
-      if (type === "Number") {
-        field.setAttribute("pattern", "-?[0-9]*");
-        field.title = "Please enter an integer value";
-      } else {
-        field.title = "Please enter the value";
-      }
-      inner.appendChild(field);
+    inner = document.createElement("span");
+    inner.innerText = value;
+    if (isLocked) {
+      inner.className = "pref-table__cell__disabled-text";
     }
 
     cell.appendChild(inner);
@@ -128,8 +163,10 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
       button.innerText = "toggle";
       button.addEventListener("click", dummy);
     } else {
-      button.innerText = "save";
-      button.addEventListener("click", dummy);
+      button.innerText = "edit";
+      button.addEventListener("click", function () {
+        editItem(name, value, type === "Number");
+      });
     }
 
     cell.appendChild(button);
@@ -165,6 +202,7 @@ function addItem(name, value, isLocked, isModified, Type, isFav, isUser) {
   }
   row.setAttribute("aria-label", "Preference " + name);
   row.setAttribute("role", "list ");
+  row.id = name;
 
   getFirstCol(row);
   getSecondCol(row);
