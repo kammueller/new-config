@@ -107,8 +107,6 @@ button:disabled.button--ghost.icon.icon--reset {
 .pane-container {
     width: var(--pane-width);
     min-width: var(--pane-min-width);
-    display: flex;
-    flex-direction: column;
     margin-bottom: var(--small-category-height);
 }
 
