@@ -33,7 +33,7 @@ a.button.button--primary {
     font-weight: 300;
 }
 
-html|button.button--primary:hover,
+html|button.button--primary:enabled:hover,
 a.button.button--primary:hover {
     background-color: var(--blue-70);
 }
@@ -96,7 +96,7 @@ a.button:active {
     background-color: var(--grey-90-a30);
 }
 
-html|button.button--ghost:hover,
+html|button.button--ghost:enabled:hover,
 a.button.button--ghost:hover {
     background-color: var(--grey-90-a10);
 }
