@@ -17,7 +17,7 @@
     --table-border-radius: 2px;
     --table-border-col: var(--grey-40);
     --table-header-col: var(--grey-50);
-    --small-category-height: 36px;
+    --small-category-height: 30px;
 
     --table-width: calc(var(--pane-width) - 2 * var(--table-border) - 2 * var(--button-margin));
 }
@@ -136,7 +136,8 @@ button:disabled.button--ghost.icon.icon--reset {
 }
 
 .category__icon {
-    margin: 10px 10px 10px 15px;
+    margin-left: 15px;
+    margin-right: 10px;
     -moz-context-properties: fill;
     fill: currentColor;
 }
@@ -146,7 +147,6 @@ button:disabled.button--ghost.icon.icon--reset {
     text-overflow: ellipsis;
     overflow: hidden;
     flex-shrink: 1;
-    font-size: .9em;
 }
 
 #categories > .category.category--small.category--spacer {
