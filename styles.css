@@ -33,6 +33,10 @@
     flex-shrink: 0;
 }
 
+span.icon {
+    margin-right: 10px;
+}
+
 .icon.icon--dropdown {
     background-image: url("chrome://global/skin/icons/arrow-dropdown-16.svg");
 }
@@ -169,6 +173,7 @@ button:disabled.button--ghost.icon.icon--reset {
 .search-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .search-box {
@@ -202,8 +207,8 @@ html|input[type="text"].search-box__input {
     align-items: center;
 }
 
-.search-select:last-child {
-    padding-right: 0;
+.search-select:last-of-type {
+    padding-right: 40px;
 }
 
 .search-select input[type="checkbox"] {
@@ -274,7 +279,6 @@ button.button--ghost.button--ghost--primary:active {
     border-bottom: 1px solid var(--grey-40);
     text-align: center;
     line-height: 1.8em;
-    font-size: .9em;
     font-weight: 600;
     -moz-user-select: none;
 }
