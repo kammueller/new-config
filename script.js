@@ -1,3 +1,5 @@
+var inEdit = null;
+
 function showAdd() {
   document.getElementById("dialog-overlay").style.display = "flex";
 }
@@ -18,13 +20,55 @@ function dummy() {
   alert("some action!");
 }
 
+function save(value, formName, name) {
+  alert("should save");
+  abortEdit(value, formName, name);
+  inEdit = null;
+}
+
 function ShowPrefs() {
   window.location = "index.html";
 }
 
+function abortEdit(value, name) {
+  var formName = "form-" + name;
+  var col1a = inEdit.childNodes[0];
+  var col2a = inEdit.childNodes[1];
+  var col5a = inEdit.childNodes[4];
+  inEdit.innerHTML = "";
+  inEdit.appendChild(col1a);
+  inEdit.appendChild(col2a);
+  var cell = document.createElement("li");
+  cell.className = "pref-table__cell";
+  var inner;
+  inner = document.createElement("span");
+  inner.innerText = value;
+  cell.appendChild(inner);
+  inEdit.appendChild(cell);
+  cell = document.createElement("li");
+  cell.className = "pref-table__cell";
+  var button = document.createElement("button");
+  button.classList.add("button", "button--small");
+  button.setAttribute("form", formName);
+  button.innerText = "edit";
+  button.addEventListener("click", function () {
+    editItem(name, value, false);
+  });
+  cell.appendChild(button);
+  inEdit.appendChild(cell);
+  inEdit.appendChild(col5a);
+}
+
 function editItem(name, value, isNr) {
+  if (inEdit != null) {
+    console.log(inEdit.childNodes[2].firstChild);
+    var oldName = inEdit.childNodes[1].firstChild.innerText;
+    var oldValue = inEdit.childNodes[2].firstChild.firstChild.placeholder;
+    abortEdit(oldValue, oldName);
+  }
   var formName = "form-" + name;
   var row = document.getElementById(name);
+  inEdit = row;
 
   function getThirdCol() {
     var cell = document.createElement("li");
@@ -45,6 +89,7 @@ function editItem(name, value, isNr) {
     } else {
       field.title = "Please enter the value";
     }
+    field.placeholder = value;
     inner.appendChild(field);
 
     cell.appendChild(inner);
@@ -59,8 +104,9 @@ function editItem(name, value, isNr) {
     button.classList.add("button", "button--small", "button--primary");
     button.setAttribute("form", formName);
     button.innerText = "save";
-    button.addEventListener("click", dummy);
-
+    button.addEventListener("click", function () {
+      save(value, formName, name);
+    });
     cell.appendChild(button);
     return cell;
   }
