@@ -13,6 +13,5 @@ The following basic Logic is included:
 - if you add a pref you get the "double naming" feedback
 
 #### Versions ####
-https://kammueller.github.io/new-config/index.html
-https://kammueller.github.io/new-config/alternative.html
-https://kammueller.github.io/new-config/other-toggle.html
+This is the final mock-up.
+Follow our process here: https://bugzilla.mozilla.org/show_bug.cgi?id=1493439
