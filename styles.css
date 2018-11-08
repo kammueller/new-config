@@ -23,6 +23,10 @@
     --table-width: calc(var(--pane-width) - 2 * var(--table-border) - 2 * var(--button-margin));
 
     --grey-10-a05: rgba(249, 249, 250, 0.05);
+    --in-content-box-background-hover: var(--grey-20);
+    --in-content-box-background-active: var(--grey-30);
+    --in-content-box-border-color: var(--grey-30);
+    --in-content-page-background: var(--grey-10);
 }
 
 /* endregion */
