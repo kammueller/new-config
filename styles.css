@@ -15,8 +15,8 @@
     --main-content-y-padding: 70px;
     --table-border: 1px;
     --table-border-radius: 2px;
-    --table-border-col: var(--grey-40);
-    --table-header-col: var(--grey-50);
+    --table-border-col: var(--grey-40); /* side border (hardcoded) */
+    --table-header-col: var(--grey-50); /* font color when not hovered (hardcoded) */
     --small-category-height: 30px;
     --category-spacer-padding: calc(var(--small-category-height) / 2);
 
@@ -168,7 +168,7 @@ button:disabled.button--ghost.icon.icon--reset {
 #categories > .category.category--small.category--spacer {
     margin-top: var(--category-spacer-padding);
     margin-bottom: var(--category-spacer-padding);
-    border-top: 1px solid var(--table-border-col);
+    border-top: 1px solid var(--table-border-col); /* --in-content-box-border-color would be to weak */
     height: 0;
     min-height: 0;
 }
